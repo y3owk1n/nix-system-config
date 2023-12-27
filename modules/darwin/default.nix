@@ -8,9 +8,13 @@
     systemPath = [ "/opt/homebrew/bin" "/opt/homebrew/sbin" ];
     pathsToLink = [ "/Applications" ];
   };
-  users.users.demo = {
-    name = "demo";
-    home = "/Users/demo";
+  # Fixes error about home dir being /var/empty
+  # See https://github.com/nix-community/home-manager/issues/4026
+  users.users.${username} = {
+    home =
+      if pkgs.stdenvNoCC.isDarwin
+      then "/Users/${username}"
+      else "/home/${username}";
   };
   nix.extraOptions = ''
     auto-optimise-store = true
