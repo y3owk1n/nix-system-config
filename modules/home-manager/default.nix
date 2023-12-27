@@ -3,7 +3,7 @@
 		# Don't change this when you change package input. Leave it alone.
 		stateVersion = "23.11";
 		# Specify my home-manager configs
-		packages = with pkgs; [ripgrep nodejs_18 bun fd stats luajit minio nodePackages.pnpm rm-improved skhd alacritty neovim fd curl less];
+		packages = with pkgs; [ripgrep sqlite nodejs_18 bun fd stats luajit minio nodePackages.pnpm rm-improved skhd alacritty neovim fd curl less];
 		sessionVariables = {
 			PAGER = "less";
 			  CLICOLOR = 1;
@@ -18,6 +18,16 @@
         source = ./tmux;
         recursive = true;
     };
+    file.".config/yabai" = {
+            source = ./yabai;
+            recursive = true;
+        };
+
+    file.".config/skhd" = {
+        source = ./skhd;
+        recursive = true;
+
+        };
     };
 	xdg.configFile = {
 		nvim = {
