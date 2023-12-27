@@ -3,13 +3,17 @@
 		# Don't change this when you change package input. Leave it alone.
 		stateVersion = "23.11";
 		# Specify my home-manager configs
-		packages = with pkgs; [ripgrep neovim fd curl less];
+		packages = with pkgs; [ripgrep alacritty neovim fd curl less];
 		sessionVariables = {
 			PAGER = "less";
 			  CLICOLOR = 1;
 			  EDITOR = "nvim";
 		};
 		file.".inputrc".source = ./dotfiles/inputrc;
+    file.".config/alacritty" = {
+      source = ./alacritty;
+      recursive = true;
+      };
 	};
 	xdg.configFile = {
 		nvim = {
@@ -42,12 +46,5 @@
 		};
 		starship.enable = true;
 		starship.enableZshIntegration = true;
-		alacritty = {
-		  enable = true;
-		  settings = {
-			  font.normal.family = "GeistMono NF";
-			  font.size = 16;
-		  };
-		};
 	};
 }

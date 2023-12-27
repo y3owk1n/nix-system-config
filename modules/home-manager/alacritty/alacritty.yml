@@ -1,0 +1,45 @@
+cursor:
+  style:
+    # yamllint disable-line rule:truthy
+    blinking: Off
+    # yamllint disable-line rule:truthy
+    shape: Block
+env:
+  TERM: xterm-256color
+font:
+  bold:
+    family: GeistMono NF
+    style: Bold
+  bold_italic:
+    family: GeistMono NF
+    style: Bold Italic
+  italic:
+    family: GeistMono NF
+    style: Italic
+  normal:
+    family: GeistMono NF
+    style: Regular
+  size: 14.0
+import:
+  - ~/nix-system-config/modules/home-manager/catppuccin-macchiato.yml
+key_bindings:
+  # Vi Mode
+  # - { action: ToggleViMode, key: Space, mode: ~Search, mods: Control }
+  # (macOS only)
+  - { action: IncreaseFontSize, key: Plus, mods: Command }
+  - { action: DecreaseFontSize, key: Minus, mods: Command }
+  - { action: Quit, key: Q, mods: Command }
+  - { action: Quit, key: W, mods: Command }
+  - { action: CreateNewWindow, key: T, mods: Command }
+mouse:
+  hide_when_typing: true
+scrolling:
+  history: 10000
+  multiplier: 3
+window:
+  decorations: buttonless
+  dynamic_title: true
+  padding:
+    x: 10
+    y: 10
+working_directory: None
