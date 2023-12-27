@@ -25,6 +25,10 @@
 		  userName = "Kyle";
 		  userEmail = "wongyeowkin@gmail.com";
 		};
+		gh = {
+			enable = true;
+			gitCredentialHelper.enable = true;
+		};
 		zsh.enable = true;
 		zsh.enableCompletion = true;
 		zsh.enableAutosuggestions = true;
