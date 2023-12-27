@@ -26,6 +26,8 @@
           environment.shells = [pkgs.bash pkgs.zsh];
           environment.loginShell = pkgs.zsh;
           environment.systemPackages = [pkgs.coreutils];
+	  environment.systemPath = [ "/opt/homebrew/bin" ];
+	  envirenment.pathsToLink = [ "/Applications" ];
           users.users.demo = {
             name = "demo";
             home = "/Users/demo";
@@ -47,6 +49,16 @@
           system.defaults.NSGlobalDomain.KeyRepeat = 1;
           # backwards compat; don't change
           system.stateVersion = 4;
+	  homebrew = {
+		  enable = true;
+		  caskArgs.no_quarantine = true;
+		  global.brewfile = true;
+		  # Things from mac app store
+		  masApps = {};
+		  casks = [ "raycast" "font-geist-mono-nerd-font" ];
+		  taps = [ "homebrew/cask-fonts" ];
+		  brews = [];
+	  };
         })
         inputs.home-manager.darwinModules.home-manager
         {
@@ -65,6 +77,7 @@
                   EDITOR = "nvim";
                 };
                 programs.home-manager.enable = true;
+		programs.neovim.enable = true;
                 programs.bat.enable = true;
                 programs.bat.config.theme = "TwoDark";
                 programs.fzf.enable = true;
@@ -86,9 +99,19 @@
                 programs.starship.enableZshIntegration = true;
                 programs.alacritty = {
                   enable = true;
-                  settings.font.normal.family = "MesloLGS Nerf Font Mono";
+                  settings.font.normal.family = "GeistMono NF";
                   settings.font.size = 16;
                 };
+		home.file.".inputrc".text = ''
+			set show-all-if-ambiguous on
+			set completion-ignore-case on
+			set mark-directories on
+			set mark-symlinked-directories on
+			set match-hidden-files off
+			set visible-stats on
+			set keymap vi
+			set editing-mode vi-insert
+		'';
               })
             ];
           };
