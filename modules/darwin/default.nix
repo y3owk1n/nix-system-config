@@ -4,7 +4,7 @@
 	  environment = {
 		  shells = with pkgs; [bash zsh];
 		  loginShell = pkgs.zsh;
-		  systemPackages = with pkgs; [coreutils nodejs_18];
+		  systemPackages = with pkgs; [coreutils];
 		  systemPath = [ "/opt/homebrew/bin" ];
 		  pathsToLink = [ "/Applications" ];
 	  };
@@ -40,8 +40,8 @@
 		  global.brewfile = true;
 		  # Things from mac app store
 		  masApps = {};
-		  casks = [ "raycast" "font-geist-mono-nerd-font" ];
-		  taps = [ "homebrew/cask-fonts" ];
-		  brews = [ ];
+		  casks = [ "raycast" "font-geist-mono-nerd-font" "appcleaner" "keka" "kekaexternalhelper" "orbstack" "spaceid" "stats" "onyx" "imageoptim" "whatsapp" "lulu" ];
+		  taps = [ "homebrew/cask-fonts" "koekeishiya/formulae" ];
+		  brews = [ "yabai" ];
 	  };
         }

@@ -3,7 +3,7 @@
 		# Don't change this when you change package input. Leave it alone.
 		stateVersion = "23.11";
 		# Specify my home-manager configs
-		packages = with pkgs; [ripgrep alacritty neovim fd curl less];
+		packages = with pkgs; [ripgrep nodejs_18 bun fd stats luajit minio nodePackages.pnpm rm-improved skhd alacritty neovim fd curl less];
 		sessionVariables = {
 			PAGER = "less";
 			  CLICOLOR = 1;
@@ -90,6 +90,14 @@
                 source-file ~/.config/tmux/tmux-plugins.conf
             '';
 
-            };
+        };
+        autojump = {
+            enable = true;
+            enableFishIntegration = true;
+            enableZshIntegration = true;
+        };
+        lazygit = {
+            enable = true;
+        };
 	};
 }
