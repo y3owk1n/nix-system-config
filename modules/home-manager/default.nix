@@ -24,13 +24,8 @@
 		  enable = true;
 		  userName = "Kyle";
 		  userEmail = "wongyeowkin@gmail.com";
-		  extraConfig = {
-			  credential = {
-			  credentialStore = "secretservice";
-			  helper = "${pkgs.git-credential-manager}/bin/git-credential-manager-core";
-			  };
-		  };
 		};
+		git-credential-oauth.enable = true;
 		zsh.enable = true;
 		zsh.enableCompletion = true;
 		zsh.enableAutosuggestions = true;
