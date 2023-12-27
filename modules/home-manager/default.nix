@@ -24,10 +24,9 @@
 		  enable = true;
 		  userName = "Kyle";
 		  userEmail = "wongyeowkin@gmail.com";
-		};
-		gh = {
-			enable = true;
-			gitCredentialHelper.enable = true;
+		  extraConfig = {
+			  credential.helper = "oauth";
+		  };
 		};
 		zsh.enable = true;
 		zsh.enableCompletion = true;
