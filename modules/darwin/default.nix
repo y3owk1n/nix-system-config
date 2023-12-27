@@ -4,7 +4,7 @@
 	  environment = {
 		  shells = with pkgs; [bash zsh];
 		  loginShell = pkgs.zsh;
-		  systemPackages = with pkgs; [coreutils];
+		  systemPackages = with pkgs; [coreutils nodejs_18];
 		  systemPath = [ "/opt/homebrew/bin" ];
 		  pathsToLink = [ "/Applications" ];
 	  };
@@ -21,8 +21,7 @@
 		  keyboard.remapCapsLockToEscape = true;
 	  };
 	  fonts = {
-		  fontDir.enable = true; #DANGER
-		  fonts = [(pkgs.nerdfonts.override {fonts = ["Meslo"];})];
+		  fontDir.enable = false; #DANGER
 	  };
           services.nix-daemon.enable = true;
 	  system = {
@@ -43,6 +42,6 @@
 		  masApps = {};
 		  casks = [ "raycast" "font-geist-mono-nerd-font" ];
 		  taps = [ "homebrew/cask-fonts" ];
-		  brews = [];
+		  brews = [ ];
 	  };
         }
