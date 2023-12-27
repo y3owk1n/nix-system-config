@@ -13,21 +13,21 @@
     darwin.url = "github:LnL7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
-  outputs = inputs@{nixpkgs, home-manager, darwin, ...}: {
+  outputs = inputs@{ nixpkgs, home-manager, darwin, ... }: {
     darwinConfigurations.demos-Virtual-Machine = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       pkgs = import nixpkgs {
         system = "aarch64-darwin";
       };
       modules = [
-      ./modules/darwin
+        ./modules/darwin
         home-manager.darwinModules.home-manager
         {
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
             users.demo.imports = [
-	    ./modules/home-manager
+              ./modules/home-manager
             ];
           };
         }
