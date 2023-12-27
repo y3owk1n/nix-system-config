@@ -1,9 +1,9 @@
-{pkgs, ...}: {
+{pkgs, config, ...}: {
 	home = {
 		# Don't change this when you change package input. Leave it alone.
 		stateVersion = "23.11";
 		# Specify my home-manager configs
-		packages = with pkgs; [ripgrep fd curl less];
+		packages = with pkgs; [ripgrep neovim fd curl less];
 		sessionVariables = {
 			PAGER = "less";
 			  CLICOLOR = 1;
@@ -11,9 +11,14 @@
 		};
 		file.".inputrc".source = ./dotfiles/inputrc;
 	};
+	xdg.configFile = {
+		nvim = {
+			source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-system-config/modules/home-manager/nvim";
+			recursive = true;
+		};
+	};
 	programs = {
 		home-manager.enable = true;
-		neovim.enable = true;
 		bat.enable = true;
 		bat.config.theme = "TwoDark";
 		fzf.enable = true;
@@ -39,8 +44,10 @@
 		starship.enableZshIntegration = true;
 		alacritty = {
 		  enable = true;
-		  settings.font.normal.family = "GeistMono NF";
-		  settings.font.size = 16;
+		  settings = {
+			  font.normal.family = "GeistMono NF";
+			  font.size = 16;
+		  };
 		};
 	};
 }
