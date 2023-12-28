@@ -27,6 +27,7 @@
       "whatsapp"
       "lulu"
       "karabiner-elements"
+      "arc"
     ];
     taps = [
       "homebrew/cask-fonts"
