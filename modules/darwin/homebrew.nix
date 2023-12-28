@@ -3,13 +3,13 @@
     enable = true;
     caskArgs.no_quarantine = true;
     onActivation = {
-      autoUpdate = false;
+      autoUpdate = true;
       upgrade = true;
       cleanup = "uninstall";
     };
     global = {
       brewfile = true;
-      autoUpdate = false;
+      autoUpdate = true;
     };
     # Things from mac app store
     masApps = { };
