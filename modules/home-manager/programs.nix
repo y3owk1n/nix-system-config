@@ -65,6 +65,7 @@
       shellAliases = {
         c = "clear";
         x = "exit";
+        gg = "lazygit";
         ".." = "cd ..";
         "..." = "cd ../..";
         "...." = "cd ../../..";
