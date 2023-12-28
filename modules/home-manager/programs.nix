@@ -69,6 +69,8 @@
         ".." = "cd ..";
         "..." = "cd ../..";
         "...." = "cd ../../..";
+        "obs-kyle" = "cd $HOME/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/Kyle/ && nvim .";
+        "obs-traworld" = "cd $HOME/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/Traworld/ && nvim .";
         nixswitch = "darwin-rebuild switch --flake ~/nix-system-config/.#";
         nixup = "pushd ~/nix-system-config; nix flake update; nixswitch; popd";
         nixcleanup = "bash ~/nix-system-config/cleanup.sh";
