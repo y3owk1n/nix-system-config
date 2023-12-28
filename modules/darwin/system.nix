@@ -130,8 +130,10 @@
           WebKitDeveloperExtras = true;
         };
         "com.apple.finder" = {
-          ShowMountedServersOnDesktop = true;
-          ShowRemovableMediaOnDesktop = true;
+          ShowExternalHardDrivesOnDesktop = false;
+          ShowHardDrivesOnDesktop = false;
+          ShowMountedServersOnDesktop = false;
+          ShowRemovableMediaOnDesktop = false;
           _FXSortFoldersFirst = true;
           # When performing a search, search the current folder by default
           FXDefaultSearchScope = "SCcf";
@@ -176,10 +178,8 @@
         # Turn on app auto-update
         "com.apple.commerce".AutoUpdate = true;
         "com.raycast.macos" = {
-          NSNavLastRootDirectory = "~/src/scripts/raycast";
           "NSStatusItem Visible raycastIcon" = 0;
           commandsPreferencesExpandedItemIds = [
-            "extension_noteplan-3__00cda425-a991-4e4e-8031-e5973b8b24f6"
             "builtin_package_navigation"
             "builtin_package_scriptCommands"
             "builtin_package_floatingNotes"
