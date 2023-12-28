@@ -1,8 +1,8 @@
 { pkgs, ... }: {
   system = {
     keyboard = {
-      enableKeyMapping = true;
-      remapCapsLockToEscape = true;
+      enableKeyMapping = false;
+      # remapCapsLockToEscape = true;
     };
     defaults = {
       # `man configuration.nix` on mac is useful in seeing available options
@@ -130,8 +130,6 @@
           WebKitDeveloperExtras = true;
         };
         "com.apple.finder" = {
-          ShowExternalHardDrivesOnDesktop = true;
-          ShowHardDrivesOnDesktop = true;
           ShowMountedServersOnDesktop = true;
           ShowRemovableMediaOnDesktop = true;
           _FXSortFoldersFirst = true;

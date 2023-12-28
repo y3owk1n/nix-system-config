@@ -1,4 +1,5 @@
 { pkgs, config, ... }: {
+  imports = [ ./yabai.nix ];
   home = {
     # Don't change this when you change package input. Leave it alone.
     stateVersion = "23.11";
@@ -14,12 +15,12 @@
       minio
       nodePackages.pnpm
       rm-improved
-      skhd
       alacritty
       neovim
       fd
       curl
       less
+      karabiner-elements
     ];
     sessionVariables = {
       LANG = "en_US.UTF-8";
@@ -46,15 +47,6 @@
       source = ./dotfiles/tmux;
       recursive = true;
     };
-    file.".config/yabai" = {
-      source = ./dotfiles/yabai;
-      recursive = true;
-    };
-
-    file.".config/skhd" = {
-      source = ./dotfiles/skhd;
-      recursive = true;
-
-    };
+    # file.".config/yabai" = { recursive = true; }; file.".config/skhd" = { source = ./dotfiles/skhd; recursive = true; };
   };
 }

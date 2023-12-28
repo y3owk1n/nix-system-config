@@ -32,6 +32,7 @@
       "koekeishiya/formulae"
     ];
     brews = [
+      "skhd"
       "yabai"
       "sqlite"
     ];
