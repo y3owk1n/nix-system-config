@@ -99,6 +99,17 @@
                 fi
             fi
         fi
+
+        # ls after cd
+        if ! (( $chpwd_functions[(I)chpwd_cdls] )); then
+            chpwd_functions+=(chpwd_cdls)
+        fi
+        function chpwd_cdls() {
+            if [[ -o interactive ]]; then
+                emulate -L zsh
+                lsd -a
+            fi
+        }
       '';
     };
     starship = {
