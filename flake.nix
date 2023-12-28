@@ -47,6 +47,34 @@
             }
           ];
         };
+
+        # My Macbook Air M1
+        # Run `scutil --get LocalHostName` to get the hostname key
+        # Run `whoami` to get the username
+        Kyles-MacBook-Air = darwin.lib.darwinSystem {
+          system = [
+            "aarch64-darwin"
+          ];
+          pkgs = import nixpkgs {
+            system = "aarch64-darwin";
+          };
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./modules/darwin
+            home-manager.darwinModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.kylewong.imports = [
+                  ./modules/home-manager
+                ];
+              };
+            }
+          ];
+        };
       };
     };
 }
