@@ -49,6 +49,7 @@
         "...." = "cd ../../..";
         nixswitch = "darwin-rebuild switch --flake ~/nix-system-config/.#";
         nixup = "pushd ~/nix-system-config; nix flake update; nixswitch; popd";
+        nixcleanup = "bash ~/nix-system-config/cleanup.sh";
       };
       envExtra = ''
         # don't use global env as it will slow us down
