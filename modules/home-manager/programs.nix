@@ -43,6 +43,7 @@
       defaultKeymap = "viins";
       shellAliases = {
         c = "clear";
+        x = "exit";
         ".." = "cd ..";
         "..." = "cd ../..";
         "...." = "cd ../../..";

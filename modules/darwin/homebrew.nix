@@ -26,6 +26,7 @@
       "imageoptim"
       "whatsapp"
       "lulu"
+      "karabiner-elements"
     ];
     taps = [
       "homebrew/cask-fonts"

@@ -20,7 +20,6 @@
       fd
       curl
       less
-      karabiner-elements
     ];
     sessionVariables = {
       LANG = "en_US.UTF-8";
@@ -47,6 +46,5 @@
       source = ./dotfiles/tmux;
       recursive = true;
     };
-    # file.".config/yabai" = { recursive = true; }; file.".config/skhd" = { source = ./dotfiles/skhd; recursive = true; };
   };
 }
