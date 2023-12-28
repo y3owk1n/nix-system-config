@@ -28,6 +28,7 @@
       "lulu"
       "karabiner-elements"
       "arc"
+      "obsidian"
     ];
     taps = [
       "homebrew/cask-fonts"

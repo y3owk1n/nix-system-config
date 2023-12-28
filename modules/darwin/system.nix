@@ -92,7 +92,7 @@
         "com.apple.sound.beep.volume" = 0.606531; # 50%
         "com.apple.mouse.tapBehavior" = 1; # tap to click
         "com.apple.swipescrolldirection" = true; # "natural" scrolling
-        "com.apple.keyboard.fnState" = true;
+        "com.apple.keyboard.fnState" = false;
         "com.apple.springing.enabled" = false;
         "com.apple.trackpad.scaling" = 3.0; # fast
         "com.apple.trackpad.enableSecondaryClick" = true;
