@@ -1,11 +1,12 @@
 {
   description = "Kyle Darwin System";
-  inputs = {
-    # Where we get most of our software. Giant mono repo with recipes
-    # called derivations that say how to build software.
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-23.11-darwin";
 
-    # Manages configs links things into your home directory
+  inputs = {
+    # Nixpkgs
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    # Home manager
     home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -13,56 +14,39 @@
     darwin.url = "github:LnL7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
-  outputs = inputs@{ nixpkgs, home-manager, darwin, ... }:
-    let
-      username = "demo";
-    in
-    {
-      # For VM Testing
-      darwinConfigurations.demos-Virtual-Machine = darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        pkgs = import nixpkgs {
-          system = "aarch64-darwin";
-        };
-        specialArgs = {
-          inherit inputs username;
-        };
-        modules = [
-          ./modules/darwin
-          home-manager.darwinModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users."${username}".imports = [
-                ./modules/home-manager
-              ];
-            };
-          }
-        ];
-      };
 
-      darwinConfigurations.Kyles-Macbook-Air = darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        pkgs = import nixpkgs {
-          system = "aarch64-darwin";
+  outputs = inputs@{ nixpkgs, home-manager, darwin, ... }:
+    {
+      darwinConfigurations = {
+        # For VM Testing
+        demos-Virtual-Machine = darwin.lib.darwinSystem {
+          system = [
+            # "aarch64-linux"
+            # "i686-linux"
+            # "x86_64-linux"
+            "aarch64-darwin"
+            # "x86_64-darwin"
+          ];
+          pkgs = import nixpkgs {
+            system = "aarch64-darwin";
+          };
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./modules/darwin
+            home-manager.darwinModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.demo.imports = [
+                  ./modules/home-manager
+                ];
+              };
+            }
+          ];
         };
-        specialArgs = {
-          inherit inputs username;
-        };
-        modules = [
-          ./modules/darwin
-          home-manager.darwinModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.demo.imports = [
-                ./modules/home-manager
-              ];
-            };
-          }
-        ];
       };
     };
 }
