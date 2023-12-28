@@ -15,7 +15,6 @@
       minio
       nodePackages.pnpm
       rm-improved
-      alacritty
       neovim
       fd
       curl
@@ -38,10 +37,6 @@
       CLICOLOR = 1;
     };
     file.".inputrc".source = ./dotfiles/inputrc;
-    file.".config/alacritty" = {
-      source = ./dotfiles/alacritty;
-      recursive = true;
-    };
     file.".config/tmux" = {
       source = ./dotfiles/tmux;
       recursive = true;
