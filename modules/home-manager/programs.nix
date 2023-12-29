@@ -167,10 +167,53 @@
       sensibleOnTop = true;
       shell = "${pkgs.zsh}/bin/zsh";
       terminal = "screen-256color";
-      # More plugins and setup here
-      # Some plugins require TPM for whatever reason and does not work here
-      extraConfig = builtins.readFile ./dotfiles/tmux/tmux.conf;
-      plugins = with pkgs; [ tmuxPlugins.sensible ];
+      plugins = with pkgs; [
+        tmuxPlugins.sensible
+        tmuxPlugins.vim-tmux-navigator
+        tmuxPlugins.catppuccin
+        tmuxPlugins.resurrect
+        tmuxPlugins.continuum
+        tmuxPlugins.fzf-tmux-url
+      ];
+      extraConfig = ''
+        unbind o
+
+        unbind %
+        bind | split-window -h -c "#{pane_current_path}"
+
+        unbind '"'
+        bind - split-window -v -c "#{pane_current_path}"
+
+        unbind r
+        bind R source-file ~/.config/tmux/tmux.conf \; display-message "Config reloaded..."
+
+        bind -r j resize-pane -D 5
+        bind -r k resize-pane -U 5
+        bind -r l resize-pane -R 5
+        bind -r h resize-pane -L 5
+        bind -r m resize-pane -Z
+
+        bind-key -T copy-mode-vi 'v' send -X begin-selection # start selecting text with "v"
+        bind-key -T copy-mode-vi 'y' send -X copy-selection # copy text with "y"
+
+        set -ag terminal-overrides ",xterm-256color:RGB"
+        set -g focus-events on
+        set -g repeat-time 1000
+        set -g detach-on-destroy off
+        set -g renumber-windows on
+        set -g set-clipboard on
+        set -g status-position top
+        set -g display-time 4000
+        set -g status-interval 5
+
+        set -g @resurrect-capture-pane-contents 'on'
+        set -g @resurrect-strategy-nvim 'session'
+
+        set -g @continuum-restore 'on'
+
+        set -g @fzf-url-fzf-options '-p 60%,30% --prompt="   " --border-label=" Open URL "'
+        set -g @fzf-url-history-limit '2000'
+      '';
     };
     autojump = {
       enable = true;
