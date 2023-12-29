@@ -8,16 +8,11 @@
     ./homebrew.nix
   ];
 
-
   # Fixes error about home dir being /var/empty
   # See https://github.com/nix-community/home-manager/issues/4026
   users.users = {
-    demo = {
-      home = "/Users/demo";
-    };
-    kylewong = {
-      home = "/Users/kylewong";
-    };
+    demo = { home = "/Users/demo"; };
+    kylewong = { home = "/Users/kylewong"; };
 
   };
 }

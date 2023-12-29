@@ -1,3 +1,1 @@
-{ pkgs, ... }: {
-  programs.zsh.enable = true;
-}
+{ pkgs, ... }: { programs.zsh.enable = true; }

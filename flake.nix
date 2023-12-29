@@ -15,66 +15,51 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, darwin, ... }:
-    {
-      darwinConfigurations = {
-        # For VM Testing
-        demos-Virtual-Machine = darwin.lib.darwinSystem {
-          system = [
-            # "aarch64-linux"
-            # "i686-linux"
-            # "x86_64-linux"
-            "aarch64-darwin"
-            # "x86_64-darwin"
-          ];
-          pkgs = import nixpkgs {
-            system = "aarch64-darwin";
-          };
-          specialArgs = {
-            inherit inputs;
-          };
-          modules = [
-            ./modules/darwin
-            home-manager.darwinModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.demo.imports = [
-                  ./modules/home-manager
-                ];
-              };
-            }
-          ];
-        };
+  outputs = inputs@{ nixpkgs, home-manager, darwin, ... }: {
+    darwinConfigurations = {
+      # For VM Testing
+      demos-Virtual-Machine = darwin.lib.darwinSystem {
+        system = [
+          # "aarch64-linux"
+          # "i686-linux"
+          # "x86_64-linux"
+          "aarch64-darwin"
+          # "x86_64-darwin"
+        ];
+        pkgs = import nixpkgs { system = "aarch64-darwin"; };
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./modules/darwin
+          home-manager.darwinModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.demo.imports = [ ./modules/home-manager ];
+            };
+          }
+        ];
+      };
 
-        # My Macbook Air M1
-        # Run `scutil --get LocalHostName` to get the hostname key
-        # Run `whoami` to get the username
-        Kyles-MacBook-Air = darwin.lib.darwinSystem {
-          system = [
-            "aarch64-darwin"
-          ];
-          pkgs = import nixpkgs {
-            system = "aarch64-darwin";
-          };
-          specialArgs = {
-            inherit inputs;
-          };
-          modules = [
-            ./modules/darwin
-            home-manager.darwinModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.kylewong.imports = [
-                  ./modules/home-manager
-                ];
-              };
-            }
-          ];
-        };
+      # My Macbook Air M1
+      # Run `scutil --get LocalHostName` to get the hostname key
+      # Run `whoami` to get the username
+      Kyles-MacBook-Air = darwin.lib.darwinSystem {
+        system = [ "aarch64-darwin" ];
+        pkgs = import nixpkgs { system = "aarch64-darwin"; };
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./modules/darwin
+          home-manager.darwinModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.kylewong.imports = [ ./modules/home-manager ];
+            };
+          }
+        ];
       };
     };
+  };
 }

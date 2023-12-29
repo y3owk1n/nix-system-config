@@ -4,20 +4,24 @@
     bat = {
       enable = true;
       config = {
-        theme = "Dracula"; # I like the TwoDark colors better, but want bold/italic in markdown docs
+        theme =
+          "Dracula"; # I like the TwoDark colors better, but want bold/italic in markdown docs
         #pager = "less -FR";
         pager = "page -WO -q 90000";
         italic-text = "always";
-        style = "plain"; # no line numbers, git status, etc... more like cat with colors
+        style =
+          "plain"; # no line numbers, git status, etc... more like cat with colors
       };
     };
     fzf = {
       enable = true;
       enableZshIntegration = true;
       tmux.enableShellIntegration = true;
-      defaultCommand = "\fd --type f --hidden --exclude .git";
-      fileWidgetCommand = "\fd --exclude .git --type f"; # for when ctrl-t is pressed
-      changeDirWidgetCommand = "\fd --type d --hidden --follow --max-depth 3 --exclude .git";
+      defaultCommand = "fd --type f --hidden --exclude .git";
+      fileWidgetCommand =
+        "fd --exclude .git --type f"; # for when ctrl-t is pressed
+      changeDirWidgetCommand =
+        "fd --type d --hidden --follow --max-depth 3 --exclude .git";
     };
     lsd = {
       enable = true;
@@ -27,27 +31,25 @@
       enable = true;
       userName = "y3owk1n";
       userEmail = "wongyeowkin@gmail.com";
-      extraConfig =
-        {
-          github.user = "y3owk1n";
-          color.ui = true;
-          pull.rebase = true;
-          merge.conflictstyle = "diff3";
-          init.defaultBranch = "main";
-          http.sslVerify = true;
-          commit.verbose = true;
-          diff.algorithm = "patience";
-          protocol.version = "2";
-          core.commitGraph = true;
-          gc.writeCommitGraph = true;
-          push.autoSetupRemote = true;
-        }
-        // pkgs.lib.optionalAttrs pkgs.stdenv.isDarwin {
-          # these should speed up vim nvim-tree and other things that watch git repos but
-          # only works on mac. see https://github.com/nvim-tree/nvim-tree.lua/wiki/Troubleshooting#git-fsmonitor-daemon
-          core.fsmonitor = true;
-          core.untrackedcache = true;
-        };
+      extraConfig = {
+        github.user = "y3owk1n";
+        color.ui = true;
+        pull.rebase = true;
+        merge.conflictstyle = "diff3";
+        init.defaultBranch = "main";
+        http.sslVerify = true;
+        commit.verbose = true;
+        diff.algorithm = "patience";
+        protocol.version = "2";
+        core.commitGraph = true;
+        gc.writeCommitGraph = true;
+        push.autoSetupRemote = true;
+      } // pkgs.lib.optionalAttrs pkgs.stdenv.isDarwin {
+        # these should speed up vim nvim-tree and other things that watch git repos but
+        # only works on mac. see https://github.com/nvim-tree/nvim-tree.lua/wiki/Troubleshooting#git-fsmonitor-daemon
+        core.fsmonitor = true;
+        core.untrackedcache = true;
+      };
     };
     git-credential-oauth.enable = true;
     zsh = {
@@ -69,8 +71,10 @@
         ".." = "cd ..";
         "..." = "cd ../..";
         "...." = "cd ../../..";
-        "obs-kyle" = "cd $HOME/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/Kyle/ && nvim .";
-        "obs-traworld" = "cd $HOME/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/Traworld/ && nvim .";
+        "obs-kyle" =
+          "cd $HOME/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/Kyle/ && nvim .";
+        "obs-traworld" =
+          "cd $HOME/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/Traworld/ && nvim .";
         nixswitch = "darwin-rebuild switch --flake ~/nix-system-config/.#";
         nixup = "pushd ~/nix-system-config; nix flake update; nixswitch; popd";
         nixcleanup = "bash ~/nix-system-config/cleanup.sh";
@@ -134,18 +138,14 @@
       # More plugins and setup here
       # Some plugins require TPM for whatever reason and does not work here
       extraConfig = builtins.readFile ./dotfiles/tmux/tmux.conf;
-      plugins = with pkgs; [
-        tmuxPlugins.sensible
-      ];
+      plugins = with pkgs; [ tmuxPlugins.sensible ];
     };
     autojump = {
       enable = true;
       enableFishIntegration = true;
       enableZshIntegration = true;
     };
-    lazygit = {
-      enable = true;
-    };
+    lazygit = { enable = true; };
     alacritty = {
       enable = true;
       settings = {

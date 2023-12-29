@@ -72,8 +72,9 @@
 
   home.file.skhd = {
     target = ".config/skhd/skhdrc";
-    text = let yabai = "/opt/homebrew/bin/yabai"; in
-      ''
+    text =
+      let yabai = "/opt/homebrew/bin/yabai";
+      in ''
         # focus window
         alt - h : ${yabai} -m window --focus west # option - h on mac
         alt - j : ${yabai} -m window --focus south # option - j on mac

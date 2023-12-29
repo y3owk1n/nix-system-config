@@ -1,5 +1,1 @@
-{ pkgs, ... }: {
-  services = {
-    nix-daemon.enable = true;
-  };
-}
+{ pkgs, ... }: { services = { nix-daemon.enable = true; }; }

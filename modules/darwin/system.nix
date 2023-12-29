@@ -119,7 +119,7 @@
         NSNavPanelExpandedStateForSaveMode2 = true;
         NSDocumentSaveNewDocumentsToCloud = false;
         # speed up animation on open/save boxes (default:0.2)
-        NSWindowResizeTime = 0.001;
+        NSWindowResizeTime = 1.0e-3;
         PMPrintingExpandedStateForPrint = true;
         PMPrintingExpandedStateForPrint2 = true;
       };
@@ -156,9 +156,7 @@
           # Disable inline attachments (just show the icons)
           DisableInlineAttachmentViewing = true;
         };
-        "com.apple.AdLib" = {
-          allowApplePersonalizedAdvertising = false;
-        };
+        "com.apple.AdLib" = { allowApplePersonalizedAdvertising = false; };
         "com.apple.print.PrintingPrefs" = {
           # Automatically quit printer app once the print jobs complete
           "Quit When Finished" = true;

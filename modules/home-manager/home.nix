@@ -12,6 +12,7 @@
       fd
       stats
       luajit
+      luajitPackages.luarocks
       minio
       nodePackages.pnpm
       rm-improved
@@ -19,6 +20,8 @@
       fd
       curl
       less
+      nixfmt
+      nixpkgs-fmt
     ];
     sessionVariables = {
       LANG = "en_US.UTF-8";

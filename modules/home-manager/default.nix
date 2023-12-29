@@ -1,7 +1,1 @@
-{ pkgs, config, ... }: {
-  imports = [
-    ./home.nix
-    ./xdg.nix
-    ./programs.nix
-  ];
-}
+{ pkgs, config, ... }: { imports = [ ./home.nix ./xdg.nix ./programs.nix ]; }
