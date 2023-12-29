@@ -1,15 +1,21 @@
-local obsidian = require("utils.obsidian")
-
 return {
   {
     "epwalsh/obsidian.nvim",
     version = "*",
     lazy = true,
     ft = "markdown",
-    enabled = obsidian.findRoot(),
+    cmd = {
+      "ObsidianOpen",
+      "ObsidianNew",
+      "ObsidianBackLinks",
+      "ObsidianYesterday",
+      "ObsidianPasteImg",
+    },
     event = {
-      "VimEnter *",
-      "BufReadPre " .. vim.fn.expand("~") .. "/Library/Mobile Documents/iCloud~md~obsidian/Documents/**.md",
+      -- "VimEnter *",
+      "BufReadPre "
+        .. vim.fn.expand("~")
+        .. "/Library/Mobile Documents/iCloud~md~obsidian/Documents/**.md",
       "BufNewFile " .. vim.fn.expand("~") .. "/Library/Mobile Documents/iCloud~md~obsidian/Documents/**.md",
     },
     dependencies = {
