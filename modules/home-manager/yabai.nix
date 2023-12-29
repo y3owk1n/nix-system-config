@@ -55,7 +55,7 @@
       # Notes
       yabai -m rule --add app="^(Notes|Reminders|Obsidian)$" space=3
       # Social
-      yabai -m rule --add app="^(WhatsApp|Messages|chatMate for WhatsApp)$" space=4
+      yabai -m rule --add app="^(WhatsApp|Messages)$" space=4
       # Productivity
       yabai -m rule --add app="^(Mail|Calendar)$" space=5
       # Work
