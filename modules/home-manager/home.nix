@@ -37,9 +37,5 @@
       CLICOLOR = 1;
     };
     file.".inputrc".source = ./dotfiles/inputrc;
-    file.".config/tmux" = {
-      source = ./dotfiles/tmux;
-      recursive = true;
-    };
   };
 }

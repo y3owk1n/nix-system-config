@@ -121,12 +121,22 @@
     };
     tmux = {
       enable = true;
-      extraConfig = ''
-        source-file ~/.config/tmux/tmux-keys.conf
-        source-file ~/.config/tmux/tmux-settings.conf
-        source-file ~/.config/tmux/tmux-plugins.conf
-      '';
-
+      aggressiveResize = true;
+      baseIndex = 1;
+      escapeTime = 0;
+      historyLimit = 50000;
+      keyMode = "vi";
+      mouse = true;
+      prefix = "C-t";
+      sensibleOnTop = true;
+      shell = "${pkgs.zsh}/bin/zsh";
+      terminal = "screen-256color";
+      # More plugins and setup here
+      # Some plugins require TPM for whatever reason and does not work here
+      extraConfig = builtins.readFile ./dotfiles/tmux/tmux.conf;
+      plugins = with pkgs; [
+        tmuxPlugins.sensible
+      ];
     };
     autojump = {
       enable = true;
