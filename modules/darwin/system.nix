@@ -11,6 +11,11 @@
         # quarantine downloads until approved
         LSQuarantine = true;
       };
+      menuExtraClock = {
+        Show24Hour = false;
+        ShowAMPM = true;
+        ShowDate = 0;
+      };
       # login window settings
       loginwindow = {
         # disable guest account
@@ -81,6 +86,7 @@
       # };
 
       NSGlobalDomain = {
+        AppleEnableSwipeNavigateWithScrolls = true;
         # 2 = heavy font smoothing; if text looks blurry, back this down to 1
         AppleFontSmoothing = 2;
         AppleShowAllExtensions = true;
