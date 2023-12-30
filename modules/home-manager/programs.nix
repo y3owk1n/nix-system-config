@@ -170,10 +170,56 @@
       plugins = with pkgs; [
         tmuxPlugins.sensible
         tmuxPlugins.vim-tmux-navigator
-        tmuxPlugins.catppuccin
-        tmuxPlugins.resurrect
-        tmuxPlugins.continuum
-        tmuxPlugins.fzf-tmux-url
+        {
+          plugin = tmuxPlugins.catppuccin.overrideAttrs (_: {
+            src = pkgs.fetchFromGitHub {
+              owner = "catppuccin";
+              repo = "tmux";
+              rev = "47e33044b4b47b1c1faca1e42508fc92be12131a";
+              sha256 = "sha256-kn3kf7eiiwXj57tgA7fs5N2+B2r441OtBlM8IBBLl4I=";
+            };
+          });
+          extraConfig = ''
+            set -g @catppuccin_flavour 'macchiato' # or frappe, macchiato, mocha
+            set -g @catppuccin_window_left_separator ""
+            set -g @catppuccin_window_right_separator " "
+            set -g @catppuccin_window_middle_separator " █"
+            set -g @catppuccin_window_number_position "right"
+            set -g @catppuccin_window_default_fill "number"
+            set -g @catppuccin_window_default_text "#W"
+            set -g @catppuccin_window_current_fill "number"
+            set -g @catppuccin_window_current_text "#W#{?window_zoomed_flag,(),}"
+            set -g @catppuccin_status_modules_right "directory meetings date_time"
+            set -g @catppuccin_status_modules_left "session"
+            set -g @catppuccin_status_left_separator  " "
+            set -g @catppuccin_status_right_separator " "
+            set -g @catppuccin_status_right_separator_inverse "no"
+            set -g @catppuccin_status_fill "icon"
+            set -g @catppuccin_status_connect_separator "no"
+            set -g @catppuccin_directory_text "#{pane_current_path}"
+            set -g @catppuccin_date_time_text "%H:%M"
+          '';
+        }
+        {
+          plugin = tmuxPlugins.resurrect;
+          extraConfig = ''
+            set -g @resurrect-capture-pane-contents 'on'
+            set -g @resurrect-strategy-nvim 'session'
+          '';
+        }
+        {
+          plugin = tmuxPlugins.continuum;
+          extraConfig = ''
+            set -g @continuum-restore 'on'
+          '';
+        }
+        {
+          plugin = tmuxPlugins.fzf-tmux-url;
+          extraConfig = ''
+            set -g @fzf-url-fzf-options '-p 60%,30% --prompt="   " --border-label=" Open URL "'
+            set -g @fzf-url-history-limit '2000'
+          '';
+        }
       ];
       extraConfig = ''
         unbind o
@@ -205,14 +251,6 @@
         set -g status-position top
         set -g display-time 4000
         set -g status-interval 5
-
-        set -g @resurrect-capture-pane-contents 'on'
-        set -g @resurrect-strategy-nvim 'session'
-
-        set -g @continuum-restore 'on'
-
-        set -g @fzf-url-fzf-options '-p 60%,30% --prompt="   " --border-label=" Open URL "'
-        set -g @fzf-url-history-limit '2000'
       '';
     };
     autojump = {
