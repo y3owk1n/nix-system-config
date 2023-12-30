@@ -17,11 +17,11 @@
 
   outputs = inputs@{ nixpkgs, home-manager, darwin, ... }:
     let
-      darwinSystem = { system, modules, username, ... }:
+      darwinSystem = { system, modules, username, pkgs, ... }:
         darwin.lib.darwinSystem {
           system = system;
           modules = modules ++ [
-            ./modules/darwin
+            (import ./modules/darwin { inherit username pkgs; })
             home-manager.darwinModules.home-manager
             {
               home-manager = {
