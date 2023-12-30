@@ -30,11 +30,7 @@
       "arc"
       "obsidian"
     ];
-    taps = [ "homebrew/cask-fonts" "koekeishiya/formulae" ];
-    brews = [
-      #"skhd"
-      #"yabai"
-      "sqlite"
-    ];
+    taps = [ "homebrew/cask-fonts" ];
+    brews = [ "sqlite" ];
   };
 }
