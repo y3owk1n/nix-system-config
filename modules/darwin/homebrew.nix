@@ -32,7 +32,7 @@
     ];
     taps = [ "homebrew/cask-fonts" "koekeishiya/formulae" ];
     brews = [
-      "skhd"
+      #"skhd"
       #"yabai"
       "sqlite"
     ];
