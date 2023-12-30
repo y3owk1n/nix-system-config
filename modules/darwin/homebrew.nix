@@ -25,8 +25,8 @@
       "onyx"
       "imageoptim"
       "whatsapp"
-      "lulu"
       "karabiner-elements"
+      "lulu"
       "arc"
       "obsidian"
     ];
