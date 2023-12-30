@@ -31,6 +31,10 @@
       "obsidian"
     ];
     taps = [ "homebrew/cask-fonts" "koekeishiya/formulae" ];
-    brews = [ "skhd" "yabai" "sqlite" ];
+    brews = [
+      "skhd"
+      #"yabai"
+      "sqlite"
+    ];
   };
 }
