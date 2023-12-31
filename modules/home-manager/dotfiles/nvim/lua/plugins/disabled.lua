@@ -10,11 +10,6 @@ return {
     enabled = false,
   },
   {
-
-    "RRethy/vim-illuminate",
-    enabled = false,
-  },
-  {
     "folke/tokyonight.nvim",
     enabled = false,
   },
