@@ -28,6 +28,7 @@ return {
         "luacheck",
         "shellcheck",
         "yamlfmt",
+        "shfmt",
       },
     },
   },

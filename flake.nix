@@ -32,8 +32,7 @@
             }
           ];
         };
-    in
-    {
+    in {
       darwinConfigurations = {
         demos-Virtual-Machine = darwinSystem {
           system = "aarch64-darwin";
