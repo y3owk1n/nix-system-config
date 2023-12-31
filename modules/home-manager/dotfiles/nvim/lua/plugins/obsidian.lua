@@ -28,7 +28,7 @@ return {
     keys = {
       { "<localleader>o", "<cmd>ObsidianOpen<CR>", desc = "Open in Obsidian" },
       { "<localleader>n", "<cmd>ObsidianNew<CR>", desc = "New note" },
-      { "<localleader>b", "<cmd>ObsidianBackLinks<CR>", desc = "Backlinks list" },
+      { "<localleader>b", "<cmd>ObsidianBacklinks<CR>", desc = "Backlinks list" },
       { "<localleader>t", "<cmd>ObsidianToday<CR>", desc = "Today Note" },
       { "<localleader>y", "<cmd>ObsidianYesterday<CR>", desc = "Yesterday Note" },
       { "<localleader>c", "<cmd>lua require('obsidian').util.toggle_checkbox()<cr>", desc = "Toggle Checkbox" },
