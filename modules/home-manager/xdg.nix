@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ config, ... }: {
   xdg.configFile = {
     nvim = {
       source = config.lib.file.mkOutOfStoreSymlink

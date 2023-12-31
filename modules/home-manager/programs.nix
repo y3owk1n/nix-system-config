@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ pkgs, ... }: {
   programs = {
     home-manager.enable = true;
     bat = {

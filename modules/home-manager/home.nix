@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ pkgs, ... }: {
   imports = [ ];
   home = {
     # Don't change this when you change package input. Leave it alone.
