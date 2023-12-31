@@ -22,6 +22,7 @@
       less
       nixfmt
       nixpkgs-fmt
+      pngpaste
     ];
     sessionVariables = {
       LANG = "en_US.UTF-8";
