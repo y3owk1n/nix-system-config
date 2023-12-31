@@ -93,6 +93,7 @@
         c = "clear";
         x = "exit";
         gg = "lazygit";
+        vim = "nvim";
         ".." = "cd ..";
         "..." = "cd ../..";
         "...." = "cd ../../..";
