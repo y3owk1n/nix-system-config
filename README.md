@@ -1,6 +1,8 @@
-## Install Nix on Mac
+# Commands to make it work
 
-https://nixos.org/download#nix-install-macos
+## Instaling Nix on Macos
+
+<https://nixos.org/download#nix-install-macos>
 
 ```bash
 sh <(curl -L https://nixos.org/nix/install)
@@ -10,6 +12,18 @@ sh <(curl -L https://nixos.org/nix/install)
 
 ```bash
 git credential-oauth configure
+```
+
+## Getting localhostname
+
+```bash
+scutil --get LocalHostName
+```
+
+## Getting username
+
+```bash
+whoami
 ```
 
 ## Build nix to results
@@ -22,4 +36,10 @@ nix --extra-experimental-features 'nix-command flakes' build .#darwinConfigurati
 
 ```bash
 ./result/sw/bin/darwin-rebuild switch --flake ~/nix-system-config
+```
+
+## Cleanup
+
+```bash
+bash ~/nix-system-config/cleanup.sh
 ```
