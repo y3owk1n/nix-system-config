@@ -74,7 +74,7 @@
         showhidden = true;
         show-recents = false;
         show-process-indicators = true;
-        orientation = "bottom";
+        orientation = "left";
         mru-spaces = false;
         # mouse in top right corner will (5) start screensaver
         wvous-tr-corner = 5;
