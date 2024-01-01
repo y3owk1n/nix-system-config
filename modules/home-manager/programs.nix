@@ -257,7 +257,6 @@
     };
     autojump = {
       enable = true;
-      enableFishIntegration = true;
       enableZshIntegration = true;
     };
     lazygit = { enable = true; };
