@@ -32,6 +32,10 @@
         # don't use global env as it will slow us down
         skip_global_compinit=1
       '';
+      initExtraBeforeCompInit = ''
+        autoload -U promptinit; promptinit
+        prompt pure
+      '';
       initExtraFirst = ''
         if which tmux 2>&1 >/dev/null; then
             if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then

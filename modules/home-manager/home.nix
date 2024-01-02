@@ -24,6 +24,7 @@
       nixpkgs-fmt
       pngpaste
       minio
+      pure-prompt
     ];
     sessionVariables = {
       LANG = "en_US.UTF-8";

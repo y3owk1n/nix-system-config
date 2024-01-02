@@ -9,7 +9,6 @@
     ./home-manager
     ./lazygit
     ./lsd
-    ./starship
     ./tmux
     ./zsh
   ];
