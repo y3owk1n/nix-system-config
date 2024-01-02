@@ -24,7 +24,7 @@
       nixpkgs-fmt
       pngpaste
       minio
-      pure-prompt
+      agkozak-zsh-prompt
     ];
     sessionVariables = {
       LANG = "en_US.UTF-8";
