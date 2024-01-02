@@ -23,6 +23,7 @@
       nixfmt
       nixpkgs-fmt
       pngpaste
+      minio
     ];
     sessionVariables = {
       LANG = "en_US.UTF-8";
