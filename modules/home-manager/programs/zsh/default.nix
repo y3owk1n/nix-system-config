@@ -36,14 +36,12 @@
         autoload -U promptinit; promptinit
         prompt agkozak-zsh-prompt
         AGKOZAK_CUSTOM_SYMBOLS=( '⇣⇡' '⇣' '⇡' '+' '✘' '!' '»' '?' '$')
-        AGKOZAK_PROMPT_DIRTRIM=4
         AGKOZAK_LEFT_PROMPT_ONLY=1
         AGKOZAK_PROMPT_CHAR=(    )
         AGKOZAK_COLORS_PROMPT_CHAR=green
         AGKOZAK_COLORS_BRANCH_STATUS=magenta
         AGKOZAK_USER_HOST_DISPLAY=0
         AGKOZAK_BLANK_LINES=1
-        AGKOZAK_MULTILINE=0
       '';
       initExtraFirst = ''
         if which tmux 2>&1 >/dev/null; then
