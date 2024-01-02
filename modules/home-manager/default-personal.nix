@@ -1,3 +1,9 @@
 { ... }: {
-  imports = [ ./home.nix ./xdg.nix ./programs.nix ./programs/git-personal.nix ];
+  imports = [
+    ./home.nix
+    ./xdg.nix
+    ./programs.nix
+    ./programs/git
+    ./programs/git/personal.nix
+  ];
 }

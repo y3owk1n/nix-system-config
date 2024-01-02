@@ -2,10 +2,7 @@
   programs = {
     git = {
       enable = true;
-      userName = "mtraworld";
-      userEmail = "marketing@traworld.com";
       extraConfig = {
-        github.user = "mtraworld";
         # color.ui = true;
         pull.rebase = true;
         merge.conflictstyle = "diff3";
