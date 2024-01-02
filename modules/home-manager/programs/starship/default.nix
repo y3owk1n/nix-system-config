@@ -10,7 +10,6 @@
         add_newline = true;
         cmd_duration.disabled = true;
         git_metrics.disabled = false;
-        battery.disabled = true;
       };
     };
   };
