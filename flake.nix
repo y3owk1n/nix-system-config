@@ -23,13 +23,6 @@
           modules = modules ++ [
             (import ./modules/darwin { inherit username pkgs; })
             home-manager.darwinModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.${username}.imports = [ ./modules/home-manager ];
-              };
-            }
           ];
         };
     in {
@@ -38,7 +31,14 @@
           system = "aarch64-darwin";
           pkgs = import nixpkgs { system = "aarch64-darwin"; };
           specialArgs = { inherit inputs; };
-          modules = [ ];
+          modules = [{
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.demo.imports =
+                [ ./modules/home-manager/default-personal.nix ];
+            };
+          }];
           username = "demo";
         };
 
@@ -46,7 +46,29 @@
           system = "aarch64-darwin";
           pkgs = import nixpkgs { system = "aarch64-darwin"; };
           specialArgs = { inherit inputs; };
-          modules = [ ];
+          modules = [{
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.kylewong.imports =
+                [ ./modules/home-manager/default-personal.nix ];
+            };
+          }];
+          username = "kylewong";
+        };
+
+        Kyles-iMac = darwinSystem {
+          system = "aarch64-darwin";
+          pkgs = import nixpkgs { system = "aarch64-darwin"; };
+          specialArgs = { inherit inputs; };
+          modules = [{
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.kylewong.imports =
+                [ ./modules/home-manager/default-work.nix ];
+            };
+          }];
           username = "kylewong";
         };
       };
