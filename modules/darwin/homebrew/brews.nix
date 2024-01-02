@@ -1,0 +1,1 @@
+{ ... }: { homebrew = { brews = [ "sqlite" ]; }; }

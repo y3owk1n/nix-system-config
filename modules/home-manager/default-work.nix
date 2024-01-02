@@ -1,3 +1,1 @@
-{ ... }: {
-  imports = [ ./home.nix ./xdg.nix ./programs ./programs/git/work.nix ];
-}
+{ ... }: { imports = [ ./home ./xdg ./programs ./programs/git/work ]; }
