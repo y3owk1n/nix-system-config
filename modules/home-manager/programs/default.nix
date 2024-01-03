@@ -10,6 +10,7 @@
     ./lazygit
     ./lsd
     ./tmux
+    ./fish
     ./zsh
   ];
 }

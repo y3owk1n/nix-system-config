@@ -8,5 +8,6 @@
       "/Users/${username}"
     else
       "/home/${username}";
+    shell = pkgs.fish;
   };
 }

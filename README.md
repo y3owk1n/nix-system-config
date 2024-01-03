@@ -26,6 +26,12 @@ scutil --get LocalHostName
 whoami
 ```
 
+## Switch to fish shell
+
+```bash
+chsh -s /usr/local/bin/fish
+```
+
 ## Build nix to results
 
 ```bash
