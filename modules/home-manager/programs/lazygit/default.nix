@@ -1,1 +1,0 @@
-{ ... }: { programs = { lazygit = { enable = true; }; }; }

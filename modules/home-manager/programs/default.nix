@@ -6,7 +6,6 @@
     ./git
     ./git-credential-oauth
     ./home-manager
-    ./lazygit
     ./lsd
     ./tmux
     ./fish
