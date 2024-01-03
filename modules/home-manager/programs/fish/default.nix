@@ -235,6 +235,22 @@
           name = "pisces";
           src = pkgs.fishPlugins.pisces.src;
         }
+        {
+          name = "sponge";
+          src = pkgs.fishPlugins.sponge.src;
+        }
+        {
+          name = "z";
+          src = pkgs.fishPlugins.z.src;
+        }
+        {
+          name = "plugin-git";
+          src = pkgs.fishPlugins.plugin-git.src;
+        }
+        {
+          name = "colored-man-pages";
+          src = pkgs.fishPlugins.colored-man-pages.src;
+        }
       ];
       functions = { fish_user_key_bindings = "fish_vi_key_bindings"; };
       loginShellInit = ''

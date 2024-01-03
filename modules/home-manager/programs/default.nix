@@ -1,7 +1,6 @@
 { ... }: {
   imports = [
     ./alacritty
-    ./autojump
     ./bat
     ./fzf
     ./git
