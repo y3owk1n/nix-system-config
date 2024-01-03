@@ -3,6 +3,7 @@
     fzf = {
       enable = true;
       enableZshIntegration = true;
+      enableFishIntegration = true;
       tmux.enableShellIntegration = true;
       colors = {
         "bg+" = "#363a4f";
