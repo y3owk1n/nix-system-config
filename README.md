@@ -29,7 +29,7 @@ whoami
 ## Switch to fish shell
 
 ```bash
-chsh -s /usr/local/bin/fish
+chsh -s (which fish)
 ```
 
 ## Build nix to results
