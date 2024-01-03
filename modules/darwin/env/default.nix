@@ -7,7 +7,8 @@
     loginShellInit = ''
       export SHELL=${pkgs.fish}/bin/fish
     '';
-    systemPath = [ "/opt/homebrew/bin" "/opt/homebrew/sbin" ];
+    systemPath =
+      [ "/opt/homebrew/bin" "/opt/homebrew/sbin" "/run/current-system/sw/bin" ];
     pathsToLink = [ "/Applications" "/share/fish" ];
   };
 }
