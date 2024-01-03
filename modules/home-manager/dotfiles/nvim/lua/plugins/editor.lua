@@ -44,7 +44,6 @@ return {
         ["<leader>g"] = { name = "+git" },
         ["<leader>h"] = { name = "+harpoon" },
         ["<leader>gh"] = { name = "+hunks" },
-        ["<leader>gw"] = { name = "+git_worktree" },
         ["<leader>q"] = { name = "+quit/session" },
         ["<leader>s"] = { name = "+search" },
         ["<leader>u"] = { name = "+ui" },
@@ -146,7 +145,6 @@ return {
       telescope.setup(opts)
       require("telescope").load_extension("fzf")
       require("telescope").load_extension("file_browser")
-      require("telescope").load_extension("git_worktree")
     end,
   },
   {
