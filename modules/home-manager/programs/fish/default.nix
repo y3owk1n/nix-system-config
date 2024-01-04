@@ -259,7 +259,11 @@
         }
       ];
       functions = {
-        fish_user_key_bindings = "fish_vi_key_bindings";
+        fish_user_key_bindings = ''
+          fish_vi_key_bindings
+          bind \cg _fzf_dev_folder
+          bind -M insert \cg _fzf_dev_folder
+        '';
         mkdirx = ''
           if test -z $argv
               echo "Usage: mkdirx folder"
@@ -326,6 +330,16 @@
           else
               echo "Error: Failed to clone repository."
           end
+        '';
+        _fzf_dev_folder = ''
+          set -l selected_directory (ls ~/Dev | fzf --prompt="Directory> ")
+
+          if test -n "$selected_directory"
+              # Change to the selected directory
+              cd ~/Dev/$selected_directory
+          end
+
+          commandline --function repaint
         '';
       };
       loginShellInit = ''
