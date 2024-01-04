@@ -404,6 +404,7 @@
         };
         __autols_hook = {
           description = "Auto ls";
+          onVariable = "PWD";
           body = ''
             if not set -q __autols_initialized
                 set -g __autols_initialized 1
