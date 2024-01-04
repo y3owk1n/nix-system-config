@@ -258,7 +258,19 @@
           src = pkgs.fishPlugins.fzf-fish.src;
         }
       ];
-      functions = { fish_user_key_bindings = "fish_vi_key_bindings"; };
+      functions = {
+        fish_user_key_bindings = "fish_vi_key_bindings";
+        mkdirx = ''
+          if test -z $argv
+              echo "Usage: mkdirx folder"
+              return 1
+          end
+
+          mkdir $argv[1]
+
+          cd $argv[1]
+        '';
+      };
       loginShellInit = ''
         if which tmux >/dev/null 2>&1
             if test "$TERM" != "screen-256color" -a "$TERM" != "screen"
