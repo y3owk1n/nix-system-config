@@ -11,6 +11,7 @@
         __autols_hook
 
         fzf_configure_bindings --directory=\cf --history=\cr --git_log= --git_status= --processes=\cp
+        set fzf_directory_opts --bind "enter:execute($EDITOR {} &> /dev/tty)"
 
         set -U __fish_initialized 3400
         set -U _tide_left_items os\x1epwd\x1egit\x1enewline\x1echaracter
