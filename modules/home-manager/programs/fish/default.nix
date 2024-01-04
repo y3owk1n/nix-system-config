@@ -10,9 +10,6 @@
         __autotmux_hook
         __autols_hook
 
-        fzf_configure_bindings --directory=\cf --history=\cr --git_log= --git_status= --processes=\cp
-        set fzf_directory_opts --bind "enter:execute($EDITOR {} &> /dev/tty)"
-
         set -U __fish_initialized 3400
         set -U _tide_left_items os\x1epwd\x1egit\x1enewline\x1echaracter
         set -U _tide_prompt_28504 \x1b\x5bm\x0f\x1b\x5bm\x0f\x1b\x5bm\x0f\x1b\x5bm\x0f\x1b\x5bm\x0f\x1b\x5b97m\uf179\x1b\x5b90m\x20\x1b\x5bm\x0f\x1b\x5bm\x0f\x40PWD\x40\x1b\x5b90m\x20\x1b\x5bm\x0f\x1b\x5bm\x0f\x1b\x5b35m\uf1d3\x20\x1b\x5b37m\x1b\x5b35mmain\x1b\x5b91m\x1b\x5b92m\x1b\x5b92m\x1b\x5b91m\x1b\x5b93m\x20\x2b4\x1b\x5b93m\x20\x217\x1b\x5b94m\x1b\x5bm\x0f\x1b\x5bm\x0f\x1b\x5bm\x0f\x20\x1e\x1b\x5b92m\u276f
@@ -221,9 +218,9 @@
       shellAbbrs = {
         c = "clear";
         x = "exit";
-        ns = "nixswitch";
-        nu = "nixup";
-        nc = "nixcleanup";
+        fpp = "_fzf_dev_folder";
+        fpf = "_fzf_current_dir";
+        fpc = "_fzf_cmd_history";
       };
       shellAliases = {
         "obs-kyle" =
@@ -262,10 +259,6 @@
         {
           name = "puffer";
           src = pkgs.fishPlugins.puffer.src;
-        }
-        {
-          name = "fzf-fish";
-          src = pkgs.fishPlugins.fzf-fish.src;
         }
       ];
       functions = {
@@ -366,11 +359,58 @@
         _fzf_dev_folder = {
           description = "fzf dev folder";
           body = ''
-            set -l selected_directory (ls ~/Dev | fzf --prompt="Directory> ")
+            set -l selected_directory (ls ~/Dev | fzf --prompt="Projects  ")
 
             if test -n "$selected_directory"
                 # Change to the selected directory
                 cd ~/Dev/$selected_directory
+            end
+
+            commandline --function repaint
+          '';
+        };
+        _fzf_preview_cmd = {
+          description = "fzf preview cmd";
+          body = ''
+            if test -d $argv[1]
+                cat $argv[1]
+            else
+                bat --color=always $argv[1]
+            end
+          '';
+        };
+        _fzf_current_dir = {
+          description = "fzf current dir";
+          body = ''
+            set -l selected_path (fd --type f --type d --hidden --exclude .git 2>/dev/null | sed 's|^\./||' | fzf --preview="_fzf_preview_cmd {}" --prompt="Files  ")
+
+            if not set -q EDITOR
+                echo "Error: $EDITOR is not set. Please configure your preferred editor using 'set -Ux EDITOR your-editor'"
+                return 1
+            end
+
+            if not command -q $EDITOR
+                echo "Error: Editor '$EDITOR' not found. Please make sure it is installed and in your PATH."
+                return 1
+            end
+
+            if test -n "$selected_path"
+                $EDITOR $selected_path
+            end
+
+            commandline --function repaint
+          '';
+        };
+        _fzf_cmd_history = {
+          description = "fzf command history";
+          body = ''
+            set -l search_term (commandline --current-token)
+
+            set -l selected_command (history | fzf --prompt="Command history  ")
+
+            if test -n "$selected_command"
+                # Replace the current token with the selected command
+                commandline --current-token --replace -- (string escape -- $selected_command)
             end
 
             commandline --function repaint
