@@ -5,6 +5,8 @@
       interactiveShellInit = ''
         set fish_greeting # Disable greeting\n
 
+        fzf_configure_bindings --directory=\cf --history=\cc --git_log= --git_status= --processes=\cp
+
         set -Ux __fish_initialized 3400
         set -Ux _tide_left_items os\x1epwd\x1egit\x1enewline\x1echaracter
         set -Ux _tide_prompt_28504 \x1b\x5bm\x0f\x1b\x5bm\x0f\x1b\x5bm\x0f\x1b\x5bm\x0f\x1b\x5bm\x0f\x1b\x5b97m\uf179\x1b\x5b90m\x20\x1b\x5bm\x0f\x1b\x5bm\x0f\x40PWD\x40\x1b\x5b90m\x20\x1b\x5bm\x0f\x1b\x5bm\x0f\x1b\x5b35m\uf1d3\x20\x1b\x5b37m\x1b\x5b35mmain\x1b\x5b91m\x1b\x5b92m\x1b\x5b92m\x1b\x5b91m\x1b\x5b93m\x20\x2b4\x1b\x5b93m\x20\x217\x1b\x5b94m\x1b\x5bm\x0f\x1b\x5bm\x0f\x1b\x5bm\x0f\x20\x1e\x1b\x5b92m\u276f
@@ -250,6 +252,10 @@
         {
           name = "puffer";
           src = pkgs.fishPlugins.puffer.src;
+        }
+        {
+          name = "fzf-fish";
+          src = pkgs.fishPlugins.fzf-fish.src;
         }
       ];
       functions = { fish_user_key_bindings = "fish_vi_key_bindings"; };
