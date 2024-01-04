@@ -270,6 +270,16 @@
 
           cd $argv[1]
         '';
+        touchx = ''
+          if test -z $argv
+              echo "Usage: touchx file"
+              return 1
+          end
+
+          touch $argv[1]
+
+          $EDITOR $argv[1]
+        '';
       };
       loginShellInit = ''
         if which tmux >/dev/null 2>&1
