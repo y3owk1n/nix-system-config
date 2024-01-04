@@ -214,9 +214,6 @@
         c = "clear";
         x = "exit";
         vim = "nvim";
-        ".." = "cd ..";
-        "..." = "cd ../..";
-        "...." = "cd ../../..";
         "obs-kyle" =
           "cd $HOME/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/Kyle/ && nvim .";
         "obs-traworld" =
@@ -249,6 +246,10 @@
         {
           name = "colored-man-pages";
           src = pkgs.fishPlugins.colored-man-pages.src;
+        }
+        {
+          name = "puffer";
+          src = pkgs.fishPlugins.puffer.src;
         }
       ];
       functions = { fish_user_key_bindings = "fish_vi_key_bindings"; };
