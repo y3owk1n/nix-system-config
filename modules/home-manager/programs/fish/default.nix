@@ -218,8 +218,9 @@
       shellAbbrs = {
         c = "clear";
         x = "exit";
-        fpp = "_fzf_dev_folder";
-        fpf = "_fzf_current_dir";
+        fpp = "_fzf_picker --directory-only ~/Dev/";
+        fpf = "_fzf_picker";
+        fpfh = "_fzf_picker --show-hidden-files";
         fpc = "_fzf_cmd_history";
       };
       shellAliases = {
@@ -275,8 +276,6 @@
         };
         fish_user_key_bindings = ''
           fish_vi_key_bindings
-          bind \cg _fzf_dev_folder
-          bind -M insert \cg _fzf_dev_folder
         '';
         mkdirx = {
           description = "mkdir and cd";
@@ -356,19 +355,6 @@
           '';
 
         };
-        _fzf_dev_folder = {
-          description = "fzf dev folder";
-          body = ''
-            set -l selected_directory (ls ~/Dev | fzf --prompt="Projects  ")
-
-            if test -n "$selected_directory"
-                # Change to the selected directory
-                cd ~/Dev/$selected_directory
-            end
-
-            commandline --function repaint
-          '';
-        };
         _fzf_preview_cmd = {
           description = "fzf preview cmd";
           body = ''
@@ -377,28 +363,6 @@
             else
                 bat --color=always $argv[1]
             end
-          '';
-        };
-        _fzf_current_dir = {
-          description = "fzf current dir";
-          body = ''
-            set -l selected_path (fd --type f --type d --hidden --exclude .git 2>/dev/null | sed 's|^\./||' | fzf --preview="_fzf_preview_cmd {}" --prompt="Files  ")
-
-            if not set -q EDITOR
-                echo "Error: $EDITOR is not set. Please configure your preferred editor using 'set -Ux EDITOR your-editor'"
-                return 1
-            end
-
-            if not command -q $EDITOR
-                echo "Error: Editor '$EDITOR' not found. Please make sure it is installed and in your PATH."
-                return 1
-            end
-
-            if test -n "$selected_path"
-                $EDITOR $selected_path
-            end
-
-            commandline --function repaint
           '';
         };
         _fzf_cmd_history = {
@@ -415,6 +379,68 @@
 
             commandline --function repaint
           '';
+        };
+        _fzf_picker = {
+          description = "fzf picker";
+          body = ''
+            set -l directory_only false
+            set -l show_hidden_files false
+            set -l path '.'
+
+            # echo "agrv: $argv"
+
+            for arg in $argv
+                if test "$arg" = "--directory-only"
+                    set directory_only true
+                else if test "$arg" = "--show-hidden-files"
+                    set show_hidden_files true
+                else
+                    set path $arg
+                end
+            end
+
+            # echo "Directory only: $directory_only"
+            # echo "Show hidden files: $show_hidden_files"
+            # echo "Path: $path"
+
+            if $directory_only
+                set -l selected_directory (ls $path | fzf --prompt="Projects  ")
+                # echo "Selected directory: $selected_directory"
+                # echo "Changing to directory: $path/$selected_directory"
+                if test -n "$selected_directory" -a -d "$path/$selected_directory"
+                    cd $path/$selected_directory
+                end
+            else
+                set -l selected_path
+
+                if $show_hidden_files
+                    # echo "Including hidden"
+                    set selected_path (find $path -type f -o -type d | fzf --preview="_fzf_preview_cmd {}" --prompt="Files  ")
+                else
+                    # echo "Excluding hidden"
+                    set selected_path (fd --type f --type d --hidden --exclude .git --exclude .gitignore 2>/dev/null | sed 's|^\$path/||' | fzf --preview="_fzf_preview_cmd {}" --prompt="Files  ")
+                    # echo "Selected path in else: $selected_path"
+                end
+
+                if test -n "$selected_path"
+                    if not set -q EDITOR
+                        echo "Error: \$EDITOR is not set. Please configure your preferred editor using 'set -Ux EDITOR your-editor'"
+                        return 1
+                    end
+
+                    if not command -q $EDITOR
+                        echo "Error: Editor '$EDITOR' not found. Please make sure it is installed and in your PATH."
+                        return 1
+                    end
+
+                    $EDITOR $path/$selected_path
+                end
+
+            end
+
+            commandline --function repaint
+          '';
+
         };
         __autotmux_hook = {
           description = "Auto load tmux";
