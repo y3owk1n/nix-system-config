@@ -63,8 +63,17 @@
           src = pkgs.fetchFromGitHub {
             owner = "y3owk1n";
             repo = "fish-fzf";
-            rev = "ddd3c353f9cebd5bde15379a1c297f6c145b8851";
-            sha256 = "sha256-4b/+Z7/LtUPYFC5krU3uTXWMkkmjA9jl2ARGO9kOuho=";
+            rev = "04098610b8abfab5ea4edc07b79d0c618a20c655";
+            sha256 = "sha256-6fVZwOhu0fzIiMgZSP5hHbmFJZE00lOc9KM66m453S8=";
+          };
+        }
+        {
+          name = "fish-x";
+          src = pkgs.fetchFromGitHub {
+            owner = "y3owk1n";
+            repo = "fish-x";
+            rev = "d5488105456c087f449168c6d4df1cc7a092067e";
+            sha256 = "sha256-Oq0SsNdVrx7WpIuIdwpccQBK6JJuhLPS3Zj7J0nqA1s=";
           };
         }
       ];
@@ -83,84 +92,6 @@
         fish_user_key_bindings = ''
           fish_vi_key_bindings
         '';
-        mkdirx = {
-          description = "mkdir and cd";
-          body = ''
-            if test -z $argv
-                echo "Usage: mkdirx folder"
-                return 1
-            end
-
-            set folder $argv[1]
-
-            mkdir -p $folder
-
-            if test $status -ne 0
-                echo "Error: Failed to create directory $folder"
-                return $status
-            end
-
-            cd $folder
-
-            if test $status -ne 0
-                echo "Error: Failed to change to directory $folder"
-                return $status
-            end
-          '';
-        };
-        touchx = {
-          description = "touch and open in editor";
-          body = ''
-            if test -z $argv
-                echo "Usage: touchx file"
-                return 1
-            end
-
-            if not set -q EDITOR
-                echo "Error: $EDITOR is not set. Please configure your preferred editor using 'set -Ux EDITOR your-editor'"
-                return 1
-            end
-
-            if not command -q $EDITOR
-                echo "Error: Editor '$EDITOR' not found. Please make sure it is installed and in your PATH."
-                return 1
-            end
-
-            touch $argv[1]
-
-            $EDITOR $argv[1]
-          '';
-
-        };
-        gclx = {
-          description = "Git clone and cd";
-          body = ''
-            # Check if an argument is provided
-            if test -z $argv
-                echo "Usage: gclx owner/repo or gclx https://github.com/owner/repo.git"
-                return 1
-            end
-
-            # Extract owner and repo names from the argument
-            set owner (echo $argv[1] | sed 's|^https://github.com/\(.*\)/\(.*\)\.git$|\1|')
-            set repo (echo $argv[1] | sed 's|^https://github.com/\(.*\)/\(.*\)\.git$|\2|')
-
-            # If the argument is not a full URL, assume it's in owner/repo format
-            if test "$owner" = "$argv[1]"
-                set owner (echo $argv[1] | cut -d '/' -f 1)
-                set repo (echo $argv[1] | cut -d '/' -f 2)
-            end
-
-            # Perform git clone
-            if git clone "https://github.com/$owner/$repo.git" $repo
-                # Change to the newly cloned directory
-                cd $repo
-            else
-                echo "Error: Failed to clone repository."
-            end
-          '';
-
-        };
         __autotmux_hook = {
           description = "Auto load tmux";
           body = ''
