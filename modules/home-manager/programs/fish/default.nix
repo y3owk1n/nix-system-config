@@ -177,11 +177,14 @@
           body = ''
             set -l search_term (commandline --current-token)
             set -l prompt_name 'Command History'
+            set -l allow_execute
 
             if test (count $argv) -gt 0
                 for i in (seq (count $argv))
                     if test "$argv[$i]" = "--prompt-name"
                         set prompt_name $argv[(math $i + 1)]
+                    else if test "$argv[$i]" = "--allow-execute"
+                        set allow_execute 1
                     end
                 end
             end
@@ -189,11 +192,12 @@
             set -l selected_command (history | fzf --prompt=(_fzf_preview_name $prompt_name))
 
             if test -n "$selected_command"
-                # Replace the current token with the selected command
-                commandline --current-token --replace -- (string escape -- $selected_command)
+                commandline --current-token --replace -- $selected_command
             end
 
-            commandline --function repaint
+            if test -n "$allow_execute"
+                commandline --function execute
+            end
           '';
         };
         _fzf_directory_picker = {
@@ -202,6 +206,7 @@
             set -l path '.'
             set -l recursive_depth 1
             set -l prompt_name 'Directory (Multilevel)'
+            set -l allow_cd
 
             if test (count $argv) -gt 0
                 for i in (seq (count $argv))
@@ -215,6 +220,8 @@
                         if test (math $i + 1) -le (count $argv)
                             set prompt_name $argv[(math $i + 1)]
                         end
+                    else if test "$argv[$i]" = "--allow-cd"
+                        set allow_cd 1
                     else
                         # Check if there is another argument after the current one
                         if test (count $argv) -ge (math $i + 1)
@@ -229,7 +236,11 @@
             set selected_directory (fd . $path --min-depth 1 --type d --max-depth "$recursive_depth"  | fzf --prompt=(_fzf_preview_name $prompt_name))
 
             if test -n "$selected_directory"
-                cd $selected_directory
+                if test -n "$allow_cd"
+                    cd $selected_directory
+                else
+                    commandline --current-token --replace -- (string escape -- $selected_directory)
+                end
             end
 
             commandline --function repaint
@@ -241,6 +252,7 @@
             set -l show_hidden_files false
             set -l path '.'
             set -l prompt_name 'Files'
+            set -l allow_open_in_editor
 
             if test (count $argv) -gt 0
                 for i in (seq (count $argv))
@@ -251,6 +263,8 @@
                         if test (math $i + 1) -le (count $argv)
                             set prompt_name $argv[(math $i + 1)]
                         end
+                    else if test "$argv[$i]" = "--allow-open-in-editor"
+                        set allow_open_in_editor 1
                     else
                         # Check if there is another argument after the current one
                         if test (count $argv) -ge (math $i + 1)
@@ -269,17 +283,22 @@
             end
 
             if test -n "$selected_path"
-                if not set -q EDITOR
-                    echo "Error: \$EDITOR is not set. Please configure your preferred editor using 'set -Ux EDITOR your-editor'"
-                    return 1
-                end
 
-                if not command -q $EDITOR
-                    echo "Error: Editor '$EDITOR' not found. Please make sure it is installed and in your PATH."
-                    return 1
-                end
+                if test -n "$allow_open_in_editor"
+                    if not set -q EDITOR
+                        echo "Error: \$EDITOR is not set. Please configure your preferred editor using 'set -Ux EDITOR your-editor'"
+                        return 1
+                    end
 
-                $EDITOR $path/$selected_path
+                    if not command -q $EDITOR
+                        echo "Error: Editor '$EDITOR' not found. Please make sure it is installed and in your PATH."
+                        return 1
+                    end
+
+                    $EDITOR $path/$selected_path
+                else
+                    commandline --current-token --replace -- (string escape -- $path/$selected_path)
+                end
             end
 
             commandline --function repaint
