@@ -14,9 +14,9 @@
       shellAbbrs = {
         c = "clear";
         x = "exit";
-        fpp = "_fzf_directory_picker ~/Dev/";
-        fpf = "_fzf_file_picker";
-        fpfh = "_fzf_file_picker --show-hidden-files";
+        fpp = "_fzf_directory_picker --prompt-name Projects ~/Dev/";
+        fpf = "_fzf_file_picker --prompt-name Files";
+        fpfh = "_fzf_file_picker --show-hidden-files --prompt-name Files+";
         fpc = "_fzf_cmd_history";
       };
       shellAliases = {
@@ -161,12 +161,32 @@
             end
           '';
         };
+        _fzf_preview_name = {
+          description = "fzf preview name";
+          body = ''
+            set prompt_arrow ' ' 
+            if test -n $argv
+                echo "$argv $prompt_arrow"
+            else
+                echo "Search $prompt_arrow"
+            end
+          '';
+        };
         _fzf_cmd_history = {
           description = "fzf command history";
           body = ''
             set -l search_term (commandline --current-token)
+            set -l prompt_name 'Command History'
 
-            set -l selected_command (history | fzf --prompt="Command history  ")
+            if test (count $argv) -gt 0
+                for i in (seq (count $argv))
+                    if test "$argv[$i]" = "--prompt-name"
+                        set prompt_name $argv[(math $i + 1)]
+                    end
+                end
+            end
+
+            set -l selected_command (history | fzf --prompt=(_fzf_preview_name $prompt_name))
 
             if test -n "$selected_command"
                 # Replace the current token with the selected command
@@ -181,18 +201,32 @@
           body = ''
             set -l path '.'
             set -l recursive_depth 1
+            set -l prompt_name 'Directory (Multilevel)'
 
-            for i in (seq (count $argv))
-                if test "$argv[$i]" = "--recursive-depth"
-                    set recursive_depth $argv[(math $i + 1)]
-                else
-                    set path (echo $argv[$i] | sed 's:/*$::')
+            if test (count $argv) -gt 0
+                for i in (seq (count $argv))
+                    if test "$argv[$i]" = "--recursive-depth"
+                        # Check if there is another argument after "--recursive-depth"
+                        if test (math $i + 1) -le (count $argv)
+                            set recursive_depth $argv[(math $i + 1)]
+                        end
+                    else if test "$argv[$i]" = "--prompt-name"
+                        # Check if there is another argument after "--prompt-name"
+                        if test (math $i + 1) -le (count $argv)
+                            set prompt_name $argv[(math $i + 1)]
+                        end
+                    else
+                        # Check if there is another argument after the current one
+                        if test (count $argv) -ge (math $i + 1)
+                            set path (echo $argv[(math $i + 1)] | sed 's:/*$::')
+                        end
+                    end
                 end
             end
 
             set -l selected_directory
 
-            set selected_directory (find $path -mindepth 1 -type d -maxdepth "$recursive_depth"  | fzf --prompt="Directory (Multi Level)  ")
+            set selected_directory (fd . $path --min-depth 1 --type d --max-depth "$recursive_depth"  | fzf --prompt=(_fzf_preview_name $prompt_name))
 
             if test -n "$selected_directory"
                 cd $selected_directory
@@ -206,24 +240,32 @@
           body = ''
             set -l show_hidden_files false
             set -l path '.'
+            set -l prompt_name 'Files'
 
-            for arg in $argv
-                if test "$arg" = "--show-hidden-files"
-                    set show_hidden_files true
-                else
-                    set path $arg
+            if test (count $argv) -gt 0
+                for i in (seq (count $argv))
+                    if test "$argv[$i]" = "--show-hidden-files"
+                        set show_hidden_files true
+                    else if test "$argv[$i]" = "--prompt-name"
+                        # Check if there is another argument after "--prompt-name"
+                        if test (math $i + 1) -le (count $argv)
+                            set prompt_name $argv[(math $i + 1)]
+                        end
+                    else
+                        # Check if there is another argument after the current one
+                        if test (count $argv) -ge (math $i + 1)
+                            set path (echo $argv[(math $i + 1)] | sed 's:/*$::')
+                        end
+                    end
                 end
             end
 
             set -l selected_path
 
             if $show_hidden_files
-                # echo "Including hidden"
-                set selected_path (find $path -type f -o -type d | fzf --preview="_fzf_preview_cmd {}" --prompt="Files+  ")
+                set selected_path (fd . $path --type f --type d --hidden | fzf --preview="_fzf_preview_cmd {}" --prompt=(_fzf_preview_name $prompt_name))
             else
-                # echo "Excluding hidden"
-                set selected_path (fd --type f --type d --hidden --exclude .git --exclude .gitignore 2>/dev/null | sed 's|^\$path/||' | fzf --preview="_fzf_preview_cmd {}" --prompt="Files  ")
-                # echo "Selected path in else: $selected_path"
+                set selected_path (fd . $path --type f --type d --exclude .git --exclude .gitignore 2>/dev/null | sed 's|^\$path/||' | fzf --preview="_fzf_preview_cmd {}" --prompt=(_fzf_preview_name $prompt_name))
             end
 
             if test -n "$selected_path"
