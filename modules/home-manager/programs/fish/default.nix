@@ -76,8 +76,8 @@
           src = pkgs.fetchFromGitHub {
             owner = "y3owk1n";
             repo = "fish-x";
-            rev = "d5488105456c087f449168c6d4df1cc7a092067e";
-            sha256 = "sha256-Oq0SsNdVrx7WpIuIdwpccQBK6JJuhLPS3Zj7J0nqA1s=";
+            rev = "c87b6b4a4bbcef1ecabb02d0442b74d7a6b35e02";
+            sha256 = "sha256-w8QJ1TAQT9xTuqPpwBht9RXUYVoMr6zE5bC4t6Pxylw=";
           };
         }
       ];
