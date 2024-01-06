@@ -37,7 +37,9 @@ return {
       {
         "<leader>cc",
         function()
-          require("neogen").generate({})
+          require("neogen").generate({
+            type = "func",
+          })
         end,
         desc = "Neogen Comment",
       },
