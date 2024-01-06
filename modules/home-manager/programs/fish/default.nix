@@ -59,6 +59,10 @@
           src = pkgs.fishPlugins.puffer.src;
         }
         {
+          name = "fishtape_3";
+          src = pkgs.fishPlugins.fishtape_3.src;
+        }
+        {
           name = "fish-fzf";
           src = pkgs.fetchFromGitHub {
             owner = "y3owk1n";
