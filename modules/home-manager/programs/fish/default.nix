@@ -67,8 +67,8 @@
           src = pkgs.fetchFromGitHub {
             owner = "y3owk1n";
             repo = "fish-fzf";
-            rev = "v1.0.0";
-            sha256 = "sha256-eobPBZrutcrc332d80VI8Ph9RDzZua8fbZ63F8ohuBo=";
+            rev = "v1.0.1";
+            sha256 = "sha256-JD191rdCPmCWRL8n2dDJk6zBQm81qxJp5k4kC9ODalk=";
           };
         }
         {
