@@ -53,14 +53,13 @@ map("n", "<leader>wx", ":close<CR>", { desc = "Close current split" })
 map("n", "<leader>sx", require("telescope.builtin").resume, { desc = "Resume last picker" })
 
 -- util
-map("n", "<leader>W", "<cmd>w<cr>", { desc = "Save" })
 map("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
 map("n", "<C-d>", "<C-d>zz", { desc = "Half page down and center" })
 map("n", "<C-u>", "<C-u>zz", { desc = "Half page up and center" })
 map("n", "n", "nzzzv", { desc = "Search next and center" })
 map("n", "N", "Nzzzv", { desc = "Search previous and center" })
 map("v", "J", ":m '>+1<cr>gv=gv", { desc = "Move line up" })
-map("v", "K", ":m '>-2<cr>gv=gv", { desc = "Move line down" })
+map("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move line down" })
 
 -- color conversion
 map("n", "<leader>ch", function()
