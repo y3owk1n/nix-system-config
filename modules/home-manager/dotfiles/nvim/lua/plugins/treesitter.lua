@@ -33,6 +33,7 @@ return {
         "tsx",
         "typescript",
         "xml",
+        "vimdoc",
         "yaml",
       },
     },
