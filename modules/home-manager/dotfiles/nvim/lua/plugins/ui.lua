@@ -9,11 +9,11 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     event = "ColorScheme",
-    opts = {
-      sections = {
-        lualine_z = {},
-      },
-    },
+    opts = function(_, opts)
+      opts.sections.lualine_z = {}
+
+      table.insert(opts.sections.lualine_x, 2, require("lazyvim.util").lualine.cmp_source("codeium"))
+    end,
   },
   {
     "folke/noice.nvim",

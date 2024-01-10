@@ -1,5 +1,17 @@
 return {
   {
+    "Exafunction/codeium.vim",
+    event = "BufEnter",
+    cmd = "Codeium",
+    build = ":Codeium Auth",
+    opts = {},
+    config = function()
+      vim.keymap.set("i", "<Right>", function()
+        return vim.fn["codeium#Accept"]()
+      end, { expr = true, silent = true })
+    end,
+  },
+  {
     "ThePrimeagen/refactoring.nvim",
     keys = {
       {
@@ -62,6 +74,12 @@ return {
 
       local luasnip = require("luasnip")
       local cmp = require("cmp")
+
+      table.insert(opts.sources, 1, {
+        name = "codeium",
+        group_index = 1,
+        priority = 100,
+      })
 
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
 
