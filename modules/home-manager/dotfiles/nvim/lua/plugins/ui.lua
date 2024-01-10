@@ -12,7 +12,7 @@ return {
     opts = function(_, opts)
       opts.sections.lualine_z = {}
 
-      table.insert(opts.sections.lualine_x, 2, require("lazyvim.util").lualine.cmp_source("codeium"))
+      table.insert(opts.sections.lualine_x, 2, 'vim.fn["codeium#GetStatusString"]()')
     end,
   },
   {
