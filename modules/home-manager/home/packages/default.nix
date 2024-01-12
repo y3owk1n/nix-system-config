@@ -21,6 +21,8 @@
       pngpaste
       minio
       agkozak-zsh-prompt
+      markdownlint-cli
+      yamllint
     ];
   };
 }
