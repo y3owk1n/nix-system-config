@@ -12,7 +12,7 @@
       minio
       nodePackages.pnpm
       rm-improved
-      neovim
+      # neovim
       fd
       curl
       less

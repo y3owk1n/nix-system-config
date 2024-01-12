@@ -1,4 +1,4 @@
-{ pkgs, username, ... }: {
+{ pkgs, username, system, inputs, ... }: {
   imports = [ ./env ./programs ./nix-conf ./system ./services ./homebrew ];
 
   # Fixes error about home dir being /var/empty
@@ -10,4 +10,6 @@
       "/home/${username}";
     shell = pkgs.fish;
   };
+
+  environment.systemPackages = [ inputs.k92-nvim.packages.${system}.default ];
 }

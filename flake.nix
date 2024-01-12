@@ -13,15 +13,17 @@
     # Control system level software and settings including fonts
     darwin.url = "github:LnL7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    k92-nvim.url = "github:y3owk1n/k92-nvim";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, darwin, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, darwin, k92-nvim, ... }:
     let
       darwinSystem = { system, modules, username, pkgs, ... }:
         darwin.lib.darwinSystem {
           system = system;
           modules = modules ++ [
-            (import ./modules/darwin { inherit username pkgs; })
+            (import ./modules/darwin { inherit username pkgs system inputs; })
             home-manager.darwinModules.home-manager
           ];
         };
