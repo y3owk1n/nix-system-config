@@ -15,15 +15,9 @@
       fd
       curl
       less
-      nixfmt
-      nixpkgs-fmt
       pngpaste
       minio
       agkozak-zsh-prompt
-      markdownlint-cli
-      yamllint
-      prettierd
-      eslint_d
     ];
   };
 }
