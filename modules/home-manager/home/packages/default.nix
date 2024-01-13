@@ -8,14 +8,13 @@
       fd
       stats
       luajit
-      luajitPackages.luarocks
       minio
       nodePackages.pnpm
       rm-improved
       fd
       curl
       less
-      pngpaste
+      # pngpaste # only used for obsidian.nvim, not using it for now
       minio
       agkozak-zsh-prompt
     ];
