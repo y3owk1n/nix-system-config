@@ -12,7 +12,6 @@
       minio
       nodePackages.pnpm
       rm-improved
-      # neovim
       fd
       curl
       less
@@ -23,6 +22,8 @@
       agkozak-zsh-prompt
       markdownlint-cli
       yamllint
+      prettierd
+      eslint_d
     ];
   };
 }
