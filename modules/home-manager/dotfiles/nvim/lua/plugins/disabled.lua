@@ -35,4 +35,8 @@ return {
     "nvimdev/dashboard-nvim",
     enabled = false,
   },
+  {
+    "folke/persistence.nvim",
+    enabled = true,
+  },
 }
