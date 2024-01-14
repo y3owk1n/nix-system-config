@@ -11,5 +11,5 @@
     shell = pkgs.fish;
   };
 
-  environment.systemPackages = [ inputs.k92-nvim.packages.${system}.default ];
+  # environment.systemPackages = [ inputs.k92-nvim.packages.${system}.default ];
 }

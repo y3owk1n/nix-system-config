@@ -5,6 +5,7 @@
 local opt = vim.opt
 local global = vim.g
 local cmd = vim.cmd
+local fn = vim.fn
 
 -- disable some extension providers
 global.loaded_python3_provider = 0
@@ -76,6 +77,18 @@ cmd([[let &t_Ce = "\e[4:0m]"]])
 -- Add astericks in block comments
 opt.formatoptions:append({ "r" })
 
-if vim.fn.has("nvim-0.8") == 1 then
-  vim.opt.cmdheight = 0
+opt.spelllang:append("cjk") -- disable spellchecking for asian characters (VIM algorithm does not support it)
+
+opt.shortmess:append("c") -- don't show redundant messages from ins-completion-menu
+opt.shortmess:append("I") -- don't show the default intro message
+opt.shortmess:append({ s = true, I = true }) -- disable search count wrap and startup messages
+
+opt.viewoptions:remove("curdir") -- disable saving current directory with views
+
+opt.backspace:append({ "nostop" }) -- don't stop backspace at insert
+
+opt.whichwrap:append("<,>,[,],h,l")
+
+if fn.has("nvim-0.8") == 1 then
+  opt.cmdheight = 0
 end

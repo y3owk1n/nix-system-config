@@ -31,6 +31,7 @@ del("n", "<leader><tab>[")
 del("n", "<leader>`")
 del("n", "<leader>,")
 del("n", "<leader>bb")
+del("n", "<leader>be")
 del("n", "<A-j>")
 del("n", "<A-k>")
 del("i", "<A-j>")
@@ -48,9 +49,6 @@ del("n", "<leader>gG")
 map("n", "-", "<C-W>s", { desc = "Split window below" })
 map("n", "|", "<C-W>v", { desc = "Split window right" })
 map("n", "<leader>wx", ":close<CR>", { desc = "Close current split" })
-
--- telescope
-map("n", "<leader>sx", require("telescope.builtin").resume, { desc = "Resume last picker" })
 
 -- util
 map("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
