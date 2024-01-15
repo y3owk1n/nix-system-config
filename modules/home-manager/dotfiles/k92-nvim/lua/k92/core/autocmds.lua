@@ -1,5 +1,11 @@
 local augroup = require("k92.utils.autocmds").augroup
 
+vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
+	desc = "Check if buffers changed on editor focus",
+	group = augroup("checktime"),
+	command = "checktime",
+})
+
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
 	group = augroup("highlight_yank"),

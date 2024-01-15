@@ -21,6 +21,7 @@ return {
 			["<leader>m"] = { name = "+move" },
 			["<leader>s"] = { name = "+search" },
 			["<leader>w"] = { name = "+windows" },
+			["<leader>x"] = { name = "+trouble" },
 		},
 	},
 	config = function(_, opts)

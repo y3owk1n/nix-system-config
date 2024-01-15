@@ -70,12 +70,61 @@ return {
 		lspconfig["tsserver"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			keys = {
+				"<leader>co",
+				function()
+					vim.lsp.buf.code_action({
+						apply = true,
+						context = {
+							only = { "source.organizeImports.ts" },
+							diagnostics = {},
+						},
+					})
+				end,
+				desc = "Organize Imports",
+			},
+			{
+				"<leader>cR",
+				function()
+					vim.lsp.buf.code_action({
+						apply = true,
+						context = {
+							only = { "source.removeUnused.ts" },
+							diagnostics = {},
+						},
+					})
+				end,
+				desc = "Remove Unused Imports",
+			},
+			settings = {
+				typescript = {
+					format = {
+						indentSize = vim.o.shiftwidth,
+						convertTabsToSpaces = vim.o.expandtab,
+						tabSize = vim.o.tabstop,
+					},
+				},
+				javascript = {
+					format = {
+						indentSize = vim.o.shiftwidth,
+						convertTabsToSpaces = vim.o.expandtab,
+						tabSize = vim.o.tabstop,
+					},
+				},
+				completions = {
+					completeFunctionCalls = true,
+				},
+			},
 		})
 
 		-- configure typescript server with plugin
 		lspconfig["eslint"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			settings = {
+				-- helps eslint find the eslintrc when it's placed in a subfolder instead of the cwd root
+				workingDirectory = { mode = "auto" },
+			},
 		})
 
 		-- configure tailwindcss server
@@ -106,6 +155,29 @@ return {
 		lspconfig["nil_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+		})
+
+		-- configure yamlls server with plugin
+		lspconfig["yamlls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			settings = {
+				redhat = { telemetry = { enabled = false } },
+				yaml = {
+					keyOrdering = false,
+					format = {
+						enable = true,
+					},
+					validate = true,
+					schemaStore = {
+						-- Must disable built-in schemaStore support to use
+						-- schemas from SchemaStore.nvim plugin
+						enable = false,
+						-- Avoid TypeError: Cannot read properties of undefined (reading 'length')
+						url = "",
+					},
+				},
+			},
 		})
 
 		-- configure lua server (with special settings)
