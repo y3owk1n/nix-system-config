@@ -11,7 +11,6 @@ return {
 		"ObsidianPasteImg",
 	},
 	event = {
-		-- "VimEnter *",
 		"BufReadPre "
 			.. vim.fn.expand("~")
 			.. "/Library/Mobile Documents/iCloud~md~obsidian/Documents/**.md",

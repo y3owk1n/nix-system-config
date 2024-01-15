@@ -2,6 +2,8 @@ return {
 	"stevearc/conform.nvim",
 	lazy = true,
 	event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
+	keys = { { "<leader>lc", "<cmd>ConformInfo<cr>", desc = "Conform Info" } },
+	dependencies = { "mason.nvim" },
 	opts = {
 		format_on_save = {
 			lsp_fallback = true,

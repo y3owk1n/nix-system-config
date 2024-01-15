@@ -1,5 +1,8 @@
 return {
 	"williamboman/mason.nvim",
+	cmd = "Mason",
+	keys = { { "<leader>lm", "<cmd>Mason<cr>", desc = "Mason" } },
+	build = ":MasonUpdate",
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",

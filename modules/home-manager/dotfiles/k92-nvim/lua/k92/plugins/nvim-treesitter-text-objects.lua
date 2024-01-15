@@ -4,6 +4,7 @@ local map = keymap.map
 return {
 	"nvim-treesitter/nvim-treesitter-textobjects",
 	lazy = true,
+	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			textobjects = {

@@ -1,7 +1,8 @@
 return {
 	"hrsh7th/nvim-cmp",
 	version = false, -- last release is way too old
-	event = "InsertEnter",
+	lazy = true,
+	event = { "InsertEnter" },
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer", -- source for text in buffer

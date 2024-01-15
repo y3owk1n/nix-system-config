@@ -3,7 +3,7 @@ local augroup = require("k92.utils.autocmds").augroup
 return {
 	"mfussenegger/nvim-lint",
 	lazy = true,
-	event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
+	event = { "BufReadPre", "BufNewFile", "InsertLeave" }, -- to disable, comment this out
 	config = function()
 		local lint = require("lint")
 
@@ -29,8 +29,8 @@ return {
 			json = { "biomejs" },
 			jsonc = { "biomejs" },
 			yaml = { "yamllint" },
-			nix = { "nix" },
-			markdown = { "markdownlint" },
+			-- nix = { "nix" },
+			-- markdown = { "markdownlint" },
 		}
 
 		vim.api.nvim_create_autocmd(

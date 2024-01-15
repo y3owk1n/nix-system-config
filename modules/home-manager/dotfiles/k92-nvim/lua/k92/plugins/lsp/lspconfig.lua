@@ -3,7 +3,7 @@ local map = keymap.map
 
 return {
 	"neovim/nvim-lspconfig",
-	event = { "BufReadPre", "BufNewFile" },
+	event = { "BufReadPost", "BufNewFile", "BufWritePre" },
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
@@ -49,6 +49,9 @@ return {
 
 			opts.desc = "Show documentation for what is under cursor"
 			map("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
+
+			opts.desc = "Lsp Info"
+			map("n", "<leader>li", "<cmd>LspInfo<CR>", opts) -- show documentation for what is under cursor
 		end
 
 		-- used to enable autocompletion (assign to every lsp server config)
@@ -83,6 +86,24 @@ return {
 
 		-- configure prisma orm server
 		lspconfig["prismals"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- configure marksman orm server
+		lspconfig["marksman"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- configure jsonls server with plugin
+		lspconfig["jsonls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- configure jsonls server with plugin
+		lspconfig["nil_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})

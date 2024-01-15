@@ -1,5 +1,7 @@
 return {
 	"gbprod/yanky.nvim",
+	event = { "BufReadPre", "BufNewFile" },
+	lazy = true,
 	dependencies = {
 		{ "kkharji/sqlite.lua", enabled = not jit.os:find("Windows") },
 	},

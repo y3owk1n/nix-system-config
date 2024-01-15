@@ -1,6 +1,5 @@
 return {
 	"folke/which-key.nvim",
-	event = "VeryLazy",
 	init = function()
 		vim.o.timeout = true
 		vim.o.timeoutlen = 500
@@ -14,6 +13,7 @@ return {
 			["]"] = { name = "+next" },
 			["["] = { name = "+prev" },
 			["<leader>c"] = { name = "+code" },
+			["<leader>l"] = { name = "+lsp" },
 			["<leader>f"] = { name = "+file/find" },
 			["<leader>g"] = { name = "+git" },
 			["<leader>h"] = { name = "+harpoon" },

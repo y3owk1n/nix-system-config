@@ -1,12 +1,36 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
+	init = function()
+		vim.g.lualine_laststatus = vim.o.laststatus
+		if vim.fn.argc(-1) > 0 then
+			-- set an empty statusline till lualine loads
+			vim.o.statusline = " "
+		else
+			-- hide the statusline on the starter page
+			vim.o.laststatus = 0
+		end
+	end,
 	config = function()
 		local lualine = require("lualine")
 		local lazy_status = require("lazy.status") -- to configure lazy pending updates count
 
 		local show_codeium_status_string = function()
 			return vim.fn["codeium#GetStatusString"]()
+		end
+
+		local show_startuptime = function()
+			local stats = require("lazy").stats()
+			local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+			return (
+				"⚡ "
+				.. stats.loaded
+				.. "/"
+				.. stats.count
+				.. " ("
+				.. ms
+				.. "ms)"
+			)
 		end
 
 		-- configure lualine with modified theme
@@ -57,6 +81,7 @@ return {
 						cond = lazy_status.has_updates,
 						color = { fg = "#ff9e64" },
 					},
+					{ show_startuptime },
 					{
 						show_codeium_status_string,
 					},

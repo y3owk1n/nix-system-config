@@ -3,7 +3,8 @@ local map = keymap.map
 
 return {
 	"Exafunction/codeium.vim",
-	event = "BufEnter",
+	lazy = true,
+	event = { "InsertEnter" },
 	cmd = "Codeium",
 	build = ":Codeium Auth",
 	opts = {},
