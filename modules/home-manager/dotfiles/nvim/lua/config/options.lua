@@ -90,12 +90,12 @@ opt.backspace:append({ "nostop" }) -- don't stop backspace at insert
 opt.whichwrap:append("<,>,[,],h,l")
 
 if fn.has("nvim-0.8") == 1 then
-  opt.cmdheight = 0
+	opt.cmdheight = 0
 end
 
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-  opts = opts or {}
-  opts.border = opts.border or "rounded"
-  return orig_util_open_floating_preview(contents, syntax, opts, ...)
+	opts = opts or {}
+	opts.border = opts.border or "rounded"
+	return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end

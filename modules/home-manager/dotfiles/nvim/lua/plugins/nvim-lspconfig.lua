@@ -1,41 +1,78 @@
 return {
-  "neovim/nvim-lspconfig",
-  setup = {},
-  opts = {
-    servers = {
-      biome = { single_file_support = false },
-      lua_ls = {
-        -- mason = false, -- set to false if you don't want this server to be installed with mason
-        -- Use this to add any additional keymaps
-        -- for specific lsp servers
-        ---@type LazyKeysSpec[]
-        -- keys = {},
-        settings = {
-          Lua = {
-            runtime = {
-              -- Tell the language server which version of Lua you're using
-              -- (most likely LuaJIT in the case of Neovim)
-              version = "LuaJIT",
-            },
-            diagnostics = {
-              -- Get the language server to recognize the `vim` global
-              globals = {
-                "vim",
-                "require",
-              },
-            },
-            workspace = {
-              checkThirdParty = false,
-              library = vim.api.nvim_get_runtime_file("", true),
-            },
-            completion = {
-              callSnippet = "Replace",
-            },
-          },
-        },
-      },
-      prismals = {},
-      nil_ls = {},
-    },
-  },
+	"neovim/nvim-lspconfig",
+	setup = {},
+	opts = {
+		servers = {
+			biome = { single_file_support = false },
+			lua_ls = {
+				single_file_support = true,
+				settings = {
+					Lua = {
+						workspace = {
+							checkThirdParty = false,
+						},
+						completion = {
+							workspaceWord = true,
+							callSnippet = "Both",
+						},
+						misc = {
+							parameters = {
+								-- "--log-level=trace",
+							},
+						},
+						hint = {
+							enable = true,
+							setType = false,
+							paramType = true,
+							paramName = "Disable",
+							semicolon = "Disable",
+							arrayIndex = "Disable",
+						},
+						doc = {
+							privateName = { "^_" },
+						},
+						type = {
+							castNumberToInteger = true,
+						},
+						diagnostics = {
+							disable = {
+								"incomplete-signature-doc",
+								"trailing-space",
+							},
+							-- enable = false,
+							groupSeverity = {
+								strong = "Warning",
+								strict = "Warning",
+							},
+							groupFileStatus = {
+								["ambiguity"] = "Opened",
+								["await"] = "Opened",
+								["codestyle"] = "None",
+								["duplicate"] = "Opened",
+								["global"] = "Opened",
+								["luadoc"] = "Opened",
+								["redefined"] = "Opened",
+								["strict"] = "Opened",
+								["strong"] = "Opened",
+								["type-check"] = "Opened",
+								["unbalanced"] = "Opened",
+								["unused"] = "Opened",
+							},
+							unusedLocalExclude = { "_*" },
+						},
+						format = {
+							enable = false,
+							defaultConfig = {
+								indent_style = "space",
+								indent_size = "2",
+								continuation_indent_size = "2",
+							},
+						},
+					},
+				},
+			},
+			prismals = {},
+			nil_ls = {},
+		},
+	},
 }

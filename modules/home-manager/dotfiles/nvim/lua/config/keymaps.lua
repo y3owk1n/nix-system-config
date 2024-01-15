@@ -3,14 +3,14 @@
 -- Add any additional keymaps here
 
 local function map(mode, lhs, rhs, opts)
-  local keys = require("lazy.core.handler").handlers.keys
-  ---@cast keys LazyKeysHandler
-  -- do not create the keymap if a lazy keys handler exists
-  if not keys.active[keys.parse({ lhs, mode = mode }).id] then
-    opts = opts or {}
-    opts.silent = opts.silent ~= false
-    vim.keymap.set(mode, lhs, rhs, opts)
-  end
+	local keys = require("lazy.core.handler").handlers.keys
+	---@cast keys LazyKeysHandler
+	-- do not create the keymap if a lazy keys handler exists
+	if not keys.active[keys.parse({ lhs, mode = mode }).id] then
+		opts = opts or {}
+		opts.silent = opts.silent ~= false
+		vim.keymap.set(mode, lhs, rhs, opts)
+	end
 end
 
 local del = vim.keymap.del
@@ -61,7 +61,7 @@ map("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move line down" })
 
 -- color conversion
 map("n", "<leader>ch", function()
-  require("utils.color-conversion").replaceHexWithHSL()
+	require("utils.color-conversion").replaceHexWithHSL()
 end, {
-  desc = "Replace Hex With HSL",
+	desc = "Replace Hex With HSL",
 })
