@@ -119,3 +119,15 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.wo.conceallevel = 2
 	end,
 })
+
+-- Add border to lspinfo
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	group = augroup("lspinfo_border"),
+	pattern = {
+		"lspinfo",
+		-- "mason",
+	},
+	callback = function()
+		require("lspconfig.ui.windows").default_options.border = "rounded"
+	end,
+})

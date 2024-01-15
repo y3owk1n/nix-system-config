@@ -1,5 +1,6 @@
 return {
 	"nvim-lualine/lualine.nvim",
+	event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	init = function()
 		vim.g.lualine_laststatus = vim.o.laststatus
