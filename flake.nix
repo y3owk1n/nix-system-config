@@ -17,7 +17,8 @@
     k92-nvim.url = "github:y3owk1n/k92-nvim";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, darwin, k92-nvim, ... }:
+  outputs =
+    inputs@{ nixpkgs, nixpkgs-unstable, home-manager, darwin, k92-nvim, ... }:
     let
       darwinSystem = { system, modules, username, pkgs, ... }:
         darwin.lib.darwinSystem {
@@ -31,7 +32,7 @@
       darwinConfigurations = {
         demos-Virtual-Machine = darwinSystem {
           system = "aarch64-darwin";
-          pkgs = import nixpkgs { system = "aarch64-darwin"; };
+          pkgs = import nixpkgs-unstable { system = "aarch64-darwin"; };
           specialArgs = { inherit inputs; };
           modules = [{
             home-manager = {
@@ -46,7 +47,7 @@
 
         Kyles-MacBook-Air = darwinSystem {
           system = "aarch64-darwin";
-          pkgs = import nixpkgs { system = "aarch64-darwin"; };
+          pkgs = import nixpkgs-unstable { system = "aarch64-darwin"; };
           specialArgs = { inherit inputs; };
           modules = [{
             home-manager = {
@@ -61,7 +62,7 @@
 
         Kyles-iMac = darwinSystem {
           system = "aarch64-darwin";
-          pkgs = import nixpkgs { system = "aarch64-darwin"; };
+          pkgs = import nixpkgs-unstable { system = "aarch64-darwin"; };
           specialArgs = { inherit inputs; };
           modules = [{
             home-manager = {
