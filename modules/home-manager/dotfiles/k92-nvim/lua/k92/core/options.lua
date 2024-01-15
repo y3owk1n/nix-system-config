@@ -75,6 +75,7 @@ cmd([[let &t_Ce = "\e[4:0m]"]])
 -- Add astericks in block comments
 opt.formatoptions:append({ "r" })
 
+opt.laststatus = 3 -- global statusline
 opt.spelllang:append("cjk") -- disable spellchecking for asian characters (VIM algorithm does not support it)
 opt.shortmess:append("c") -- don't show redundant messages from ins-completion-menu
 opt.shortmess:append("I") -- don't show the default intro message

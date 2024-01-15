@@ -19,7 +19,7 @@ return {
 		}
 
 		lint.linters_by_ft = {
-			sh = { "shellcheck" },
+			-- sh = { "shellcheck" },
 			-- lua = { "luacheck" },
 			fish = { "fish" },
 			javascript = { "biomejs" },
