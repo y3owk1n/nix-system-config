@@ -71,6 +71,12 @@ return {
 		)
 		keymap.set(
 			"n",
+			"<leader>sa",
+			"<cmd>Telescope autocommands<cr>",
+			{ desc = "Fuzzy find autocommands" }
+		)
+		keymap.set(
+			"n",
 			"<leader>sk",
 			"<cmd>Telescope keymaps<cr>",
 			{ desc = "Fuzzy find keymaps" }

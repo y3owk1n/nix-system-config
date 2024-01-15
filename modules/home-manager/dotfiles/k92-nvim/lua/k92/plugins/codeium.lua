@@ -1,3 +1,6 @@
+local keymap = require("k92.utils.keymaps")
+local map = keymap.map
+
 return {
 	"Exafunction/codeium.vim",
 	event = "BufEnter",
@@ -5,10 +8,11 @@ return {
 	build = ":Codeium Auth",
 	opts = {},
 	config = function()
-		vim.keymap.set("i", "<Right>", function()
+		map("i", "<Right>", function()
 			return vim.fn["codeium#Accept"]()
 		end, { expr = true, silent = true, desc = "Codeium Accept" })
-		vim.keymap.set("i", "<C-n>", function()
+
+		map("i", "<C-n>", function()
 			return vim.fn["codeium#CycleCompletions"](1)
 		end, { expr = true, silent = true, desc = "Codeium Cycle Completions" })
 	end,

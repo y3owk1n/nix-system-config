@@ -97,6 +97,12 @@ return {
 			on_attach = on_attach,
 		})
 
+		-- configure typescript server with plugin
+		lspconfig["eslint"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
 		-- configure tailwindcss server
 		lspconfig["tailwindcss"].setup({
 			capabilities = capabilities,
@@ -107,19 +113,6 @@ return {
 		lspconfig["prismals"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-		})
-
-		-- configure graphql language server
-		lspconfig["graphql"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			filetypes = {
-				"graphql",
-				"gql",
-				"svelte",
-				"typescriptreact",
-				"javascriptreact",
-			},
 		})
 
 		-- configure lua server (with special settings)

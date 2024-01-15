@@ -10,7 +10,7 @@ return {
 		},
 		formatters = {
 			biome = {
-				condition = function(_, ctx)
+				condition = function(self, ctx)
 					return vim.fs.find(
 						{ "biome.json" },
 						{ path = ctx.filename, upward = true }

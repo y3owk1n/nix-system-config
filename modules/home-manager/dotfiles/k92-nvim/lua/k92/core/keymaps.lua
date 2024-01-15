@@ -55,7 +55,7 @@ map("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move line down" })
 
 -- color conversion
 map("n", "<leader>ch", function()
-	require("utils.color-conversion").replaceHexWithHSL()
+	require("utils.color").replaceHexWithHSL()
 end, {
 	desc = "Replace Hex With HSL",
 })
