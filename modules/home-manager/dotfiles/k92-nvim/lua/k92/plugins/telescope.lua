@@ -40,6 +40,12 @@ return {
 
 		keymap.set(
 			"n",
+			"<leader><space>",
+			"<cmd>Telescope find_files<cr>",
+			{ desc = "Fuzzy find files in cwd" }
+		)
+		keymap.set(
+			"n",
 			"<leader>ff",
 			"<cmd>Telescope find_files<cr>",
 			{ desc = "Fuzzy find files in cwd" }

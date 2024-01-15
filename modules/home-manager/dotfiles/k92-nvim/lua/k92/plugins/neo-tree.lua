@@ -1,5 +1,4 @@
-local keymap = require("k92.utils.keymaps")
-local map = keymap.map
+local map = require("k92.utils.keymaps").map
 
 return {
 	"nvim-neo-tree/neo-tree.nvim",

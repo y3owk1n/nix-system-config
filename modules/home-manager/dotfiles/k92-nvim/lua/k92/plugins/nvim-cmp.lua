@@ -70,7 +70,7 @@ return {
 					end
 				end, { "i", "s" }),
 				["<CR>"] = cmp.mapping.confirm({
-					select = false,
+					select = true,
 				}),
 			}),
 			-- sources for autocompletion

@@ -7,7 +7,6 @@ return {
 		-- load the colorscheme here
 		vim.cmd([[colorscheme catppuccin]])
 	end,
-	---@type CatppuccinOptions
 	opts = {
 		flavour = "macchiato", -- latte, frappe, macchiato, mocha
 		background = { -- :h background

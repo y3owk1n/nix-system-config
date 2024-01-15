@@ -1,3 +1,6 @@
+local keymap = require("k92.utils.keymaps")
+local map = keymap.map
+
 return {
 	"nvim-treesitter/nvim-treesitter-textobjects",
 	lazy = true,
@@ -105,14 +108,14 @@ return {
 				swap = {
 					enable = true,
 					swap_next = {
-						["<leader>na"] = "@parameter.inner", -- swap parameters/argument with next
-						["<leader>n:"] = "@property.outer", -- swap object property with next
-						["<leader>nm"] = "@function.outer", -- swap function with next
+						["<leader>mni"] = "@parameter.inner", -- swap parameters/argument with next
+						["<leader>mno"] = "@property.outer", -- swap object property with next
+						["<leader>mnf"] = "@function.outer", -- swap function with next
 					},
 					swap_previous = {
-						["<leader>pa"] = "@parameter.inner", -- swap parameters/argument with prev
-						["<leader>p:"] = "@property.outer", -- swap object property with prev
-						["<leader>pm"] = "@function.outer", -- swap function with previous
+						["<leader>mpi"] = "@parameter.inner", -- swap parameters/argument with prev
+						["<leader>mpo"] = "@property.outer", -- swap object property with prev
+						["<leader>mpf"] = "@function.outer", -- swap function with previous
 					},
 				},
 				move = {
@@ -227,17 +230,13 @@ return {
 			require("nvim-treesitter.textobjects.repeatable_move")
 
 		-- vim way: ; goes to the direction you were moving.
-		vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move)
-		vim.keymap.set(
-			{ "n", "x", "o" },
-			",",
-			ts_repeat_move.repeat_last_move_opposite
-		)
+		map({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move)
+		map({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_opposite)
 
 		-- Optionally, make builtin f, F, t, T also repeatable with ; and ,
-		vim.keymap.set({ "n", "x", "o" }, "f", ts_repeat_move.builtin_f)
-		vim.keymap.set({ "n", "x", "o" }, "F", ts_repeat_move.builtin_F)
-		vim.keymap.set({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t)
-		vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T)
+		map({ "n", "x", "o" }, "f", ts_repeat_move.builtin_f)
+		map({ "n", "x", "o" }, "F", ts_repeat_move.builtin_F)
+		map({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t)
+		map({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T)
 	end,
 }
