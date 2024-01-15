@@ -1,6 +1,5 @@
 return {
-	"lewis6991/gitsigns.nvim",
-	lazy = true,
+	"windwp/nvim-ts-autotag",
 	event = { "BufReadPost", "BufNewFile", "BufWritePre" },
-	config = true,
+	opts = {},
 }

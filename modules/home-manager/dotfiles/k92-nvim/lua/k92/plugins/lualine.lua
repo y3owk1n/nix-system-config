@@ -12,8 +12,14 @@ return {
 		end
 	end,
 	config = function()
+		-- PERF: we don't need this lualine require madness 🤷
+		local lualine_require = require("lualine_require")
+		lualine_require.require = require
+
 		local lualine = require("lualine")
 		local lazy_status = require("lazy.status") -- to configure lazy pending updates count
+
+		vim.o.laststatus = vim.g.lualine_laststatus
 
 		local show_codeium_status_string = function()
 			return vim.fn["codeium#GetStatusString"]()
