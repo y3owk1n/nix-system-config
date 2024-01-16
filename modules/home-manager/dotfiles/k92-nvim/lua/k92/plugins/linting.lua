@@ -16,11 +16,15 @@ return {
 					)[1]
 				end,
 			},
+			fish = {},
+			luacheck = {},
+			nix = {},
+			markdownlint = {},
+			yamllint = {},
 		}
 
 		lint.linters_by_ft = {
-			-- sh = { "shellcheck" },
-			-- lua = { "luacheck" },
+			lua = { "luacheck" },
 			fish = { "fish" },
 			javascript = { "biomejs" },
 			javascriptreact = { "biomejs" },
@@ -29,8 +33,8 @@ return {
 			json = { "biomejs" },
 			jsonc = { "biomejs" },
 			yaml = { "yamllint" },
-			-- nix = { "nix" },
-			-- markdown = { "markdownlint" },
+			nix = { "nix" },
+			markdown = { "markdownlint" },
 		}
 
 		vim.api.nvim_create_autocmd(
