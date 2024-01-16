@@ -48,6 +48,10 @@ return {
 			return in_buffer
 		end
 
+		local function mode_icon()
+			return " " .. "" .. " "
+		end
+
 		-- configure lualine with modified theme
 		lualine.setup({
 			options = {
@@ -67,10 +71,13 @@ return {
 			},
 			sections = {
 				lualine_a = {
-					"mode",
+					{
+						mode_icon,
+						padding = { left = 0, right = 0 },
+					},
 				},
 				lualine_b = {
-					{ "branch" },
+					{ "branch", icon = "" },
 					{
 						"diff",
 						symbols = {
