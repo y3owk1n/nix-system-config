@@ -13,7 +13,7 @@ return {
 			return vim.fn["codeium#Accept"]()
 		end, { expr = true, silent = true, desc = "Codeium Accept" })
 
-		map("i", "<C-n>", function()
+		map("i", "<C-]>", function()
 			return vim.fn["codeium#CycleCompletions"](1)
 		end, { expr = true, silent = true, desc = "Codeium Cycle Completions" })
 	end,

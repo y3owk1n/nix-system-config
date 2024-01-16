@@ -88,7 +88,10 @@ return {
 					},
 				},
 				lualine_c = {
-					{ "filename" },
+					{
+						"filename",
+						path = 4,
+					},
 					{
 						"diagnostics",
 						symbols = {
