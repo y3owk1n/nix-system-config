@@ -96,6 +96,10 @@
         set -g status-position top
         set -g display-time 4000
         set -g status-interval 5
+
+        set -g status 2
+
+        set -g status-format[1] '#[align=centre]'''
       '';
     };
   };
