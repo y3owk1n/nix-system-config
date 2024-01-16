@@ -61,8 +61,13 @@ opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
+-- undo
+opt.undofile = true
+opt.undolevels = 10000
+
 -- turn off swapfile
 opt.swapfile = false
+opt.updatetime = 200 -- Save swap file and trigger CursorHold
 
 -- words
 opt.iskeyword:append("-") -- consider string-string as whole words

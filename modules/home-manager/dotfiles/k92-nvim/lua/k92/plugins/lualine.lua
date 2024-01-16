@@ -19,6 +19,7 @@ return {
 
 		local lualine = require("lualine")
 		local lazy_status = require("lazy.status") -- to configure lazy pending updates count
+		local catppuccin_palettes = require("catppuccin.palettes").get_palette()
 
 		vim.o.laststatus = vim.g.lualine_laststatus
 
@@ -38,6 +39,13 @@ return {
 				.. ms
 				.. "ms)"
 			)
+		end
+
+		local function is_writing_in_buffer_only()
+			-- Check if we are in a buffer
+			local in_buffer = vim.fn.buflisted(vim.fn.bufnr("%")) > 0
+
+			return in_buffer
 		end
 
 		-- configure lualine with modified theme
@@ -86,15 +94,24 @@ return {
 					{
 						lazy_status.updates,
 						cond = lazy_status.has_updates,
-						color = { fg = "#ff9e64" },
+						color = { fg = catppuccin_palettes.flamingo },
 					},
-					{ show_startuptime },
+					{
+						show_startuptime,
+						color = {
+							fg = catppuccin_palettes.rosewater,
+						},
+					},
 					{
 						show_codeium_status_string,
+						cond = is_writing_in_buffer_only,
 					},
-					{ "encoding" },
-					{ "fileformat" },
-					{ "filetype" },
+					{
+						"filetype",
+						icon_only = true,
+						separator = "",
+						padding = { left = 1, right = 2 },
+					},
 				},
 			},
 			extensions = { "lazy", "mason", "neo-tree", "quickfix", "trouble" },
