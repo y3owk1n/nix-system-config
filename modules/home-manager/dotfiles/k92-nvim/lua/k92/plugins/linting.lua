@@ -1,4 +1,5 @@
 local augroup = require("k92.utils.autocmds").augroup
+local find_root = require("k92.utils.file").find_root
 
 return {
 	"mfussenegger/nvim-lint",
@@ -6,22 +7,11 @@ return {
 	event = { "BufReadPre", "BufNewFile", "InsertLeave" }, -- to disable, comment this out
 	config = function()
 		local lint = require("lint")
+		local biomejs = lint.linters.biomejs
 
-		lint.linters = {
-			biomejs = {
-				condition = function(ctx)
-					return vim.fs.find(
-						{ "biome.json" },
-						{ path = ctx.filename, upward = true }
-					)[1]
-				end,
-			},
-			fish = {},
-			luacheck = {},
-			nix = {},
-			markdownlint = {},
-			yamllint = {},
-		}
+		biomejs.condition = function(ctx)
+			return find_root(ctx, { "biome.json" })
+		end
 
 		lint.linters_by_ft = {
 			lua = { "luacheck" },

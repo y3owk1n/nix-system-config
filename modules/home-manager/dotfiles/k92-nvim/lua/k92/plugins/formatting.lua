@@ -1,3 +1,5 @@
+local find_root = require("k92.utils.file").find_root
+
 return {
 	"stevearc/conform.nvim",
 	lazy = true,
@@ -13,10 +15,7 @@ return {
 		formatters = {
 			biome = {
 				condition = function(self, ctx)
-					return vim.fs.find(
-						{ "biome.json" },
-						{ path = ctx.filename, upward = true }
-					)[1]
+					return find_root(ctx, { "biome.json" })
 				end,
 			},
 		},
