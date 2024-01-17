@@ -62,6 +62,7 @@ return {
 				"stylua",
 				"prettierd",
 				"markdownlint",
+				"yamllint",
 			},
 		})
 	end,
