@@ -14,6 +14,7 @@
       curl
       less
       minio
+      lazygit
       agkozak-zsh-prompt
       # --- neovim ---
       neovim
