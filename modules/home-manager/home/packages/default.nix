@@ -1,7 +1,8 @@
 { pkgs, ... }:
-let
-  extraNodePackages = import ../../node-packages/default.nix { inherit pkgs; };
-in {
+# let
+#   extraNodePackages = import ../../node-packages/default.nix { inherit pkgs; };
+# in
+{
   home = {
     packages = with pkgs; [
       ripgrep
@@ -19,8 +20,6 @@ in {
       minio
       lazygit
       agkozak-zsh-prompt
-      # --- extraNodePackages ---
-      extraNodePackages.cpenv
       # --- neovim ---
       neovim
       luajit
@@ -29,6 +28,8 @@ in {
       codespell # for nvim
       beautysh # for nvim
       pngpaste # only used for obsidian.nvim, not using it for now
+      # --- extraNodePackages ---
+      # extraNodePackages.cpenv
     ];
   };
 }
