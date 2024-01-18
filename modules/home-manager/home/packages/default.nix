@@ -1,4 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+let
+  extraNodePackages = import ../../node-packages/default.nix { inherit pkgs; };
+in {
   home = {
     packages = with pkgs; [
       ripgrep
@@ -16,6 +19,8 @@
       minio
       lazygit
       agkozak-zsh-prompt
+      # --- extraNodePackages ---
+      extraNodePackages.cpenv
       # --- neovim ---
       neovim
       luajit

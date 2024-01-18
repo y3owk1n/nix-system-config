@@ -53,3 +53,13 @@ nix --extra-experimental-features 'nix-command flakes' build .#darwinConfigurati
 ```bash
 bash ~/nix-system-config/cleanup.sh
 ```
+
+### Installing NPM packages that are not available in Nix
+
+Navigate to `...../modules/home-manager/node-packages` and run the following command to generate a nix expression. The expression can then be added into home manager
+
+- `-18` is to build with nodejs v18
+
+```bash
+nix-shell -p nodePackages.node2nix --command "node2nix -18 -i ./node-packages.json -o node"
+```
