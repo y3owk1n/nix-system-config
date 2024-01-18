@@ -571,6 +571,15 @@ let
         sha512 = "t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==";
       };
     };
+    "typescript-5.3.3" = {
+      name = "typescript";
+      packageName = "typescript";
+      version = "5.3.3";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/typescript/-/typescript-5.3.3.tgz";
+        sha512 = "pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==";
+      };
+    };
     "util-deprecate-1.0.2" = {
       name = "util-deprecate";
       packageName = "util-deprecate";
@@ -604,10 +613,10 @@ in
   cpenv = nodeEnv.buildNodePackage {
     name = "cpenv";
     packageName = "cpenv";
-    version = "0.1.14";
+    version = "0.1.16";
     src = fetchurl {
-      url = "https://registry.npmjs.org/cpenv/-/cpenv-0.1.14.tgz";
-      sha512 = "WzEXOr6enNHor1quQD2IlPt20Epz7HYbSQnnwer67OUVkJYw2QH9NLej5lxgW0pHaFJ8U0Qx4L3PJY+PrmHnmQ==";
+      url = "https://registry.npmjs.org/cpenv/-/cpenv-0.1.16.tgz";
+      sha512 = "vqdwOFGu/6s9AqivbdYioSJ9DZTOnWw57Jl5CLRlhtjAR4ZtRHUldXkG2TXT/Ok8TT/jJOYLnHT56jCfuOUoog==";
     };
     dependencies = [
       sources."@ljharb/through-2.3.11"
@@ -681,6 +690,7 @@ in
       sources."tmp-0.0.33"
       sources."tslib-2.6.2"
       sources."type-fest-0.21.3"
+      sources."typescript-5.3.3"
       sources."util-deprecate-1.0.2"
       sources."wcwidth-1.0.1"
       sources."wrap-ansi-6.2.0"
