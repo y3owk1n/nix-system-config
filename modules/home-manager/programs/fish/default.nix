@@ -19,6 +19,7 @@
         fpfh =
           "_fzf_file_picker --allow-open-in-editor --show-hidden-files --prompt-name Files+";
         fpc = "_fzf_cmd_history --allow-execute";
+        gg = "lazygit";
       };
       shellAliases = {
         # "obs-kyle" =
