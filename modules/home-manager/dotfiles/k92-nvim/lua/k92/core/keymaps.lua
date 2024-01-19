@@ -1,5 +1,6 @@
 local keymap = require("k92.utils.keymaps")
 local map = keymap.map
+local terminal = require("k92.utils.terminal")
 
 -- better up/down
 map(
@@ -52,6 +53,11 @@ map("n", "n", "nzzzv", { desc = "Search next and center" })
 map("n", "N", "Nzzzv", { desc = "Search previous and center" })
 map("v", "J", ":m '>+1<cr>gv=gv", { desc = "Move line up" })
 map("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move line down" })
+
+-- lazygit
+map("n", "<leader>gg", function()
+	terminal({ "lazygit" }, { esc_esc = false, ctrl_hjkl = false })
+end, { desc = "Lazygit (cwd)" })
 
 -- color conversion
 map("n", "<leader>ch", function()
