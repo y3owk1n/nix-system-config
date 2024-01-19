@@ -29,6 +29,7 @@ in {
       pngpaste # only used for obsidian.nvim, not using it for now
       # --- extraNodePackages ---
       extraNodePackages.cpenv
+      extraNodePackages.better-commits
     ];
   };
 }
