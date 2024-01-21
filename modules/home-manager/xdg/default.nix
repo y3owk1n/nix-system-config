@@ -2,7 +2,7 @@
   xdg.configFile = {
     nvim = {
       source = config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/nix-system-config/modules/home-manager/dotfiles/k92-nvim";
+        "${config.home.homeDirectory}/nix-system-config/modules/home-manager/dotfiles/nvim";
       recursive = true;
     };
     karabiner = {
