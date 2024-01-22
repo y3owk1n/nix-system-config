@@ -18,6 +18,7 @@ in {
       less
       minio
       lazygit
+      jq
       agkozak-zsh-prompt
       # --- neovim ---
       neovim
