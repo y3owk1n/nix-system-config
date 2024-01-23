@@ -481,13 +481,13 @@ let
         sha512 = "wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==";
       };
     };
-    "string-width-7.0.0" = {
+    "string-width-7.1.0" = {
       name = "string-width";
       packageName = "string-width";
-      version = "7.0.0";
+      version = "7.1.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/string-width/-/string-width-7.0.0.tgz";
-        sha512 = "GPQHj7row82Hjo9hKZieKcHIhaAIKOJvFSIZXuCU9OASVZrMNUaZuz++SPVrBjnLsnk4k+z9f2EIypgxf2vNFw==";
+        url = "https://registry.npmjs.org/string-width/-/string-width-7.1.0.tgz";
+        sha512 = "SEIJCWiX7Kg4c129n48aDRwLbFb2LJmXXFrWBG4NGaRtMQ3myKPKbwrD1BKqQn74oCoNMBVrfDEr5M9YxCsrkw==";
       };
     };
     "strip-ansi-6.0.1" = {
@@ -624,7 +624,7 @@ in
           sources."ansi-regex-6.0.1"
           sources."chalk-5.3.0"
           sources."emoji-regex-10.3.0"
-          sources."string-width-7.0.0"
+          sources."string-width-7.1.0"
           sources."strip-ansi-7.1.0"
         ];
       })
