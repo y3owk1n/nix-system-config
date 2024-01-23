@@ -51,6 +51,12 @@ map("n", "<C-d>", "<C-d>zz", { desc = "Half page down and center" })
 map("n", "<C-u>", "<C-u>zz", { desc = "Half page up and center" })
 map("n", "n", "nzzzv", { desc = "Search next and center" })
 map("n", "N", "Nzzzv", { desc = "Search previous and center" })
+map(
+	"n",
+	"<leader>fx",
+	"<cmd>!chmod +x %<cr>",
+	{ desc = "Make file executable" }
+)
 map("v", "J", ":m '>+1<cr>gv=gv", { desc = "Move line up" })
 map("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move line down" })
 
