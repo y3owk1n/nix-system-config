@@ -295,13 +295,13 @@
             ]
           },
           {
-            "description": "Change CMD + h/j/k/l (j/c/v/p in MacOS Dvorak Layout) to Arrows",
+            "description": "Change option + h/j/k/l (j/c/v/p in MacOS Dvorak Layout) to Arrows",
             "manipulators": [
               {
                 "from": {
                   "key_code": "j",
                   "modifiers": {
-                    "mandatory": ["command"]
+                    "mandatory": ["option"]
                   }
                 },
                 "to": [
@@ -315,7 +315,7 @@
                 "from": {
                   "key_code": "c",
                   "modifiers": {
-                    "mandatory": ["command"]
+                    "mandatory": ["option"]
                   }
                 },
                 "to": [
@@ -329,7 +329,7 @@
                 "from": {
                   "key_code": "v",
                   "modifiers": {
-                    "mandatory": ["command"]
+                    "mandatory": ["option"]
                   }
                 },
                 "to": [
@@ -343,7 +343,7 @@
                 "from": {
                   "key_code": "p",
                   "modifiers": {
-                    "mandatory": ["command"]
+                    "mandatory": ["option"]
                   }
                 },
                 "to": [
@@ -734,4 +734,3 @@
     }
   ]
 }
-
