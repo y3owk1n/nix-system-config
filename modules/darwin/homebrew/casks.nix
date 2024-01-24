@@ -16,6 +16,7 @@
       "lulu"
       "arc"
       "obsidian"
+      "keycastr"
     ];
   };
 }
