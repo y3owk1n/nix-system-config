@@ -42,15 +42,15 @@
         shift + alt - 9 : yabai -m window --space 9; yabai -m space --focus 9
 
         # focus spaces
-        alt - 1 : yabai -m space --focus 1
-        alt - 2 : yabai -m space --focus 2
-        alt - 3 : yabai -m space --focus 3
-        alt - 4 : yabai -m space --focus 4
-        alt - 5 : yabai -m space --focus 5
-        alt - 6 : yabai -m space --focus 6
-        alt - 7 : yabai -m space --focus 7
-        alt - 8 : yabai -m space --focus 8
-        alt - 9 : yabai -m space --focus 9
+        cmd + shift + alt + ctrl - 1 : yabai -m space --focus 1
+        cmd + shift + alt + ctrl - 2 : yabai -m space --focus 2
+        cmd + shift + alt + ctrl - 3 : yabai -m space --focus 3
+        cmd + shift + alt + ctrl - 4 : yabai -m space --focus 4
+        cmd + shift + alt + ctrl - 5 : yabai -m space --focus 5
+        cmd + shift + alt + ctrl - 6 : yabai -m space --focus 6
+        cmd + shift + alt + ctrl - 7 : yabai -m space --focus 7
+        cmd + shift + alt + ctrl - 8 : yabai -m space --focus 8
+        cmd + shift + alt + ctrl - 9 : yabai -m space --focus 9
       '';
     };
   };
