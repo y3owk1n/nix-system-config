@@ -22,10 +22,7 @@
             "manipulators": [
               {
                 "from": {
-                  "key_code": "a",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
+                  "key_code": "a"
                 },
                 "parameters": {
                   "basic.to_delayed_action_delay_milliseconds": 200,
@@ -53,10 +50,7 @@
               },
               {
                 "from": {
-                  "key_code": "semicolon",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
+                  "key_code": "semicolon"
                 },
                 "parameters": {
                   "basic.to_delayed_action_delay_milliseconds": 200,
@@ -84,10 +78,7 @@
               },
               {
                 "from": {
-                  "key_code": "s",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
+                  "key_code": "s"
                 },
                 "parameters": {
                   "basic.to_delayed_action_delay_milliseconds": 200,
@@ -115,10 +106,7 @@
               },
               {
                 "from": {
-                  "key_code": "l",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
+                  "key_code": "l"
                 },
                 "parameters": {
                   "basic.to_delayed_action_delay_milliseconds": 200,
@@ -146,10 +134,7 @@
               },
               {
                 "from": {
-                  "key_code": "d",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
+                  "key_code": "d"
                 },
                 "parameters": {
                   "basic.to_delayed_action_delay_milliseconds": 200,
@@ -177,10 +162,7 @@
               },
               {
                 "from": {
-                  "key_code": "k",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
+                  "key_code": "k"
                 },
                 "parameters": {
                   "basic.to_delayed_action_delay_milliseconds": 200,
@@ -208,10 +190,7 @@
               },
               {
                 "from": {
-                  "key_code": "f",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
+                  "key_code": "f"
                 },
                 "parameters": {
                   "basic.to_delayed_action_delay_milliseconds": 200,
@@ -239,10 +218,7 @@
               },
               {
                 "from": {
-                  "key_code": "j",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
+                  "key_code": "j"
                 },
                 "parameters": {
                   "basic.to_delayed_action_delay_milliseconds": 200,
@@ -270,10 +246,7 @@
               },
               {
                 "from": {
-                  "key_code": "g",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
+                  "key_code": "g"
                 },
                 "parameters": {
                   "basic.to_delayed_action_delay_milliseconds": 200,
@@ -302,10 +275,7 @@
               },
               {
                 "from": {
-                  "key_code": "h",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
+                  "key_code": "h"
                 },
                 "parameters": {
                   "basic.to_delayed_action_delay_milliseconds": 200,
