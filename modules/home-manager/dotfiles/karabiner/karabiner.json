@@ -363,7 +363,7 @@
                     "mouse_swap_wheels": false,
                     "mouse_swap_xy": false,
                     "simple_modifications": [],
-                    "treat_as_built_in_keyboard": true
+                    "treat_as_built_in_keyboard": false
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
