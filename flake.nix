@@ -14,11 +14,11 @@
     darwin.url = "github:LnL7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    k92-nvim.url = "github:y3owk1n/k92-nvim";
+    # k92-nvim.url = "github:y3owk1n/k92-nvim";
   };
 
-  outputs =
-    inputs@{ nixpkgs, nixpkgs-unstable, home-manager, darwin, k92-nvim, ... }:
+  outputs = inputs@{ nixpkgs, nixpkgs-unstable, home-manager, darwin, ...
+    }: # add k92-nvim if want to use
     let
       darwinSystem = { system, modules, username, pkgs, ... }:
         darwin.lib.darwinSystem {
