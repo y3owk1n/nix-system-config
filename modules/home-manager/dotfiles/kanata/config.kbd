@@ -20,29 +20,39 @@
     tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
     @cap @met_a    @alt_s    @ctl_d    @sft_f    g    h    @sft_j    @ctl_k    @alt_l    @met_;    '    ret
     lsft z    x    c    v    b    n    m    ,    .    /    rsft
-    lctl lmet lalt           spc            ralt rmet rctl
+    lctl lmet lalt           @hyper_spc            ralt rmet rctl
+)
+
+(defvar
+  tap-timeout   100
+  hold-timeout  200
+  tt $tap-timeout
+  ht $hold-timeout
 )
 
 (defalias
     ;; tap: backtick (grave), hold: toggle layer-switching layer while held
-    grl (tap-hold 200 200 grv (layer-toggle layers))
+    grl (tap-hold $tt $ht grv (layer-toggle layers))
 
     ;; layer-switch changes the base layer.
     dvk (layer-switch dvorak)
 
     ;; tap for esc, hold for lctl
-    cap (tap-hold 200 200 esc lctl)
+    cap (tap-hold $tt $ht esc lctl)
+
+    ;; hyper key
+    hyper_spc (tap-hold $tt $ht spc (multi lalt lctl lmet lsft))
 
     ;; homerow mod
-    met_a (tap-hold 200 200 a lmet)
-    alt_s (tap-hold 200 200 s lalt) ;; s -> o
-    ctl_d (tap-hold 200 200 d lctl) ;; d -> e
-    sft_f (tap-hold 200 200 f lsft) ;; f -> u
+    met_a (tap-hold $tt $ht a lmet)
+    alt_s (tap-hold $tt $ht s lalt) ;; s -> o
+    ctl_d (tap-hold $tt $ht d lctl) ;; d -> e
+    sft_f (tap-hold $tt $ht f lsft) ;; f -> u
 
-    sft_j (tap-hold 200 200 j rsft) ;; j -> h
-    ctl_k (tap-hold 200 200 k rctl) ;; k -> t
-    alt_l (tap-hold 200 200 l lalt) ;; l -> n
-    met_; (tap-hold 200 200 ; rmet) ;; ; -> s
+    sft_j (tap-hold $tt $ht j rsft) ;; j -> h
+    ctl_k (tap-hold $tt $ht k rctl) ;; k -> t
+    alt_l (tap-hold $tt $ht l lalt) ;; l -> n
+    met_; (tap-hold $tt $ht ; rmet) ;; ; -> s
 )
 
 (deflayer layers
