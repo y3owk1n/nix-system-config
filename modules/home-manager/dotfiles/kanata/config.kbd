@@ -1,0 +1,54 @@
+(defsrc
+    grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+    tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+    caps a    s    d    f    g    h    j    k    l    ;    '    ret
+    lsft z    x    c    v    b    n    m    ,    .    /    rsft
+    lctl lmet lalt           spc            ralt rmet rctl
+)
+
+;; Because I am already using dvorak through system, no need to remap here!
+;; This is the dvorak layout for reference
+;;(deflayer dvorak
+  ;; grv  1    2    3    4    5    6    7    8    9    0    [    ]    bspc
+  ;; tab  '    ,    .    p    y    f    g    c    r    l    /    =    \
+  ;; caps a    o    e    u    i    d    h    t    n    s    -    ret
+  ;; lsft ;    q    j    k    x    b    m    w    v    z    rsft
+  ;; lctl lmet lalt           spc            ralt rmet rctl
+;; )
+(deflayer dvorak
+    @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
+    tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+    @cap @met_a    @alt_s    @ctl_d    @sft_f    g    h    @sft_j    @ctl_k    @alt_l    @met_;    '    ret
+    lsft z    x    c    v    b    n    m    ,    .    /    rsft
+    lctl lmet lalt           spc            ralt rmet rctl
+)
+
+(defalias
+    ;; tap: backtick (grave), hold: toggle layer-switching layer while held
+    grl (tap-hold 200 200 grv (layer-toggle layers))
+
+    ;; layer-switch changes the base layer.
+    dvk (layer-switch dvorak)
+
+    ;; tap for esc, hold for lctl
+    cap (tap-hold 200 200 esc lctl)
+
+    ;; homerow mod
+    met_a (tap-hold 200 200 a lmet)
+    alt_s (tap-hold 200 200 s lalt) ;; s -> o
+    ctl_d (tap-hold 200 200 d lctl) ;; d -> e
+    sft_f (tap-hold 200 200 f lsft) ;; f -> u
+
+    sft_j (tap-hold 200 200 j rsft) ;; j -> h
+    ctl_k (tap-hold 200 200 k rctl) ;; k -> t
+    alt_l (tap-hold 200 200 l lalt) ;; l -> n
+    met_; (tap-hold 200 200 ; rmet) ;; ; -> s
+)
+
+(deflayer layers
+    _    @dvk _    lrld _    _    _    _    _    _    _    _    _    _
+    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+    _    _    _    _    _    _    _    _    _    _    _    _    _
+    _    _    _    _    _    _    _    _    _    _    _    _
+    _    _    _              _              _    _    _
+)

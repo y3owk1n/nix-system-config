@@ -15,5 +15,10 @@
         "${config.home.homeDirectory}/nix-system-config/modules/home-manager/dotfiles/kmonad";
       recursive = true;
     };
+    kanata = {
+      source = config.lib.file.mkOutOfStoreSymlink
+        "${config.home.homeDirectory}/nix-system-config/modules/home-manager/dotfiles/kanata";
+      recursive = true;
+    };
   };
 }
