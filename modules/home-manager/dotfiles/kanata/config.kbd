@@ -23,6 +23,14 @@
     lctl lmet lalt           @hyper_spc            ralt rmet rctl
 )
 
+(deflayer arrows
+    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+    _    _    _    _    _    _    _    _    _    _    rght    _    _    _
+    _    _    _    _    _    _    _    lft    _    _    _    _    _
+    _    _    _    down    up    _    _    _    _    _    _    _
+    _    _    _              _              _    _    _
+)
+
 (defvar
   tap-timeout   100
   hold-timeout  200
@@ -37,8 +45,8 @@
     ;; layer-switch changes the base layer.
     dvk (layer-switch dvorak)
 
-    ;; tap for esc, hold for lctl
-    cap (tap-hold $tt $ht esc lctl)
+    ;; tap for esc, hold to enter arrow layer
+    cap (tap-hold $tt $ht esc (layer-toggle arrows))
 
     ;; hyper key
     hyper_spc (tap-hold $tt $ht spc (multi lalt lctl lmet lsft))
