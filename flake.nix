@@ -32,7 +32,7 @@
       darwinConfigurations = {
         demos-Virtual-Machine = darwinSystem {
           system = "aarch64-darwin";
-          pkgs = import nixpkgs-unstable { system = "aarch64-darwin"; };
+          pkgs = import nixpkgs { system = "aarch64-darwin"; };
           specialArgs = { inherit inputs; };
           modules = [{
             home-manager = {
@@ -47,7 +47,7 @@
 
         Kyles-MacBook-Air = darwinSystem {
           system = "aarch64-darwin";
-          pkgs = import nixpkgs-unstable { system = "aarch64-darwin"; };
+          pkgs = import nixpkgs { system = "aarch64-darwin"; };
           specialArgs = { inherit inputs; };
           modules = [{
             home-manager = {
@@ -62,7 +62,7 @@
 
         Kyles-iMac = darwinSystem {
           system = "aarch64-darwin";
-          pkgs = import nixpkgs-unstable { system = "aarch64-darwin"; };
+          pkgs = import nixpkgs { system = "aarch64-darwin"; };
           specialArgs = { inherit inputs; };
           modules = [{
             home-manager = {
