@@ -60,8 +60,8 @@
 )
 
 (defvar
-  tap-timeout   100
-  hold-timeout  200
+  tap-timeout   1
+  hold-timeout  160
   tt $tap-timeout
   ht $hold-timeout
 )
@@ -80,15 +80,25 @@
     hyper_spc (tap-hold $tt $ht spc (multi lalt lctl lmet lsft))
 
     ;; homerow mod
-    met_a (tap-hold $tt $ht a lmet)
-    alt_s (tap-hold $tt $ht s lalt) ;; s -> o
-    ctl_d (tap-hold $tt $ht d lctl) ;; d -> e
-    sft_f (tap-hold $tt $ht f lsft) ;; f -> u
+    ;; met_a (tap-hold $tt $ht a lmet)
+    ;; alt_s (tap-hold $tt $ht s lalt) ;; s -> o
+    ;; ctl_d (tap-hold $tt $ht d lctl) ;; d -> e
+    ;; sft_f (tap-hold $tt $ht f lsft) ;; f -> u
 
-    sft_j (tap-hold $tt $ht j rsft) ;; j -> h
-    ctl_k (tap-hold $tt $ht k rctl) ;; k -> t
-    alt_l (tap-hold $tt $ht l lalt) ;; l -> n
-    met_; (tap-hold $tt $ht ; rmet) ;; ; -> s
+    ;; sft_j (tap-hold $tt $ht j rsft) ;; j -> h
+    ;; ctl_k (tap-hold $tt $ht k rctl) ;; k -> t
+    ;; alt_l (tap-hold $tt $ht l lalt) ;; l -> n
+    ;; met_; (tap-hold $tt $ht ; rmet) ;; ; -> s
+
+    met_a (tap-hold-release $tt $ht a (one-shot 500 lmet))
+    alt_s (tap-hold-release $tt $ht s (one-shot 500 lalt)) ;; s -> o
+    ctl_d (tap-hold-release $tt $ht d (one-shot 500 lctl)) ;; d -> e
+    sft_f (tap-hold-release $tt $ht f (one-shot 500 lsft)) ;; f -> u
+
+    sft_j (tap-hold-release $tt $ht j (one-shot 500 rsft)) ;; j -> h
+    ctl_k (tap-hold-release $tt $ht k (one-shot 500 rctl)) ;; k -> t
+    alt_l (tap-hold-release $tt $ht l (one-shot 500 lalt)) ;; l -> n
+    met_; (tap-hold-release $tt $ht ; (one-shot 500 rmet)) ;; ; -> s
 )
 
 (deflayer layers
