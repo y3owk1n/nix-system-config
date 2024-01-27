@@ -2,6 +2,14 @@
 
 This is a project to help me to manage my Nix system configuration, mainly with Darwin and Home Manager.
 
+## Notes for future me
+
+### To use MX Master 3 bluetooth mouse with kanata
+
+- Reset kanata
+- Restart Keychron keyboard
+- Both keyboard and mouse should be working
+
 ## Commands to make it work (For future me)
 
 ### Installing Nix on Macos
