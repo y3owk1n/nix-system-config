@@ -24,9 +24,12 @@
   ;; whatever reason.
   ;;
   movemouse-smooth-diagonals yes
+
+  ;; concurrent-tap-hold yes
 )
 
 (defsrc
+    esc  f1   f2    f3    f4    f5    f6    f7    f8    f9    f10    f11    f12
     grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
     tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
     caps a    s    d    f    g    h    j    k    l    ;    '    ret
@@ -37,13 +40,15 @@
 ;; Because I am already using dvorak through system, no need to remap here!
 ;; This is the dvorak layout for reference
 ;;(deflayer dvorak
-  ;; grv  1    2    3    4    5    6    7    8    9    0    [    ]    bspc
-  ;; tab  '    ,    .    p    y    f    g    c    r    l    /    =    \
-  ;; caps a    o    e    u    i    d    h    t    n    s    -    ret
-  ;; lsft ;    q    j    k    x    b    m    w    v    z    rsft
-  ;; lctl lmet lalt           spc            ralt rmet rctl
+    ;; esc  f1   f2    f3    f4    f5    f6    f7    f8    f9    f10    f11    f12
+    ;; grv  1    2    3    4    5    6    7    8    9    0    [    ]    bspc
+    ;; tab  '    ,    .    p    y    f    g    c    r    l    /    =    \
+    ;; caps a    o    e    u    i    d    h    t    n    s    -    ret
+    ;; lsft ;    q    j    k    x    b    m    w    v    z    rsft
+    ;; lctl lmet lalt           spc            ralt rmet rctl
 ;; )
 (deflayer dvorak
+    @esc    _    _    _    _    _    _    _    _    _    _    _    _
     @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
     tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
     @cap @met_a    @alt_s    @ctl_d    @sft_f    g    h    @sft_j    @ctl_k    @alt_l    @met_;    '    ret
@@ -52,10 +57,20 @@
 )
 
 (deflayer arrows
+    _    _    _    _    _    _    _    _    _    _    _    _    _
     _    _    _    _    _    _    _    _    _    _    _    _    _    _
     _    _    _    _    _    _    _    _    _    _    rght    _    _    _
     _    _    _    _    _    _    _    lft    _    _    _    _    _
     _    _    _    down    up    _    _    _    _    _    _    _
+    _    _    _              _              _    _    _
+)
+
+(deflayer fns
+    _  brdown    brup    _    _    _    _    prev    pp    next    mute    voldwn    volu
+    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+    _    _    _    _    _    _    _    _    _    _    _    _    _
+    _    _    _    _    _    _    _    _    _    _    _    _
     _    _    _              _              _    _    _
 )
 
@@ -75,6 +90,9 @@
 
     ;; tap for esc, hold to enter arrow layer
     cap (tap-hold $tt $ht esc (layer-toggle arrows))
+
+    ;; tap for esc, hold to enter fn layer
+    esc (tap-hold $tt $ht esc (layer-toggle fns))
 
     ;; hyper key
     hyper_spc (tap-hold $tt $ht spc (multi lalt lctl lmet lsft))
@@ -102,6 +120,7 @@
 )
 
 (deflayer layers
+    _    _    _    _    _    _    _    _    _    _    _    _    _
     _    @dvk _    lrld _    _    _    _    _    _    _    _    _    _
     _    _    _    _    _    _    _    _    _    _    _    _    _    _
     _    _    _    _    _    _    _    _    _    _    _    _    _
