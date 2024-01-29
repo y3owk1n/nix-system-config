@@ -1,5 +1,6 @@
 (defcfg
   process-unmapped-keys true
+  log-layer-changes no
 )
 
 (defsrc
@@ -53,8 +54,10 @@
 (defvar
   tap-timeout   1
   hold-timeout  160
+  one-shot-timeout  200
   tt $tap-timeout
   ht $hold-timeout
+  ot $one-shot-timeout
 )
 
 (defalias
@@ -78,22 +81,22 @@
     ;; met_a (tap-hold $tt $ht a lmet)
     ;; alt_s (tap-hold $tt $ht s lalt) ;; s -> o
     ;; ctl_d (tap-hold $tt $ht d lctl) ;; d -> e
-    ;; sft_f (tap-hold $tt $ht f lsft) ;; f -> u
+    ;; sft_f (tap-hold-press-timeout $tt $ht f lsft f) ;; f -> u
 
     ;; sft_j (tap-hold $tt $ht j rsft) ;; j -> h
     ;; ctl_k (tap-hold $tt $ht k rctl) ;; k -> t
     ;; alt_l (tap-hold $tt $ht l lalt) ;; l -> n
     ;; met_; (tap-hold $tt $ht ; rmet) ;; ; -> s
 
-    met_a (tap-hold-release $tt $ht a (one-shot 500 lmet))
-    alt_s (tap-hold-release $tt $ht s (one-shot 500 lalt)) ;; s -> o
-    ctl_d (tap-hold-release $tt $ht d (one-shot 500 lctl)) ;; d -> e
-    sft_f (tap-hold-release $tt $ht f (one-shot 500 lsft)) ;; f -> u
+    met_a (tap-hold-release $tt $ht a (one-shot $ot lmet))
+    alt_s (tap-hold-release $tt $ht s (one-shot $ot lalt)) ;; s -> o
+    ctl_d (tap-hold-release $tt $ht d (one-shot $ot lctl)) ;; d -> e
+    sft_f (tap-hold-release $tt $ht f (one-shot $ot lsft)) ;; f -> u
 
-    sft_j (tap-hold-release $tt $ht j (one-shot 500 rsft)) ;; j -> h
-    ctl_k (tap-hold-release $tt $ht k (one-shot 500 rctl)) ;; k -> t
-    alt_l (tap-hold-release $tt $ht l (one-shot 500 lalt)) ;; l -> n
-    met_; (tap-hold-release $tt $ht ; (one-shot 500 rmet)) ;; ; -> s
+    sft_j (tap-hold-release $tt $ht j (one-shot $ot rsft)) ;; j -> h
+    ctl_k (tap-hold-release $tt $ht k (one-shot $ot rctl)) ;; k -> t
+    alt_l (tap-hold-release $tt $ht l (one-shot $ot lalt)) ;; l -> n
+    met_; (tap-hold-release $tt $ht ; (one-shot $ot rmet)) ;; ; -> s
 )
 
 (deflayer layers
