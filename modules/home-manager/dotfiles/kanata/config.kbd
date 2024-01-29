@@ -1,31 +1,5 @@
 (defcfg
-  ;; Enable processing of keys that are not in defsrc.
-  ;; This is useful if you are only mapping a few keys in defsrc instead of
-  ;; most of the keys on your keyboard. Without this, the tap-hold-release and
-  ;; tap-hold-press actions will not activate for keys that are not in defsrc.
-  ;;
-  ;; The reason this is not enabled by default is because some keys may not
-  ;; work correctly if they are intercepted. E.g. rctl/altgr on Windows; see the
-  ;; windows-altgr configuration item above for context.
-  ;;
-  process-unmapped-keys false
-
-  ;; This config entry alters the behavior of movemouse-accel actions.
-  ;; By default, this setting is disabled - vertical and horizontal
-  ;; acceleration are independent. Enabling this setting will emulate QMK mouse
-  ;; move acceleration behavior, i.e. the acceleration state of new mouse
-  ;; movement actions are inherited if others are already being pressed.
-  ;;
-  movemouse-inherit-accel-state yes
-
-  ;; This config entry alters the behavior of movemouseaccel actions.
-  ;; This makes diagonal movements simultaneous to mitigate choppiness in
-  ;; drawing apps, if you're using kanata mouse movements to draw for
-  ;; whatever reason.
-  ;;
-  movemouse-smooth-diagonals yes
-
-  ;; concurrent-tap-hold yes
+  process-unmapped-keys true
 )
 
 (defsrc
