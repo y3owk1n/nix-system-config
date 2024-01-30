@@ -7,30 +7,37 @@ map(
 	{ "n", "x" },
 	"j",
 	"v:count == 0 ? 'gj' : 'j'",
-	{ expr = true, silent = true }
+	{ expr = true, silent = true, desc = "Move line down" }
 )
 map(
 	{ "n", "x" },
 	"<Down>",
 	"v:count == 0 ? 'gj' : 'j'",
-	{ expr = true, silent = true }
+	{ expr = true, silent = true, desc = "Move line down" }
 )
 map(
 	{ "n", "x" },
 	"k",
 	"v:count == 0 ? 'gk' : 'k'",
-	{ expr = true, silent = true }
+	{ expr = true, silent = true, desc = "Move line up" }
 )
 map(
 	{ "n", "x" },
 	"<Up>",
 	"v:count == 0 ? 'gk' : 'k'",
-	{ expr = true, silent = true }
+	{ expr = true, silent = true, desc = "Move line up" }
 )
 
+-- better start & end line
+map({ "n", "v" }, "H", "^", { desc = "Move to start of line" })
+map({ "n", "v" }, "L", "$", { desc = "Move to end of line" })
+
+-- better redo
+map("n", "U", "<C-r>", { desc = "Dedent line" })
+
 -- better indenting
-map("v", "<", "<gv")
-map("v", ">", ">gv")
+map("v", "<", "<gv", { desc = "Dedent line" })
+map("v", ">", ">gv", { desc = "Indent line" })
 
 -- window
 map("n", "-", "<C-W>s", { desc = "Split window below" })
