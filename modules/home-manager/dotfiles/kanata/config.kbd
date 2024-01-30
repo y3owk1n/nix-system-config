@@ -27,6 +27,15 @@
 (deflayer dvorak
     @esc    _    _    _    _    _    _    _    _    _    _    _    _
     @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
+    tab  @q    @w    @e    @r    @t    @y    @u    @i    @o    @p    @[    @]    \
+    esc @met_a    @alt_s    @ctl_d    @sft_f    @arr_g    @arr_h    @sft_j    @ctl_k    @alt_l    @met_;    '    ret
+    XX @z    @x    @c    @v    @b    @n    @m    @,    @.    /    XX
+    XX XX XX           @hyper_spc            XX XX XX
+)
+
+(deflayer dvorak-tp
+    @esc    _    _    _    _    _    _    _    _    _    _    _    _
+    @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
     tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
     esc @met_a    @alt_s    @ctl_d    @sft_f    @arr_g    @arr_h    @sft_j    @ctl_k    @alt_l    @met_;    '    ret
     XX z    x    c    v    b    n    m    ,    .    /    XX
@@ -58,6 +67,55 @@
   tt $tap-timeout
   ht $hold-timeout
   ot $one-shot-timeout
+)
+
+;; https://github.com/jtroo/kanata/issues/502#issuecomment-1671910161
+(deffakekeys
+  to-dvorak (layer-switch dvorak)
+)
+
+(defalias
+  ;; alias to cancel tap-hold keys if typing rapidly but restore after a shord idle period
+  tp (multi
+    (layer-switch dvorak-tp)
+    (on-idle-fakekey to-dvorak tap 35)
+  )
+
+  ' (multi ' @tp)
+  , (multi , @tp)
+  p (multi p @tp)
+  y (multi y @tp)
+  f (multi f @tp)
+  g (multi g @tp)
+  c (multi c @tp)
+  r (multi r @tp)
+  l (multi l @tp)
+  / (multi / @tp)
+  = (multi = @tp)
+  i (multi i @tp)
+  d (multi d @tp)
+  h (multi h @tp)
+  t (multi t @tp)
+  n (multi n @tp)
+  s (multi s @tp)
+  - (multi - @tp)
+  ; (multi ; @tp)
+  q (multi q @tp)
+  j (multi j @tp)
+  k (multi k @tp)
+  x (multi x @tp)
+  b (multi b @tp)
+  m (multi m @tp)
+  w (multi w @tp)
+  v (multi v @tp)
+  z (multi z @tp)
+  . (multi . @tp)
+  a (multi a @tp)
+  o (multi o @tp)
+  e (multi e @tp)
+  u (multi u @tp)
+  [ (multi [ @tp)
+  ] (multi ] @tp)
 )
 
 (defalias
