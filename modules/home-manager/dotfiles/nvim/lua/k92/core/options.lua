@@ -74,7 +74,15 @@ opt.updatetime = 200 -- Save swap file and trigger CursorHold
 
 -- words
 opt.iskeyword:append("-") -- consider string-string as whole words
-opt.fillchars = { eob = " " }
+opt.fillchars = {
+	foldopen = "",
+	foldclose = "",
+	-- fold = "⸱",
+	fold = " ",
+	foldsep = " ",
+	diff = "╱",
+	eob = " ",
+}
 
 -- enable undercurl
 cmd([[let &t_Cs = "\e[4:3m]"]])
@@ -106,3 +114,9 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 	opts.border = opts.border or "rounded"
 	return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
+
+-- for nvim ufo setup
+vim.o.foldcolumn = "1" -- '0' is not bad
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
