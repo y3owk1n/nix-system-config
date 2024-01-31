@@ -1,13 +1,14 @@
 local augroup = require("k92.utils.autocmds").augroup
+local autocmd = vim.api.nvim_create_autocmd
 
-vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
+autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
 	desc = "Check if buffers changed on editor focus",
 	group = augroup("checktime"),
 	command = "checktime",
 })
 
 -- Highlight on yank
-vim.api.nvim_create_autocmd("TextYankPost", {
+autocmd("TextYankPost", {
 	group = augroup("highlight_yank"),
 	callback = function()
 		vim.highlight.on_yank()
@@ -15,7 +16,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- resize splits if window got resized
-vim.api.nvim_create_autocmd({ "VimResized" }, {
+autocmd({ "VimResized" }, {
 	group = augroup("resize_splits"),
 	callback = function()
 		local current_tab = vim.fn.tabpagenr()
@@ -25,7 +26,7 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 })
 
 -- go to last loc when opening a buffer
-vim.api.nvim_create_autocmd("BufReadPost", {
+autocmd("BufReadPost", {
 	group = augroup("last_loc"),
 	callback = function(event)
 		local exclude = { "gitcommit" }
@@ -46,7 +47,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 })
 
 -- close some filetypes with <q>
-vim.api.nvim_create_autocmd("FileType", {
+autocmd("FileType", {
 	group = augroup("close_with_q"),
 	pattern = {
 		"PlenaryTestPopup",
@@ -76,7 +77,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- wrap and check for spell in text filetypes
-vim.api.nvim_create_autocmd("FileType", {
+autocmd("FileType", {
 	group = augroup("wrap_spell"),
 	pattern = { "gitcommit", "markdown" },
 	callback = function()
@@ -86,7 +87,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- Auto create dir when saving a file, in case some intermediate directory does not exist
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+autocmd({ "BufWritePre" }, {
 	group = augroup("auto_create_dir"),
 	callback = function(event)
 		if event.match:match("^%w%w+://") then
@@ -98,13 +99,13 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 })
 
 -- Turn off paste mode when leaving insert
-vim.api.nvim_create_autocmd("InsertLeave", {
+autocmd("InsertLeave", {
 	pattern = "*",
 	command = "set nopaste",
 })
 
 -- Fix conceallevel for json files
-vim.api.nvim_create_autocmd("FileType", {
+autocmd("FileType", {
 	pattern = { "json", "jsonc" },
 	callback = function()
 		vim.wo.spell = false
@@ -113,7 +114,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- Fix conceallevel for markdown files
-vim.api.nvim_create_autocmd("FileType", {
+autocmd("FileType", {
 	pattern = { "markdown" },
 	callback = function()
 		vim.wo.conceallevel = 2
@@ -121,7 +122,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- Add border to lspinfo
-vim.api.nvim_create_autocmd({ "FileType" }, {
+autocmd({ "FileType" }, {
 	group = augroup("lspinfo_border"),
 	pattern = {
 		"lspinfo",
@@ -129,5 +130,15 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	},
 	callback = function()
 		require("lspconfig.ui.windows").default_options.border = "rounded"
+	end,
+})
+
+autocmd("FileType", {
+	group = augroup("vertical_help"),
+	pattern = "help",
+	callback = function()
+		vim.bo.bufhidden = "unload"
+		vim.cmd.wincmd("L")
+		vim.cmd.wincmd("=")
 	end,
 })

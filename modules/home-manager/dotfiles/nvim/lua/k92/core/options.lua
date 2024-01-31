@@ -28,6 +28,9 @@ opt.softtabstop = 4 -- 4 spaces for softtab
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 
+-- Enable smart indenting (see https://stackoverflow.com/questions/1204149/smart-wrap-in-vim)
+opt.breakindent = true
+
 -- line wrapping
 opt.wrap = false -- disable line wrapping
 
