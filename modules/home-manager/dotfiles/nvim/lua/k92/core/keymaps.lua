@@ -41,7 +41,7 @@ map("v", ">", ">gv", { desc = "Indent line" })
 
 -- window
 map("n", "-", "<C-W>s", { desc = "Split window below" })
-map("n", "|", "<C-W>v", { desc = "Split window right" })
+map("n", "\\", "<C-W>v", { desc = "Split window right" })
 map("n", "<leader>wx", ":close<CR>", { desc = "Close current split" })
 
 -- Clear search with <esc>
