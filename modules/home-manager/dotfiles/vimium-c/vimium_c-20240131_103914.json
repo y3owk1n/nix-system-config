@@ -1,0 +1,28 @@
+{
+	"name": "Vimium C",
+	"@time": "31/01/2024, 10:39:14",
+	"time": 1706668754508,
+	"environment": {
+		"extension": "1.99.994",
+		"platform": "mac",
+		"chromium": 121
+	},
+	"exclusionRules": [
+		{
+			"passKeys": "",
+			"pattern": ":https://mail.google.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": "^https?://docs\\.google\\.com/spreadsheets/"
+		}
+	],
+	"keyLayout": 2,
+	"keyMappings": [
+		"#!no-check",
+		"mapKey u f",
+		""
+	],
+	"linkHintCharacters": "aoeuhtnsid",
+	"vimSync": true
+}
