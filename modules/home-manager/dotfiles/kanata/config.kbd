@@ -37,9 +37,9 @@
     @esc    _    _    _    _    _    _    _    _    _    _    _    _
     @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
     tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-    esc @met_a    @alt_s    @ctl_d    @sft_f    @arr_g    @arr_h    @sft_j    @ctl_k    @alt_l    @met_;    '    ret
+    esc a    s    d    f    g    h    j    k    l    ;    '    ret
     XX z    x    c    v    b    n    m    ,    .    /    XX
-    XX XX XX           @hyper_spc            XX XX XX
+    XX XX XX           spc            XX XX XX
 )
 
 (deflayer arrows
