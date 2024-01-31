@@ -23,15 +23,17 @@ return {
 				delete_to_trash = true,
 				skip_confirm_for_simple_edits = true,
 				keymaps = {
-					["o?"] = "actions.show_help",
+					["?"] = "actions.show_help",
 					["<CR>"] = "actions.select",
-					["<leader>o\\"] = "actions.select_vsplit",
-					["<leader>o-"] = "actions.select_split", -- this is used to navigate left
-					["<leader>or"] = "actions.refresh",
-					["<leader>os"] = "actions.change_sort",
-					["<leader>ox"] = "actions.open_external",
-					["<leader>oh"] = "actions.toggle_hidden",
-					["<leader>ot"] = "actions.toggle_trash",
+					["\\"] = "actions.select_vsplit",
+					["-"] = "actions.select_split", -- this is used to navigate left
+					["r"] = "actions.refresh",
+					["s"] = "actions.change_sort",
+					["x"] = "actions.open_external",
+					["h"] = "actions.toggle_hidden",
+					["t"] = "actions.toggle_trash",
+					["<BS>"] = "actions.parent",
+					["_"] = "actions.open_cwd",
 				},
 				use_default_keymaps = false,
 			})
