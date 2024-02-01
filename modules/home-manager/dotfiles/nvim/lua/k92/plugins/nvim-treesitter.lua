@@ -17,7 +17,7 @@ return {
 		end,
 		dependencies = {
 			"windwp/nvim-ts-autotag",
-			"nvim-treesitter/nvim-treesitter-textobjects",
+			-- "nvim-treesitter/nvim-treesitter-textobjects",
 		},
 		config = function()
 			-- import nvim-treesitter plugin
