@@ -69,7 +69,7 @@ map("n", "<leader>r", function()
 	local cmd = ":%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>"
 	local keys = vim.api.nvim_replace_termcodes(cmd, true, false, true)
 	vim.api.nvim_feedkeys(keys, "n", false)
-end)
+end, { desc = "Replace word under cursor" })
 
 -- Quick SO
 map("n", "<leader>S", function()

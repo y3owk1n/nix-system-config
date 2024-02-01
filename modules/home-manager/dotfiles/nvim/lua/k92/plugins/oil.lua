@@ -44,7 +44,7 @@ return {
 
 			map("n", "<leader>E", function()
 				oil.toggle_float(vim.fn.getcwd())
-			end, { desc = "Explorer Parent" })
+			end, { desc = "Explorer (CWD)" })
 		end,
 	},
 }

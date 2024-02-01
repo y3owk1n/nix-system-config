@@ -1,7 +1,15 @@
+local keymap = require("k92.utils.keymaps")
+local map = keymap.map
+
 return {
 	"mbbill/undotree",
 
 	config = function()
-		vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+		map(
+			"n",
+			"<leader>u",
+			vim.cmd.UndotreeToggle,
+			{ desc = "Toggle undotree" }
+		)
 	end,
 }
