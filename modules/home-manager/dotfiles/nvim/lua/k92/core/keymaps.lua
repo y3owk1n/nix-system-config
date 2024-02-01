@@ -61,8 +61,8 @@ map("n", "N", "Nzzzv", { desc = "Search previous and center" })
 
 -- Do things without affecting the registers
 map("n", "x", '"_x', { desc = "Delete a character without copying it" })
-map({ "n", "x", "v" }, "p", '"0p', { desc = "Paste without replacing" })
-map({ "n", "x", "v" }, "P", '"0P', { desc = "Paste without replacing" })
+map("x", "<leader>p", '"_dP', { desc = "Paste without replacing" })
+map({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without replacing" })
 
 -- make file executable
 map(
