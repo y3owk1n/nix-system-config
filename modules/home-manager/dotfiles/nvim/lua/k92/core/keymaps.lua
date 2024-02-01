@@ -71,6 +71,12 @@ map("n", "<leader>r", function()
 	vim.api.nvim_feedkeys(keys, "n", false)
 end)
 
+-- Quick SO
+map("n", "<leader>S", function()
+	vim.cmd("so")
+	print("source file")
+end, { desc = "Source file" })
+
 -- make file executable
 map(
 	"n",
