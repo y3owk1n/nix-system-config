@@ -74,6 +74,12 @@ autocmd("FileType", {
 			"<cmd>close<cr>",
 			{ buffer = event.buf, silent = true }
 		)
+		vim.keymap.set(
+			"n",
+			"<esc>",
+			"<cmd>close<cr>",
+			{ buffer = event.buf, silent = true }
+		)
 	end,
 })
 
