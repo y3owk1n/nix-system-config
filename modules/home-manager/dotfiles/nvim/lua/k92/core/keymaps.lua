@@ -2,7 +2,7 @@ local keymap = require("k92.utils.keymaps")
 local map = keymap.map
 local terminal = require("k92.utils.terminal")
 
--- better up/down
+-- Better up/down
 map(
 	{ "n", "x" },
 	"j",
@@ -28,18 +28,18 @@ map(
 	{ expr = true, silent = true, desc = "Move line up" }
 )
 
--- better start & end line
+-- Better start & end line
 map({ "n", "v" }, "H", "^", { desc = "Move to start of line" })
 map({ "n", "v" }, "L", "$", { desc = "Move to end of line" })
 
--- better redo
+-- Better redo
 map("n", "U", "<C-r>", { desc = "Dedent line" })
 
--- better indenting
+-- Better indenting
 map("v", "<", "<gv", { desc = "Dedent line" })
 map("v", ">", ">gv", { desc = "Indent line" })
 
--- window
+-- Window management
 map("n", "-", "<C-W>s", { desc = "Split window below" })
 map("n", "\\", "<C-W>v", { desc = "Split window right" })
 map("n", "<leader>wx", ":close<CR>", { desc = "Close current split" })
@@ -52,7 +52,7 @@ map(
 	{ desc = "Escape and clear hlsearch" }
 )
 
--- util
+-- Center page during actions
 map("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
 map("n", "<C-d>", "<C-d>zz", { desc = "Half page down and center" })
 map("n", "<C-u>", "<C-u>zz", { desc = "Half page up and center" })
@@ -77,22 +77,24 @@ map("n", "<leader>S", function()
 	print("source file")
 end, { desc = "Source file" })
 
--- make file executable
+-- Make file executable
 map(
 	"n",
 	"<leader>fx",
 	"<cmd>!chmod +x %<cr>",
 	{ desc = "Make file executable" }
 )
+
+-- Move lines
 map("v", "J", ":m '>+1<cr>gv=gv", { desc = "Move line up" })
 map("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move line down" })
 
--- lazygit
+-- Lazygit
 map("n", "<leader>gg", function()
 	terminal({ "lazygit" }, { esc_esc = false, ctrl_hjkl = false })
 end, { desc = "Lazygit (cwd)" })
 
--- color conversion
+-- Color conversion
 map("n", "<leader>ch", function()
 	require("utils.color").replaceHexWithHSL()
 end, {

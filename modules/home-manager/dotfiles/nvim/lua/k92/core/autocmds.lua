@@ -46,9 +46,9 @@ autocmd("BufReadPost", {
 	end,
 })
 
--- close some filetypes with <q>
+-- close some filetypes with <q> or <esc>
 autocmd("FileType", {
-	group = augroup("close_with_q"),
+	group = augroup("close_with_q_or_esc"),
 	pattern = {
 		"PlenaryTestPopup",
 		"help",
@@ -140,6 +140,7 @@ autocmd({ "FileType" }, {
 	end,
 })
 
+-- Make help page open in vertical split
 autocmd("FileType", {
 	group = augroup("vertical_help"),
 	pattern = "help",
