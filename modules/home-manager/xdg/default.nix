@@ -2,17 +2,17 @@
   xdg.configFile = {
     nvim = {
       source = config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/nix-system-config/modules/home-manager/dotfiles/nvim";
+        "${config.home.homeDirectory}/nix-system-config/modules/config/nvim";
       recursive = true;
     };
     karabiner = {
       source = config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/nix-system-config/modules/home-manager/dotfiles/karabiner";
+        "${config.home.homeDirectory}/nix-system-config/modules/config/karabiner";
       recursive = true;
     };
     kanata = {
       source = config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/nix-system-config/modules/home-manager/dotfiles/kanata";
+        "${config.home.homeDirectory}/nix-system-config/modules/config/kanata";
       recursive = true;
     };
   };

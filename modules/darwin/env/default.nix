@@ -12,10 +12,6 @@ in {
     systemPath =
       [ "/opt/homebrew/bin" "/opt/homebrew/sbin" "/run/current-system/sw/bin" ];
     pathsToLink = [ "/Applications" "/share/fish" ];
-    # launchDaemons.kanata = {
-    #   enable = true;
-    #   source = ../../home-manager/dotfiles/kanata/katana.plist;
-    # };
   };
   launchd.daemons.kanata = {
     serviceConfig = {

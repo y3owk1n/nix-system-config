@@ -30,8 +30,6 @@
           "darwin-rebuild switch --impure --flake ~/nix-system-config/.#";
         nixup = "pushd ~/nix-system-config; nix flake update; nixswitch; popd";
         nixcleanup = "bash ~/nix-system-config/cleanup.sh";
-        # kanata =
-        #   "sudo $HOME/nix-system-config/modules/home-manager/dotfiles/kanata/kanata_macos_cmd_allowed --cfg $HOME/nix-system-config/modules/home-manager/dotfiles/kanata/config.kbd";
       };
       plugins = [
         {
