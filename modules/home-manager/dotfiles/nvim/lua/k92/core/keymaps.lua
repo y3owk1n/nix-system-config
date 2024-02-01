@@ -58,6 +58,13 @@ map("n", "<C-d>", "<C-d>zz", { desc = "Half page down and center" })
 map("n", "<C-u>", "<C-u>zz", { desc = "Half page up and center" })
 map("n", "n", "nzzzv", { desc = "Search next and center" })
 map("n", "N", "Nzzzv", { desc = "Search previous and center" })
+
+-- Do things without affecting the registers
+map("n", "x", '"_x', { desc = "Delete a character without copying it" })
+map({ "n", "x", "v" }, "p", '"0p', { desc = "Paste without replacing" })
+map({ "n", "x", "v" }, "P", '"0P', { desc = "Paste without replacing" })
+
+-- make file executable
 map(
 	"n",
 	"<leader>fx",
