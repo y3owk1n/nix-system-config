@@ -4,7 +4,7 @@ local map = keymap.map
 return {
 	{
 		"kevinhwang91/nvim-ufo",
-		event = "BufEnter",
+		event = { "BufReadPost", "BufNewFile", "BufWritePre" },
 		dependencies = {
 			"kevinhwang91/promise-async",
 		},
