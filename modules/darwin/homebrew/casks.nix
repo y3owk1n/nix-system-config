@@ -17,6 +17,7 @@
       "arc"
       "obsidian"
       "keycastr"
+      "pieces"
     ];
   };
 }
