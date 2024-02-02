@@ -24,6 +24,7 @@ return {
 		local buffer_util = require("k92.utils.buffer")
 		local codeium_util = require("k92.utils.codeium")
 		local startup_util = require("k92.utils.startup")
+		local harpoon_util = require("k92.utils.harpoon")
 
 		vim.o.laststatus = vim.g.lualine_laststatus
 
@@ -67,6 +68,10 @@ return {
 					},
 				},
 				lualine_c = {
+					{
+						harpoon_util.show_harpoon_component,
+						color = { fg = catppuccin_palettes.flamingo },
+					},
 					{
 						"filename",
 						path = 1,
