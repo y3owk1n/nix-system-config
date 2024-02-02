@@ -10,5 +10,6 @@
     ./tmux
     ./fish
     ./zsh
+    ./neovim
   ];
 }

@@ -21,7 +21,6 @@ in {
       jq
       agkozak-zsh-prompt
       # --- neovim ---
-      neovim
       luajit
       luajitPackages.luarocks # for nvim
       nixfmt # for nvim
