@@ -21,32 +21,11 @@ return {
 		local lazy_status = require("lazy.status") -- to configure lazy pending updates count
 		local catppuccin_palettes = require("catppuccin.palettes").get_palette()
 
+		local buffer_util = require("k92.utils.buffer")
+		local codeium_util = require("k92.utils.codeium")
+		local startup_util = require("k92.utils.startup")
+
 		vim.o.laststatus = vim.g.lualine_laststatus
-
-		local show_codeium_status_string = function()
-			return vim.fn["codeium#GetStatusString"]()
-		end
-
-		local show_startuptime = function()
-			local stats = require("lazy").stats()
-			local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-			return (
-				"⚡ "
-				.. stats.loaded
-				.. "/"
-				.. stats.count
-				.. " ("
-				.. ms
-				.. "ms)"
-			)
-		end
-
-		local function is_writing_in_buffer_only()
-			-- Check if we are in a buffer
-			local in_buffer = vim.fn.buflisted(vim.fn.bufnr("%")) > 0
-
-			return in_buffer
-		end
 
 		local function mode_icon()
 			return " " .. "" .. " "
@@ -90,7 +69,7 @@ return {
 				lualine_c = {
 					{
 						"filename",
-						path = 4,
+						path = 1,
 					},
 					{
 						"diagnostics",
@@ -109,14 +88,14 @@ return {
 						color = { fg = catppuccin_palettes.flamingo },
 					},
 					{
-						show_startuptime,
+						startup_util.show_startuptime,
 						color = {
 							fg = catppuccin_palettes.rosewater,
 						},
 					},
 					{
-						show_codeium_status_string,
-						cond = is_writing_in_buffer_only,
+						codeium_util.show_codeium_status_string,
+						cond = buffer_util.is_writing_in_buffer_only,
 					},
 					{
 						"filetype",
