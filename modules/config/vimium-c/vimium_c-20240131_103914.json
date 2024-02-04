@@ -1,7 +1,7 @@
 {
   "name": "Vimium C",
-  "@time": "31/01/2024, 12:21:10",
-  "time": 1706674870748,
+  "@time": "04/02/2024, 10:20:02",
+  "time": 1707013202231,
   "environment": {
     "extension": "1.99.994",
     "platform": "mac",
@@ -18,7 +18,15 @@
     }
   ],
   "keyLayout": 2,
-  "keyMappings": ["#!no-check", "unmap f", "map u LinkHints.activate", ""],
+  "keyMappings": [
+    "#!no-check",
+    "unmap f",
+    "map u LinkHints.activate",
+    "",
+    "unmap F",
+    "map U LinkHints.activateOpenInNewTab",
+    ""
+  ],
   "linkHintCharacters": "htnsgcrl",
   "vimSync": true
 }
