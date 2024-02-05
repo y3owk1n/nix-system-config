@@ -13,17 +13,17 @@ in {
       [ "/opt/homebrew/bin" "/opt/homebrew/sbin" "/run/current-system/sw/bin" ];
     pathsToLink = [ "/Applications" "/share/fish" ];
   };
-  launchd.daemons.kanata = {
-    serviceConfig = {
-      KeepAlive = true;
-      RunAtLoad = true;
-      ProgramArguments = [
-        "/bin/sh"
-        "-c"
-        "exec sudo /run/current-system/sw/bin/kanata -n -c /Users/kylewong/.config/kanata/config.kbd"
-      ];
-      StandardErrorPath = "/var/log/kanata.log";
-      StandardOutPath = "/var/log/kanata.log";
-    };
-  };
+  # launchd.daemons.kanata = {
+  #   serviceConfig = {
+  #     KeepAlive = true;
+  #     RunAtLoad = true;
+  #     ProgramArguments = [
+  #       "/bin/sh"
+  #       "-c"
+  #       "exec sudo /run/current-system/sw/bin/kanata -n -c /Users/kylewong/.config/kanata/config.kbd"
+  #     ];
+  #     StandardErrorPath = "/var/log/kanata.log";
+  #     StandardOutPath = "/var/log/kanata.log";
+  #   };
+  # };
 }
