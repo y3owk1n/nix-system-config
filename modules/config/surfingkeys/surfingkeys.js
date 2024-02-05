@@ -37,7 +37,7 @@ settings.scrollStepSize = 200;
 settings.tabsThreshold = 0;
 settings.modeAfterYank = "Normal";
 
-map("u", "e");
+map("u", "f");
 map("P", "cc");
 map("gi", "i");
 map("F", "gf");
@@ -53,6 +53,12 @@ map("H", "S");
 map("L", "D");
 map("gt", "R");
 map("gT", "E");
+mapkey("<Ctrl-d>", "Scroll down", () => {
+  Normal.scroll("pageDown");
+});
+mapkey("<Ctrl-u>", "Scroll up", () => {
+  Normal.scroll("pageUp");
+});
 map("K", "R");
 map("J", "E");
 // Next/Prev Page
@@ -84,6 +90,8 @@ unmap("ob");
 unmap("og");
 unmap("od");
 unmap("oy");
+unmap("d");
+unmap("f");
 
 // ---- Search Engines -----
 removeSearchAlias("b", "s");
