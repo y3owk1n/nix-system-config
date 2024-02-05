@@ -15,5 +15,10 @@
         "${config.home.homeDirectory}/nix-system-config/modules/config/kanata";
       recursive = true;
     };
+    surfingkeys = {
+      source = config.lib.file.mkOutOfStoreSymlink
+        "${config.home.homeDirectory}/nix-system-config/modules/config/surfingkeys";
+      recursive = true;
+    };
   };
 }
