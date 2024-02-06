@@ -101,3 +101,12 @@ removeSearchAlias("h", "s");
 removeSearchAlias("w", "s");
 removeSearchAlias("y", "s");
 removeSearchAlias("s", "s");
+
+settings.theme = `
+/* Edit these variables for easy theme making */
+:root {
+  /* Font */
+  --font: 'GeistMono NF', Ubuntu, sans;
+  --font-size: 12;
+  --font-weight: bold;
+`;
