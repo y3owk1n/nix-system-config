@@ -40,7 +40,7 @@ settings.modeAfterYank = "Normal";
 map("u", "f");
 map("P", "cc");
 map("gi", "i");
-map("F", "gf");
+map("U", "gf");
 map("gf", "w");
 map("`", "'");
 // save default key `t` to temp key `>_t`
@@ -109,4 +109,5 @@ settings.theme = `
   --font: 'GeistMono NF', Ubuntu, sans;
   --font-size: 12;
   --font-weight: bold;
+}
 `;
