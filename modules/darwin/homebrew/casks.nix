@@ -14,10 +14,8 @@
       "whatsapp"
       "karabiner-elements"
       "lulu"
-      "arc"
       "obsidian"
       "keycastr"
-      "pieces"
     ];
   };
 }
