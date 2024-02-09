@@ -16,6 +16,7 @@
       "lulu"
       "obsidian"
       "keycastr"
+      "chromium"
     ];
   };
 }
