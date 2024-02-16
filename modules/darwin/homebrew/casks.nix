@@ -17,6 +17,7 @@
       "obsidian"
       "keycastr"
       "chromium"
+      "bruno"
     ];
   };
 }
