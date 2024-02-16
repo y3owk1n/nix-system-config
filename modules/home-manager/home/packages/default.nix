@@ -5,7 +5,8 @@ in {
   home = {
     packages = with pkgs; [
       ripgrep
-      cargo
+      # cargo
+      rustup
       nodejs_18
       bun
       fd

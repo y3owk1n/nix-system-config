@@ -157,6 +157,11 @@ return {
 			on_attach = on_attach,
 		})
 
+		lspconfig["rust_analyzer"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
 		-- configure yamlls server with plugin
 		lspconfig["yamlls"].setup({
 			capabilities = capabilities,

@@ -40,6 +40,7 @@ return {
 				"tailwindcss",
 				"tsserver",
 				"yamlls",
+				"rust_analyzer",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
@@ -63,6 +64,7 @@ return {
 				"prettierd",
 				"markdownlint",
 				"yamllint",
+				"rust_analyzer",
 			},
 		})
 	end,
