@@ -36,6 +36,7 @@ return {
 					["_"] = "actions.open_cwd",
 				},
 				use_default_keymaps = false,
+				experimental_watch_for_changes = true,
 			})
 
 			map("n", "<leader>e", function()
