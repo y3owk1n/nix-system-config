@@ -189,7 +189,7 @@
             "builtin_package_floatingNotes"
           ];
           "emojiPicker_skinTone" = "mediumLight";
-          initialSpotlightHotkey = "Command-49";
+          # initialSpotlightHotkey = "Command-49";
           navigationCommandStyleIdentifierKey = "legacy";
           "onboarding_canShowActionPanelHint" = 0;
           "onboarding_canShowBackNavigationHint" = 0;
@@ -209,7 +209,7 @@
           organizationsPreferencesTabVisited = 1;
           popToRootTimeout = 60;
           raycastAPIOptions = 8;
-          raycastGlobalHotkey = "Command-49";
+          # raycastGlobalHotkey = "Command-49";
           raycastPreferredWindowMode = "default";
           raycastShouldFollowSystemAppearance = 1;
           raycastWindowPresentationMode = 1;
