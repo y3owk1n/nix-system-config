@@ -18,6 +18,7 @@
       "keycastr"
       "chromium"
       "bruno"
+      "kawa"
     ];
   };
 }
