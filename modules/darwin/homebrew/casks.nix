@@ -19,6 +19,7 @@
       "chromium"
       "bruno"
       "kawa"
+      "breaktimer"
     ];
   };
 }
