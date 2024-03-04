@@ -19,7 +19,7 @@
       "chromium"
       "bruno"
       "kawa"
-      "breaktimer"
+      "time-out"
     ];
   };
 }
