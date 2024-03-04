@@ -19,7 +19,7 @@ return {
 			["<leader>g"] = { name = "+[g]it" },
 			["<leader>h"] = { name = "+[h]arpoon" },
 			["<leader>s"] = { name = "+[s]earch" },
-			["<leader>w"] = { name = "+[windows" },
+			["<leader>w"] = { name = "+[w]indows" },
 			["<leader>x"] = { name = "+[t]rouble" },
 		},
 	},
