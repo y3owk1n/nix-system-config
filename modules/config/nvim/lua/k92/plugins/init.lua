@@ -1,10 +1,26 @@
 return {
-	{ "nvim-lua/plenary.nvim", lazy = true },
-	{ "nvim-tree/nvim-web-devicons", lazy = true },
 	{ "christoomey/vim-tmux-navigator" },
 	{
 		"b0o/SchemaStore.nvim",
 		lazy = true,
 		version = false, -- last release is way too old
+	},
+	{
+		"windwp/nvim-ts-autotag",
+		event = { "BufReadPost", "BufNewFile", "BufWritePre" },
+		opts = {},
+	},
+	{
+		"kylechui/nvim-surround",
+		lazy = true,
+		event = { "BufReadPre", "BufNewFile" },
+		version = "*", -- Use for stability; omit to use `main` branch for the latest features
+		config = true,
+	},
+	{
+		"NvChad/nvim-colorizer.lua",
+		lazy = true,
+		event = { "BufReadPre", "BufNewFile" },
+		config = true,
 	},
 }

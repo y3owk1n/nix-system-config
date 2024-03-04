@@ -3,12 +3,17 @@ return {
 	branch = "0.1.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+		{
+			"nvim-telescope/telescope-fzf-native.nvim",
+			build = "make",
+			cond = function()
+				return vim.fn.executable("make") == 1
+			end,
+		},
 		"nvim-tree/nvim-web-devicons",
 	},
-	config = function(_, opts)
+	config = function()
 		local telescope = require("telescope")
-		local actions = require("telescope.actions")
 
 		telescope.setup({
 			defaults = {
@@ -36,81 +41,77 @@ return {
 		telescope.load_extension("fzf")
 
 		-- set keymaps
+		local builtin = require("telescope.builtin")
 		local keymap = vim.keymap -- for conciseness
 
 		keymap.set(
 			"n",
 			"<leader><space>",
-			"<cmd>Telescope find_files<cr>",
-			{ desc = "Fuzzy find files in cwd" }
+			builtin.find_files,
+			{ desc = "[S]earch [F]iles" }
 		)
 		keymap.set(
 			"n",
-			"<leader>ff",
-			"<cmd>Telescope find_files<cr>",
-			{ desc = "Fuzzy find files in cwd" }
+			"<leader>sf",
+			builtin.find_files,
+			{ desc = "[S]earch [F]iles" }
 		)
 		keymap.set(
 			"n",
-			"<leader>fr",
-			"<cmd>Telescope oldfiles<cr>",
-			{ desc = "Fuzzy find recent files" }
+			"<leader>s.",
+			builtin.oldfiles,
+			{ desc = "[S]earch Recent Files" }
 		)
-
+		keymap.set(
+			"n",
+			"<leader>sd",
+			builtin.diagnostics,
+			{ desc = "[S]earch [D]iagnostics" }
+		)
 		keymap.set(
 			"n",
 			"<leader>sg",
-			"<cmd>Telescope live_grep<cr>",
-			{ desc = "Find string in cwd" }
+			builtin.live_grep,
+			{ desc = "[S]earch by [G]rep" }
+		)
+		keymap.set(
+			"n",
+			"<leader>sw",
+			builtin.grep_string,
+			{ desc = "[S]earch current [W]ord" }
 		)
 		keymap.set(
 			"n",
 			"<leader>sb",
 			"<cmd>Telescope current_buffer_fuzzy_find<cr>",
-			{ desc = "Fuzzy find in current buffer" }
+			{ desc = "[S]earch current [B]buffer Fuzzy" }
 		)
 		keymap.set(
 			"n",
 			"<leader>sh",
-			"<cmd>Telescope help_tags<cr>",
-			{ desc = "Fuzzy find help" }
-		)
-		keymap.set(
-			"n",
-			"<leader>sa",
-			"<cmd>Telescope autocommands<cr>",
-			{ desc = "Fuzzy find autocommands" }
+			builtin.help_tags,
+			{ desc = "[S]earch [H]elp" }
 		)
 		keymap.set(
 			"n",
 			"<leader>sk",
-			"<cmd>Telescope keymaps<cr>",
-			{ desc = "Fuzzy find keymaps" }
+			builtin.keymaps,
+			{ desc = "[S]earch [K]eymaps" }
 		)
 		keymap.set(
 			"n",
-			"<leader>sm",
-			"<cmd>Telescope man_pages<cr>",
-			{ desc = "Fuzzy find man pages" }
+			"<leader>ss",
+			builtin.builtin,
+			{ desc = "[S]earch [S]elect Telescope" }
 		)
 		keymap.set(
 			"n",
 			"<leader>sx",
-			"<cmd>Telescope resume<cr>",
-			{ desc = "Fuzzy find last" }
+			builtin.resume,
+			{ desc = "[S]earch [R]esume" }
 		)
-
-		keymap.set(
-			"n",
-			"<leader>gc",
-			"<cmd>Telescope git_commits<cr>",
-			{ desc = "Fuzzy find git commits" }
-		)
-		keymap.set(
-			"n",
-			"<leader>gs",
-			"<cmd>Telescope git_status<cr>",
-			{ desc = "Fuzzy find git status" }
-		)
+		keymap.set("n", "<leader>sn", function()
+			builtin.find_files({ cwd = vim.fn.stdpath("config") })
+		end, { desc = "[S]earch [N]eovim files" })
 	end,
 }

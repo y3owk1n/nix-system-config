@@ -19,7 +19,6 @@ return {
 			["<leader>g"] = { name = "+git" },
 			["<leader>h"] = { name = "+harpoon" },
 			["<leader>m"] = { name = "+move" },
-			["<leader>o"] = { name = "+oil" },
 			["<leader>s"] = { name = "+search" },
 			["<leader>w"] = { name = "+windows" },
 			["<leader>x"] = { name = "+trouble" },

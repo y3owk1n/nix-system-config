@@ -17,7 +17,6 @@ vim.g.maplocalleader = "."
 require("lazy").setup({
 	spec = {
 		{ import = "k92.plugins" },
-		{ import = "k92.plugins.lsp" },
 	},
 	defaults = {
 		-- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
