@@ -62,20 +62,20 @@ map("n", "N", "Nzzzv", { desc = "Search previous and center" })
 -- Do things without affecting the registers
 map("n", "x", '"_x', { desc = "Delete a character without copying it" })
 map("x", "<leader>p", '"_dP', { desc = "Paste without replacing" })
-map({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without replacing" })
+map({ "n", "v" }, "<leader>d", '"_d', { desc = "[D]elete without replacing" })
 
 -- Press 'S' for quick find/replace for the word under the cursor
 map("n", "<leader>r", function()
 	local cmd = ":%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>"
 	local keys = vim.api.nvim_replace_termcodes(cmd, true, false, true)
 	vim.api.nvim_feedkeys(keys, "n", false)
-end, { desc = "Replace word under cursor" })
+end, { desc = "[R]eplace word under cursor" })
 
 -- Quick SO
 map("n", "<leader>S", function()
 	vim.cmd("so")
 	print("source file")
-end, { desc = "Source file" })
+end, { desc = "[S]ource file" })
 
 -- Make file executable
 map(

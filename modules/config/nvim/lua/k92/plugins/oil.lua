@@ -47,11 +47,11 @@ return {
 
 			map("n", "<leader>e", function()
 				oil.toggle_float()
-			end, { desc = "Explorer" })
+			end, { desc = "[E]xplorer" })
 
 			map("n", "<leader>E", function()
 				oil.toggle_float(vim.fn.getcwd())
-			end, { desc = "Explorer (CWD)" })
+			end, { desc = "[E]xplorer (CWD)" })
 		end,
 	},
 }
