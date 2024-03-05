@@ -15,6 +15,7 @@ return {
 			["["] = { name = "+prev" },
 			["<leader>c"] = { name = "+[c]ode" },
 			["<leader>l"] = { name = "+[l]sp" },
+			["<leader>lb"] = { name = "+[l]sp [b]uiltin" },
 			["<leader>f"] = { name = "+[f]ile" },
 			["<leader>g"] = { name = "+[g]it" },
 			["<leader>h"] = { name = "+[h]arpoon" },

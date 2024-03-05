@@ -36,9 +36,4 @@ return {
 			["_"] = { "trim_whitespace" },
 		},
 	},
-	config = function(_, opts)
-		local conform = require("conform")
-
-		conform.setup(opts)
-	end,
 }

@@ -1,5 +1,3 @@
-local map = require("k92.utils.keymaps").map
-
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "oil",
 	callback = function()
@@ -41,17 +39,23 @@ return {
 		},
 		-- Optional dependencies
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		config = function(opts)
-			local oil = require("oil")
-			oil.setup(opts)
-
-			map("n", "<leader>e", function()
-				oil.toggle_float()
-			end, { desc = "[E]xplorer" })
-
-			map("n", "<leader>E", function()
-				oil.toggle_float(vim.fn.getcwd())
-			end, { desc = "[E]xplorer (CWD)" })
-		end,
+		keys = {
+			{
+				"<leader>e",
+				mode = { "n" },
+				function()
+					require("oil").toggle_float()
+				end,
+				desc = "[E]xplorer",
+			},
+			{
+				"<leader>E",
+				mode = { "n" },
+				function()
+					require("oil").toggle_float(vim.fn.getcwd())
+				end,
+				desc = "[E]xplorer (CWD)",
+			},
+		},
 	},
 }

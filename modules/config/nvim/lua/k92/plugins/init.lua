@@ -23,4 +23,8 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		config = true,
 	},
+	{
+		"dmmulroy/ts-error-translator.nvim",
+		opts = {},
+	},
 }
