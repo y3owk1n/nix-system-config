@@ -17,9 +17,9 @@
       "obsidian"
       "keycastr"
       "chromium"
-      "bruno"
+      # "bruno"
       "kawa"
-      "time-out"
+      # "time-out"
     ];
   };
 }
