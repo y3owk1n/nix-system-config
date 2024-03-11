@@ -3,7 +3,7 @@ let kanata = import ../custom/kanata.nix;
 in {
   # Here go the darwin preferences and config items
   environment = {
-    systemPackages = with pkgs; [ coreutils cachix kanata ];
+    systemPackages = with pkgs; [ coreutils kanata ];
     shells = with pkgs; [ bash fish zsh ];
     loginShell = pkgs.fish;
     loginShellInit = ''
