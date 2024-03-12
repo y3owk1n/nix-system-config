@@ -37,7 +37,7 @@
           dynamic_title = true;
           padding.x = 10;
           padding.y = 10;
-          working_directory = "None";
+          # working_directory = "None";
         };
         colors = {
           primary = {
@@ -63,10 +63,10 @@
               foreground = "#24273A";
               background = "#A6DA95";
             };
-            footer_bar = {
-              foreground = "#24273A";
-              background = "#A5ADCB";
-            };
+            # footer_bar = {
+            #   foreground = "#24273A";
+            #   background = "#A5ADCB";
+            # };
           };
           hints = {
             start = {
