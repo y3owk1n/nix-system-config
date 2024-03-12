@@ -49,6 +49,8 @@ map(">_t", "t");
 map("t", "on");
 // create a new key `o` for saved temp key `>_t`
 map("o", ">_t");
+// save default key `H` to temp key `>_H`
+map(">_H", "H");
 map("H", "S");
 map("L", "D");
 map("gt", "R");
@@ -59,8 +61,8 @@ mapkey("<Ctrl-d>", "Scroll down", () => {
 mapkey("<Ctrl-u>", "Scroll up", () => {
   Normal.scroll("pageUp");
 });
-map("K", "R");
-map("J", "E");
+map("n", "R");
+map("p", "E");
 // Next/Prev Page
 map("K", "[[");
 map("J", "]]");
