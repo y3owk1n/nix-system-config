@@ -1,5 +1,3 @@
-// A very tridactyl-esque config file.
-
 // Compatibility Prefix
 const {
   Clipboard,
@@ -61,11 +59,12 @@ mapkey("<Ctrl-d>", "Scroll down", () => {
 mapkey("<Ctrl-u>", "Scroll up", () => {
   Normal.scroll("pageUp");
 });
-map("n", "R");
-map("p", "E");
-// Next/Prev Page
-map("K", "[[");
-map("J", "]]");
+// save default key `R` to temp key `>_R`
+map(">_R", "R");
+map("J", "R");
+// save default key `E` to temp key `>_E`
+map(">_E", "E");
+map("K", "E");
 
 // ---- Unmap -----
 // Proxy Stuff
@@ -107,9 +106,9 @@ removeSearchAlias("s", "s");
 settings.theme = `
 /* Edit these variables for easy theme making */
 :root {
-  /* Font */
-  --font: 'GeistMono NF', Ubuntu, sans;
-  --font-size: 12;
-  --font-weight: bold;
+    /* Font */
+    --font: 'GeistMono NF', Ubuntu, sans;
+    --font-size: 12;
+    --font-weight: bold;
 }
 `;
