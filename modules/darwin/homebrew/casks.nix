@@ -16,12 +16,9 @@
       "lulu"
       "obsidian"
       "keycastr"
-      # "chromium"
       "eloston-chromium"
-      # "orion"
-      # "bruno"
+      "brave-browser"
       "kawa"
-      # "time-out"
     ];
   };
 }

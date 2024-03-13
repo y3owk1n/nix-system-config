@@ -49,7 +49,7 @@
         yabai -m space 7 --label "Music"
 
         # Web browsers
-        yabai -m rule --add app="^(Google Chrome|Safari|Arc|Microsoft Edge|Safari Technology Preview|Firefox)$" space=1
+        yabai -m rule --add app="^(Google Chrome|Safari|Arc|Microsoft Edge|Safari Technology Preview|Firefox|Brave)$" space=1
         # Terminal
         yabai -m rule --add app="^(Terminal|Alacritty)$" space=2
         # Notes
