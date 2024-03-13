@@ -23,8 +23,8 @@
     "goBack": "shift+h",
     "goForward": "shift+l",
     "reload": "r",
-    "tabForward": "n",
-    "tabBack": "p",
+    "tabForward": "shift+j",
+    "tabBack": "shift+k",
     "closeTab": "x",
     "openTab": "t"
   }
