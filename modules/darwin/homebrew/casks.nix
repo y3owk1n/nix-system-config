@@ -17,7 +17,6 @@
       "obsidian"
       "keycastr"
       "eloston-chromium"
-      "brave-browser"
       "kawa"
     ];
   };
