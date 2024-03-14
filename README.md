@@ -71,3 +71,20 @@ Navigate to `...../modules/home-manager/node-packages` and run the following com
 ```bash
 nix-shell -p nodePackages.node2nix --command "node2nix -18 -i ./node-packages.json -o node"
 ```
+
+### To fix ungoogled-chromium icloud password not working
+
+https://github.com/ungoogled-software/ungoogled-chromium-macos/issues/144#issuecomment-1913176798
+
+```bash
+echo '{
+    "name": "com.apple.passwordmanager",
+    "description": "PasswordManagerBrowserExtensionHelper",
+    "path": "/System/Cryptexes/App/System/Library/CoreServices/PasswordManagerBrowserExtensionHelper.app/Contents/MacOS/PasswordManagerBrowserExtensionHelper",
+    "type": "stdio",
+    "allowed_origins": [
+        "chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/",
+        "chrome-extension://mfbcdcnpokpoajjciilocoachedjkima/"
+    ]
+}' > ~/Library/Application\ Support/Chromium/NativeMessagingHosts/com.apple.passwordmanager.json
+```
