@@ -36,7 +36,8 @@
     "app.mailjet.com",
     "search.google.com",
     "business.facebook.com",
-    "my.vultr.com"
+    "my.vultr.com",
+    "www.bing.com"
   ],
   "disabledFor": ["www.traworld.com"],
   "changeBrowserTheme": false,
