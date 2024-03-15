@@ -103,12 +103,12 @@ removeSearchAlias("w", "s");
 removeSearchAlias("y", "s");
 removeSearchAlias("s", "s");
 
+const hintsCss =
+  "font-size: 10pt; font-family: 'GeistMono Nerd Font', Ubuntu, sans-serif; border: 0px; color: #f0c6c6 !important; background: #24273a; background-color: #24273a";
+
+api.Hints.style(hintsCss);
+api.Hints.style(hintsCss, "text");
+
 settings.theme = `
 /* Edit these variables for easy theme making */
-:root {
-    /* Font */
-    --font: 'GeistMono NF', Ubuntu, sans;
-    --font-size: 12;
-    --font-weight: bold;
-}
 `;
