@@ -12,6 +12,9 @@ return {
 			save_on_toggle = true,
 			sync_on_ui_close = true,
 		},
+		menu = {
+			width = vim.api.nvim_win_get_width(0) - 4,
+		},
 	},
 	config = function(_, opts)
 		local harpoon = require("harpoon")
