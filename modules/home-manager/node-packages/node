@@ -94,13 +94,13 @@ let
         sha512 = "RzlRISXWqIKEf83FDC9ZtJ3JvuK1l7aGpretf41BCWYrvla2wU8W8MTRNMiPrPJ+1SIqrRC1nZdZ60hD9hRXLg==";
       };
     };
-    "@inquirer/type-1.2.0" = {
+    "@inquirer/type-1.2.1" = {
       name = "_at_inquirer_slash_type";
       packageName = "@inquirer/type";
-      version = "1.2.0";
+      version = "1.2.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@inquirer/type/-/type-1.2.0.tgz";
-        sha512 = "/vvkUkYhrjbm+RolU7V1aUFDydZVKNKqKHR5TsE+j5DXgXFwrsOPcoGUJ02K0O7q7O53CU2DOTMYCHeGZ25WHA==";
+        url = "https://registry.npmjs.org/@inquirer/type/-/type-1.2.1.tgz";
+        sha512 = "xwMfkPAxeo8Ji/IxfUSqzRi0/+F2GIqJmpc5/thelgMGsjNZcjDDRBO9TLXT1s/hdx/mK5QbVIvgoLIFgXhTMQ==";
       };
     };
     "@types/mute-stream-0.0.4" = {
@@ -112,13 +112,13 @@ let
         sha512 = "CPM9nzrCPPJHQNA9keH9CVkVI+WR5kMa+7XEs5jcGQ0VoAGnLv242w8lIVgwAEfmE4oufJRaTc9PNLQl0ioAow==";
       };
     };
-    "@types/node-20.11.24" = {
+    "@types/node-20.11.28" = {
       name = "_at_types_slash_node";
       packageName = "@types/node";
-      version = "20.11.24";
+      version = "20.11.28";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/node/-/node-20.11.24.tgz";
-        sha512 = "Kza43ewS3xoLgCEpQrsT+xRo/EJej1y0kVYGiLFE1NEODXGzTfwiC6tXTLMQskn1X4/Rjlh0MQUvx9W+L9long==";
+        url = "https://registry.npmjs.org/@types/node/-/node-20.11.28.tgz";
+        sha512 = "M/GPWVS2wLkSkNHVeLkrF2fD5Lx5UC4PxA0uZcKc6QqbIQUJyW1jVjueJYi1z8n0I5PxYrtpnPnWglE+y9A0KA==";
       };
     };
     "@types/wrap-ansi-3.0.0" = {
@@ -535,13 +535,13 @@ let
         sha512 = "t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==";
       };
     };
-    "typescript-5.3.3" = {
+    "typescript-5.4.2" = {
       name = "typescript";
       packageName = "typescript";
-      version = "5.3.3";
+      version = "5.4.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/typescript/-/typescript-5.3.3.tgz";
-        sha512 = "pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==";
+        url = "https://registry.npmjs.org/typescript/-/typescript-5.4.2.tgz";
+        sha512 = "+2/g0Fds1ERlP6JsakQQDXjZdZMM+rqpamFZJEKh4kwTIn3iDkgKtby0CeNd5ATNZ4Ry1ax15TMx0W2V+miizQ==";
       };
     };
     "undici-types-5.26.5" = {
@@ -584,9 +584,9 @@ in
       sources."@inquirer/prompts-3.3.2"
       sources."@inquirer/rawlist-1.2.16"
       sources."@inquirer/select-1.3.3"
-      sources."@inquirer/type-1.2.0"
+      sources."@inquirer/type-1.2.1"
       sources."@types/mute-stream-0.0.4"
-      sources."@types/node-20.11.24"
+      sources."@types/node-20.11.28"
       sources."@types/wrap-ansi-3.0.0"
       sources."ansi-escapes-4.3.2"
       sources."ansi-regex-5.0.1"
@@ -643,7 +643,7 @@ in
       sources."supports-color-7.2.0"
       sources."tmp-0.0.33"
       sources."type-fest-0.21.3"
-      sources."typescript-5.3.3"
+      sources."typescript-5.4.2"
       sources."undici-types-5.26.5"
       sources."wrap-ansi-6.2.0"
     ];
