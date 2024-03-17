@@ -40,7 +40,11 @@ return {
 			operators = {},
 		},
 		color_overrides = {},
-		custom_highlights = {},
+		custom_highlights = function(colors)
+			return {
+				HighlightUndo = { bg = colors.red, fg = colors.base },
+			}
+		end,
 		integrations = {
 			fidget = true,
 			flash = true,

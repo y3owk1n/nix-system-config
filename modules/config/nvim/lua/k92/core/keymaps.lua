@@ -33,7 +33,7 @@ map({ "n", "v" }, "H", "^", { desc = "Move to start of line" })
 map({ "n", "v" }, "L", "$", { desc = "Move to end of line" })
 
 -- Better redo
-map("n", "U", "<C-r>", { desc = "Dedent line" })
+-- map("n", "U", "<C-r>", { desc = "Dedent line" })
 
 -- Better indenting
 map("v", "<", "<gv", { desc = "Dedent line" })
