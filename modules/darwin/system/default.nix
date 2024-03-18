@@ -80,6 +80,12 @@
         wvous-tr-corner = 5;
       };
 
+      screencapture = {
+        disable-shadow = true;
+        location = "~/Downloads";
+        type = "jpg";
+      };
+
       # universalaccess = {
       # get rid of extra transparency in menu bar and elsewhere
       # reduceTransparency = false;
@@ -90,6 +96,7 @@
         # 2 = heavy font smoothing; if text looks blurry, back this down to 1
         AppleFontSmoothing = 2;
         AppleShowAllExtensions = true;
+        AppleShowAllFiles = true;
         # Dark mode
         AppleInterfaceStyle = "Dark";
         # auto switch between light/dark mode
@@ -153,10 +160,6 @@
           # Require password immediately after sleep or screen saver begins
           askForPassword = 1;
           askForPasswordDelay = 0;
-        };
-        "com.apple.screencapture" = {
-          location = "~/Downloads";
-          type = "png";
         };
         "com.apple.mail" = {
           # Disable inline attachments (just show the icons)
