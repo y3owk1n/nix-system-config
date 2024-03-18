@@ -35,6 +35,14 @@ map({ "n", "v" }, "L", "$", { desc = "Move to end of line" })
 -- Better redo
 -- map("n", "U", "<C-r>", { desc = "Dedent line" })
 
+-- Better yank
+map(
+	{ "n", "x" },
+	"y",
+	"ygv<Esc>",
+	{ desc = "Yank block and remain cursor", noremap = true, silent = true }
+)
+
 -- Better indenting
 map("v", "<", "<gv", { desc = "Dedent line" })
 map("v", ">", ">gv", { desc = "Indent line" })
