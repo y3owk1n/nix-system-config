@@ -318,7 +318,7 @@ return {
 		vim.list_extend(ensure_installed, {
 			"biome",
 			"jsonls",
-			"eslint",
+			"eslint_d",
 			"lua_ls",
 			"marksman",
 			"prismals",
