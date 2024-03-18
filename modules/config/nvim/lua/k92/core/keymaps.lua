@@ -37,7 +37,7 @@ map({ "n", "v" }, "L", "$", { desc = "Move to end of line" })
 
 -- Better yank
 map(
-	{ "n", "x" },
+	"x",
 	"y",
 	"ygv<Esc>",
 	{ desc = "Yank block and remain cursor", noremap = true, silent = true }
