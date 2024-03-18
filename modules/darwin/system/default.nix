@@ -78,6 +78,8 @@
         mru-spaces = false;
         # mouse in top right corner will (5) start screensaver
         wvous-tr-corner = 5;
+        # mouse in top left corner will (13) start lock screen
+        wvous-tl-corner = 13;
       };
 
       screencapture = {
