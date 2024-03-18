@@ -7,21 +7,16 @@ return {
 	event = { "BufReadPre", "BufNewFile", "InsertLeave" }, -- to disable, comment this out
 	config = function()
 		local lint = require("lint")
-		local biomejs = lint.linters.biomejs
-
-		biomejs.condition = function(ctx)
-			return find_root(ctx, { "biome.json" })
-		end
 
 		lint.linters_by_ft = {
 			lua = { "luacheck" },
 			fish = { "fish" },
-			javascript = { "biomejs", "eslint" },
-			javascriptreact = { "biomejs", "eslint" },
-			typescript = { "biomejs", "eslint" },
-			typescriptreact = { "biomejs", "eslint" },
-			json = { "biomejs", "eslint" },
-			jsonc = { "biomejs", "eslint" },
+			javascript = { "biomejs", "eslint_d" },
+			javascriptreact = { "biomejs", "eslint_d" },
+			typescript = { "biomejs", "eslint_d" },
+			typescriptreact = { "biomejs", "eslint_d" },
+			json = { "biomejs", "eslint_d" },
+			jsonc = { "biomejs", "eslint_d" },
 			yaml = { "yamllint" },
 			nix = { "nix" },
 			markdown = { "markdownlint" },
@@ -32,7 +27,38 @@ return {
 			{
 				group = augroup("lint"),
 				callback = function()
-					lint.try_lint()
+					local names = lint.linters_by_ft[vim.bo.filetype]
+					local current_filename = vim.fn.expand("%:p")
+
+					local js_related_fts = {
+						javascript = true,
+						javascriptreact = true,
+						typescript = true,
+						typescriptreact = true,
+						json = true,
+						jsonc = true,
+					}
+
+					if js_related_fts[vim.bo.filetype] then
+						if
+							find_root(
+								{ filename = current_filename },
+								{ ".eslintrc.js", ".eslintrc.cjs" }
+							)
+						then
+							lint.try_lint("eslint_d")
+						else
+							for i, name in ipairs(names) do
+								if name == "eslint_d" then
+									table.remove(names, i)
+									break -- Exit the loop once 'eslint_d' is removed
+								end
+							end
+							lint.try_lint(names)
+						end
+					else
+						lint.try_lint(names)
+					end
 				end,
 			}
 		)
