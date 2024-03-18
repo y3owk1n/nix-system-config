@@ -18,6 +18,8 @@
       "keycastr"
       "brave-browser"
       "kawa"
+      "meetingbar"
+      "hiddenbar"
     ];
   };
 }
