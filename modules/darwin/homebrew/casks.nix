@@ -18,6 +18,7 @@
       "kawa"
       "meetingbar"
       "hiddenbar"
+      "floorp"
     ];
   };
 }
