@@ -30,6 +30,7 @@
           "darwin-rebuild switch --impure --flake ~/nix-system-config/.#";
         nixup = "pushd ~/nix-system-config; nix flake update; nixswitch; popd";
         nixcleanup = "bash ~/nix-system-config/cleanup.sh";
+        cat = "bat";
       };
       plugins = [
         {
