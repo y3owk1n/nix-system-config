@@ -2,7 +2,6 @@
   homebrew = {
     casks = [
       "raycast"
-      "font-geist-mono-nerd-font"
       "appcleaner"
       "keka"
       "kekaexternalhelper"
@@ -14,11 +13,19 @@
       "whatsapp"
       "lulu"
       "obsidian"
-      "brave-browser"
       "kawa"
       "meetingbar"
       "hiddenbar"
+
+      # browser
       "floorp"
+      "brave-browser"
+
+      # fonts
+      "font-inter"
+      "font-poppins"
+      "font-geist"
+      "font-geist-mono-nerd-font"
     ];
   };
 }
