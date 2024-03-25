@@ -3,12 +3,12 @@
     yabai = {
       enable = true;
       package = (pkgs.yabai.overrideAttrs (o: rec {
-        version = "7.0.2";
+        version = "7.0.3";
         src = builtins.fetchTarball {
           url =
             "https://github.com/koekeishiya/yabai/releases/download/v${version}/yabai-v${version}.tar.gz";
           sha256 =
-            "sha256:04219vyhlz92awrsg0bjxkw9r5pn9xvjpzp49jliwkpbgvlvb0qj";
+            "sha256:0y34kklrsjgzp03v4dq0s7na7m9kvxfc7bzydz3idv7phj3a87i6";
         };
       }));
       enableScriptingAddition = true;
@@ -49,7 +49,7 @@
         yabai -m space 7 --label "Music"
 
         # Web browsers
-        yabai -m rule --add app="^(Google Chrome|Safari|Arc|Microsoft Edge|Safari Technology Preview|Firefox|Brave Browser)$" space=1
+        yabai -m rule --add app="^(Google Chrome|Safari|Arc|Microsoft Edge|Safari Technology Preview|Firefox|Brave Browser|Floorp)$" space=1
         # Terminal
         yabai -m rule --add app="^(Terminal|Alacritty)$" space=2
         # Notes
