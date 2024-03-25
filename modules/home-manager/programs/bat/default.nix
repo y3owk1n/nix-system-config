@@ -3,7 +3,7 @@
     bat = {
       enable = true;
       config = {
-        theme = "Catppuccin Macchiato";
+        theme = "catppuccin";
         #pager = "less -FR";
         pager = "page -WO -q 90000";
         italic-text = "always";
@@ -18,7 +18,7 @@
             rev = "b19bea35a85a32294ac4732cad5b0dc6495bed32";
             sha256 = "sha256-POoW2sEM6jiymbb+W/9DKIjDM1Buu1HAmrNP0yC2JPg=";
           };
-          file = "Catppuccin%20Macchiato.tmTheme";
+          file = "themes/Catppuccin Macchiato.tmTheme";
         };
 
       };
