@@ -18,8 +18,8 @@
       "hiddenbar"
 
       # browser
-      "floorp"
       "brave-browser"
+      "firefox"
 
       # fonts
       "font-inter"
