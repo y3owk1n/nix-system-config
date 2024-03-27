@@ -121,13 +121,13 @@
     table-layout: unset;
 }
 
-#completions table tr .title, #completions table tr td.excmd {
+#completions table tr .title, #completions table tr td.excmd, #completions table tr td.name {
     width: 50%;
     padding-left: 1rem;
     color: var(--blue);
 }
 
-#completions table tr .content, #completions table tr td.documentation {
+#completions table tr .content, #completions table tr td.documentation, #completions table tr td.doc {
     padding-right: 1rem;
     white-space: nowrap;
     overflow: hidden;
