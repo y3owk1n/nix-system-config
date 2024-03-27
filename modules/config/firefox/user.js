@@ -273,6 +273,7 @@ user_pref("security.cert_pinning.enforcement_level", 2);
 
 // PREF: set DoH provider
 user_pref("network.trr.uri", "https://dns.quad9.net/dns-query");
+// user_pref("network.trr.uri", "https://mozilla.cloudflare-dns.com/dns-query");
 
 // PREF: enforce DNS-over-HTTPS (DoH)
 user_pref("network.trr.mode", 3);
@@ -281,6 +282,14 @@ user_pref("network.dns.skipTRR-when-parental-control-enabled", false);
 // PREF: require safe SSL negotiation
 // [ERROR] SSL_ERROR_UNSAFE_NEGOTIATION
 user_pref("security.ssl.require_safe_negotiation", true);
+
+// Disable Safe Browsing
+user_pref("browser.safebrowsing.malware.enabled", false);
+user_pref("browser.safebrowsing.phishing.enabled", false);
+user_pref("browser.safebrowsing.downloads.enabled", false);
+
+// WebGL is a security risk, but sometimes break things on Google Maps
+user_pref("webgl.disabled", true);
 
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
