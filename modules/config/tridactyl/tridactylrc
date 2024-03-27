@@ -1,0 +1,29 @@
+" This wipes all existing settings. This means that if a setting in this file
+" is removed, then it will return to default. In other words, this file serves
+" as an enforced single point of truth for Tridactyl's configuration.
+sanitize tridactyllocal tridactylsync
+
+" Just use a blank page for new tab. It would be nicer to use the standard
+" Firefox homepage, but Tridactyl doesn't support this yet.
+set newtab about:blank
+
+" Colorscheme
+colourscheme shydactyl
+
+set allowautofocus false
+set hintchars aoeuhtns
+set searchengine d
+set tabopencontaineraware true
+set visualenterauto false
+set smoothscroll true
+
+" Disable all searchurls
+jsb Object.keys(tri.config.get("searchurls")).reduce((prev, u) => prev.catch(()=>{}).then(_ => tri.excmds.setnull("searchurls." + u)), Promise.resolve())
+
+" Keybindings
+bind / fillcmdline find
+bind n composite js tri.findReverse ? -1 : 1 | findnext
+bind N composite js tri.findReverse ? 1 : -1 | findnext
+bind <esc> nohlsearch
+bind J tabnext
+bind K tabprev
