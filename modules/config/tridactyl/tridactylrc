@@ -7,6 +7,9 @@ sanitize tridactyllocal tridactylsync
 " Firefox homepage, but Tridactyl doesn't support this yet.
 set newtab about:blank
 
+" Use nvim in tmux for editor.
+set editorcmd /etc/profiles/per-user/kylewong/bin/alacritty -e /etc/profiles/per-user/kylewong/bin/nvim
+
 " Colorscheme
 colourscheme catppuccin-macchiato
 
@@ -14,8 +17,12 @@ set allowautofocus false
 set hintchars aoeuhtns
 set searchengine d
 set tabopencontaineraware true
-set visualenterauto false
+" set visualenterauto false
 set smoothscroll true
+
+" Use sensitive case. Smart case would be nice here, but it doesn't work.
+set findcase sensitive
+set incsearch true
 
 " Disable all searchurls
 jsb Object.keys(tri.config.get("searchurls")).reduce((prev, u) => prev.catch(()=>{}).then(_ => tri.excmds.setnull("searchurls." + u)), Promise.resolve())
@@ -27,3 +34,5 @@ bind N composite js tri.findReverse ? 1 : -1 | findnext
 bind <esc> nohlsearch
 bind J tabnext
 bind K tabprev
+bind << tabmove -1
+bind >> tabmove +1
