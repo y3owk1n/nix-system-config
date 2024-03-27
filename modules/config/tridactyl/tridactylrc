@@ -8,7 +8,7 @@ sanitize tridactyllocal tridactylsync
 set newtab about:blank
 
 " Colorscheme
-colourscheme shydactyl
+colourscheme catppuccin-macchiato
 
 set allowautofocus false
 set hintchars aoeuhtns
