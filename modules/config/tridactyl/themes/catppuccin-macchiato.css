@@ -121,7 +121,7 @@
     table-layout: unset;
 }
 
-#completions table tr .title, #completions table tr td.excmd, #completions table tr td.name {
+#completions table tr .title, #completions table tr td.excmd, #completions table tr td.name, #completions table tr td.value {
     width: 50%;
     padding-left: 1rem;
     color: var(--blue);
@@ -169,11 +169,13 @@
     position: fixed !important;
     bottom: 0 !important;
     background: var(--tridactyl-bg) !important;
-    border: unset !important;
-    border: 1px var(--purple) solid !important;
-    font-size: 12pt !important;
+    border-radius: 6px !important;
+    border: 1px var(--tridactyl-fg) solid !important;
+    /* border: 1px var(--purple) solid !important; */
+    font-size: 0.8rem !important;
     /*font-weight: 200 !important;*/
     padding: 0.8ex !important;
+    margin: 1rem !important;
 }
 
 #completions .focused {
