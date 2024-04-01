@@ -1,5 +1,10 @@
 { ... }: {
   homebrew = {
-    taps = [ "homebrew/services" "homebrew/cask-fonts" "FelixKratz/formulae" ];
+    taps = [
+      "homebrew/services"
+      "homebrew/cask-fonts"
+      "homebrew/cask-versions"
+      "FelixKratz/formulae"
+    ];
   };
 }

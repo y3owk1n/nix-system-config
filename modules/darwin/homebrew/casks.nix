@@ -14,12 +14,12 @@
       "lulu"
       "obsidian"
       "kawa"
-      "meetingbar"
-      "hiddenbar"
+      # "meetingbar"
+      # "hiddenbar"
 
       # browser
       "brave-browser"
-      "firefox"
+      "firefox-nightly"
 
       # fonts
       "font-inter"
