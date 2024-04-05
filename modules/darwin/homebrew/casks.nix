@@ -12,7 +12,7 @@
       "imageoptim"
       "whatsapp"
       "lulu"
-      "obsidian"
+      # "obsidian"
       "kawa"
       # "meetingbar"
       # "hiddenbar"
