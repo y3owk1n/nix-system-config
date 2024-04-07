@@ -35,6 +35,7 @@
         vim = "nvim";
         nvm = "nvim";
         vi = "nvim";
+        nvi = "nvim";
       };
       plugins = [
         {
