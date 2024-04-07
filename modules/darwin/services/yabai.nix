@@ -53,7 +53,7 @@
         # Terminal
         yabai -m rule --add app="^(Terminal|Alacritty)$" space=2
         # Notes
-        yabai -m rule --add app="^(Notes|Reminders|Obsidian)$" space=3
+        yabai -m rule --add app="^(Notes|Reminders|Obsidian|GitButler)$" space=3
         # Social
         yabai -m rule --add app="^(WhatsApp|Messages)$" space=4
         # Productivity
