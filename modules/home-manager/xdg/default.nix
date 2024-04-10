@@ -1,8 +1,8 @@
-{ config, ... }: {
+{ config, ... }:
+{
   xdg.configFile = {
     nvim = {
-      source = config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/nix-system-config/modules/config/nvim";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-system-config/modules/config/nvim";
       recursive = true;
     };
     # kanata = {
@@ -16,13 +16,11 @@
     #   recursive = true;
     # };
     svim = {
-      source = config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/nix-system-config/modules/config/svim";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-system-config/modules/config/svim";
       recursive = true;
     };
     tridactyl = {
-      source = config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/nix-system-config/modules/config/tridactyl";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-system-config/modules/config/tridactyl";
       recursive = true;
     };
   };

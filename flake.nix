@@ -18,61 +18,90 @@
     # k92-nvim.url = "github:y3owk1n/k92-nvim";
   };
 
-  outputs = inputs@{ nixpkgs-unstable, home-manager, darwin, ...
+  outputs =
+    inputs@{
+      nixpkgs-unstable,
+      home-manager,
+      darwin,
+      ...
     }: # add k92-nvim if want to use
     let
-      darwinSystem = { system, modules, username, pkgs, ... }:
+      darwinSystem =
+        {
+          system,
+          modules,
+          username,
+          pkgs,
+          ...
+        }:
         darwin.lib.darwinSystem {
           system = system;
           modules = modules ++ [
-            (import ./modules/darwin { inherit username pkgs system inputs; })
+            (import ./modules/darwin {
+              inherit
+                username
+                pkgs
+                system
+                inputs
+                ;
+            })
             home-manager.darwinModules.home-manager
           ];
         };
-    in {
+    in
+    {
       darwinConfigurations = {
         demos-Virtual-Machine = darwinSystem {
           system = "aarch64-darwin";
           pkgs = import nixpkgs-unstable { system = "aarch64-darwin"; };
-          specialArgs = { inherit inputs; };
-          modules = [{
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.demo.imports =
-                [ ./modules/home-manager/default-personal.nix ];
-            };
-          }];
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.demo.imports = [ ./modules/home-manager/default-personal.nix ];
+              };
+            }
+          ];
           username = "demo";
         };
 
         Kyles-MacBook-Air = darwinSystem {
           system = "aarch64-darwin";
           pkgs = import nixpkgs-unstable { system = "aarch64-darwin"; };
-          specialArgs = { inherit inputs; };
-          modules = [{
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.kylewong.imports =
-                [ ./modules/home-manager/default-personal.nix ];
-            };
-          }];
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.kylewong.imports = [ ./modules/home-manager/default-personal.nix ];
+              };
+            }
+          ];
           username = "kylewong";
         };
 
         Kyles-iMac = darwinSystem {
           system = "aarch64-darwin";
           pkgs = import nixpkgs-unstable { system = "aarch64-darwin"; };
-          specialArgs = { inherit inputs; };
-          modules = [{
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.kylewong.imports =
-                [ ./modules/home-manager/default-work.nix ];
-            };
-          }];
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.kylewong.imports = [ ./modules/home-manager/default-work.nix ];
+              };
+            }
+          ];
           username = "kylewong";
         };
       };

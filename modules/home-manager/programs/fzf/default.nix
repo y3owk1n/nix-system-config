@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   programs = {
     fzf = {
       enable = true;
@@ -20,10 +21,8 @@
         "hl+" = "#ed8796";
       };
       defaultCommand = "fd --type f --hidden --exclude .git";
-      fileWidgetCommand =
-        "fd --exclude .git --type f"; # for when ctrl-t is pressed
-      changeDirWidgetCommand =
-        "fd --type d --hidden --follow --max-depth 3 --exclude .git";
+      fileWidgetCommand = "fd --exclude .git --type f"; # for when ctrl-t is pressed
+      changeDirWidgetCommand = "fd --type d --hidden --follow --max-depth 3 --exclude .git";
     };
   };
 }

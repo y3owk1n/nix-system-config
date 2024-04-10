@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs = {
     fish = {
       enable = true;
@@ -16,8 +17,7 @@
         x = "exit";
         fpp = "_fzf_directory_picker --allow-cd --prompt-name Projects ~/Dev/";
         fpf = "_fzf_file_picker --allow-open-in-editor --prompt-name Files";
-        fpfh =
-          "_fzf_file_picker --allow-open-in-editor --show-hidden-files --prompt-name Files+";
+        fpfh = "_fzf_file_picker --allow-open-in-editor --show-hidden-files --prompt-name Files+";
         fpc = "_fzf_cmd_history --allow-execute";
         gg = "lazygit";
       };
@@ -26,8 +26,7 @@
         #   "cd $HOME/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/Kyle/ && nvim .";
         # "obs-traworld" =
         #   "cd $HOME/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/Traworld/ && nvim .";
-        nixswitch =
-          "darwin-rebuild switch --impure --flake ~/nix-system-config/.#";
+        nixswitch = "darwin-rebuild switch --impure --flake ~/nix-system-config/.#";
         nixup = "pushd ~/nix-system-config; nix flake update; nixswitch; popd";
         nixcleanup = "bash ~/nix-system-config/cleanup.sh";
         cat = "bat";

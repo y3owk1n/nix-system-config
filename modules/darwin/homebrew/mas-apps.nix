@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   homebrew = {
     masApps = {
       "prettyJSON for Safari" = 1445328303;

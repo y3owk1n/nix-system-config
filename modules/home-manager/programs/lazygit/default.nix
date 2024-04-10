@@ -1,10 +1,14 @@
-{ ... }: {
+{ ... }:
+{
   programs = {
     lazygit = {
       enable = true;
       settings = {
         gui.theme = {
-          activeBorderColor = [ "#f0c6c6" "bold" ];
+          activeBorderColor = [
+            "#f0c6c6"
+            "bold"
+          ];
           inactiveBorderColor = [ "#a5adcb" ];
           optionsTextColor = [ "#8aadf4" ];
           selectedLineBgColor = [ "#363a4f" ];
