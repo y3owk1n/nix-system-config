@@ -1,7 +1,8 @@
 { pkgs, ... }:
 let
   extraNodePackages = import ../../node-packages/default.nix { inherit pkgs; };
-in {
+in
+{
   home = {
     packages = with pkgs; [
       ripgrep
@@ -23,7 +24,7 @@ in {
       # --- neovim ---
       luajit
       luajitPackages.luarocks # for nvim
-      nixfmt # for nvim
+      nixfmt-rfc-style # for nvim
       codespell # for nvim
       beautysh # for nvim
       pngpaste # only used for obsidian.nvim, not using it for now
