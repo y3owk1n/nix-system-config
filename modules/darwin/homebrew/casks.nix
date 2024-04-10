@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   homebrew = {
     casks = [
       "raycast"
@@ -13,7 +14,7 @@
       "whatsapp"
       "lulu"
       # "obsidian"
-      "kawa"
+      # "kawa"
       # "meetingbar"
       # "hiddenbar"
 
