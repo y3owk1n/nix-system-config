@@ -1,17 +1,32 @@
 { pkgs, ... }:
-let kanata = import ../custom/kanata.nix;
-in {
+let
+  kanata = import ../custom/kanata.nix;
+in
+{
   # Here go the darwin preferences and config items
   environment = {
-    systemPackages = with pkgs; [ coreutils kanata ];
-    shells = with pkgs; [ bash fish zsh ];
+    systemPackages = with pkgs; [
+      coreutils
+      kanata
+    ];
+    shells = with pkgs; [
+      bash
+      fish
+      zsh
+    ];
     loginShell = pkgs.fish;
     loginShellInit = ''
       export SHELL=${pkgs.fish}/bin/fish
     '';
-    systemPath =
-      [ "/opt/homebrew/bin" "/opt/homebrew/sbin" "/run/current-system/sw/bin" ];
-    pathsToLink = [ "/Applications" "/share/fish" ];
+    systemPath = [
+      "/opt/homebrew/bin"
+      "/opt/homebrew/sbin"
+      "/run/current-system/sw/bin"
+    ];
+    pathsToLink = [
+      "/Applications"
+      "/share/fish"
+    ];
   };
   # launchd.daemons.kanata = {
   #   serviceConfig = {

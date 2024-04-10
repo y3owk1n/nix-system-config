@@ -1,1 +1,9 @@
-{ ... }: { imports = [ ./home ./xdg ./programs ./programs/git/personal ]; }
+{ ... }:
+{
+  imports = [
+    ./home
+    ./xdg
+    ./programs
+    ./programs/git/personal
+  ];
+}

@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs = {
     bat = {
       enable = true;
@@ -7,8 +8,7 @@
         #pager = "less -FR";
         pager = "page -WO -q 90000";
         italic-text = "always";
-        style =
-          "plain"; # no line numbers, git status, etc... more like cat with colors
+        style = "plain"; # no line numbers, git status, etc... more like cat with colors
       };
       themes = {
         catppuccin = {
@@ -20,7 +20,6 @@
           };
           file = "themes/Catppuccin Macchiato.tmTheme";
         };
-
       };
     };
   };

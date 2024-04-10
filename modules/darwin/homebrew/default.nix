@@ -1,5 +1,11 @@
-{ ... }: {
-  imports = [ ./mas-apps.nix ./taps.nix ./casks.nix ./brews.nix ];
+{ ... }:
+{
+  imports = [
+    ./mas-apps.nix
+    ./taps.nix
+    ./casks.nix
+    ./brews.nix
+  ];
   homebrew = {
     enable = true;
     caskArgs.no_quarantine = true;

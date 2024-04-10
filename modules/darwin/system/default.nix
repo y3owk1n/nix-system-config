@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   system = {
     keyboard = {
       enableKeyMapping = false;
@@ -167,7 +168,9 @@
           # Disable inline attachments (just show the icons)
           DisableInlineAttachmentViewing = true;
         };
-        "com.apple.AdLib" = { allowApplePersonalizedAdvertising = false; };
+        "com.apple.AdLib" = {
+          allowApplePersonalizedAdvertising = false;
+        };
         "com.apple.print.PrintingPrefs" = {
           # Automatically quit printer app once the print jobs complete
           "Quit When Finished" = true;
