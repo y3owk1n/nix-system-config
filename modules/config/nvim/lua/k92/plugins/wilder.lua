@@ -6,9 +6,9 @@ return {
 			"/",
 			"?",
 		},
-		dependencies = {
-			"catppuccin/nvim",
-		},
+		-- dependencies = {
+		-- 	"catppuccin/nvim",
+		-- },
 		config = function()
 			local wilder = require("wilder")
 			local macchiato =
