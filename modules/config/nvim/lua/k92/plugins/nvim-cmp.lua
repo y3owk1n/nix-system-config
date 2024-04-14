@@ -7,6 +7,7 @@ return {
 	dependencies = {
 		{
 			"L3MON4D3/LuaSnip",
+			version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
 			build = (function()
 				-- Build Step is needed for regex support in snippets
 				-- This step is not supported in many windows environments
