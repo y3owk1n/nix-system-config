@@ -1,10 +1,4 @@
-{
-  pkgs,
-  username,
-  system,
-  inputs,
-  ...
-}:
+{ pkgs, username, ... }:
 {
   imports = [
     ./env
