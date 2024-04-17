@@ -39,6 +39,7 @@
           padding.x = 10;
           padding.y = 10;
           # working_directory = "None";
+          startup_mode = "Maximized";
         };
         colors = {
           primary = {
