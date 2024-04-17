@@ -1,4 +1,4 @@
-{ ... }:
+{ config, pkgs, ... }:
 {
   system = {
     keyboard = {
@@ -272,6 +272,13 @@
     activationScripts.postUserActivation.text = ''
       # Following line should allow us to avoid a logout/login cycle
       /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+      rsyncArgs="--archive --checksum --chmod=-w --copy-unsafe-links --delete"
+      apps_source="${config.system.build.applications}/Applications"
+      moniker="Nix Trampolines"
+      app_target_base="$HOME/Applications"
+      app_target="$app_target_base/$moniker"
+      mkdir -p "$app_target"
+      ${pkgs.rsync}/bin/rsync $rsyncArgs "$apps_source/" "$app_target"
     '';
     # backwards compat; don't change
     stateVersion = 4;
