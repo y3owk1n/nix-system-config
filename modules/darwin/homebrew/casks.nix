@@ -2,7 +2,7 @@
 {
   homebrew = {
     casks = [
-      "raycast"
+      # "raycast"
       "appcleaner"
       "keka"
       "kekaexternalhelper"
