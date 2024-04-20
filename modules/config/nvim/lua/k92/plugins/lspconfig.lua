@@ -270,7 +270,6 @@ return {
 					},
 				},
 			},
-			--
 
 			lua_ls = {
 				-- cmd = {...},
@@ -281,21 +280,21 @@ return {
 						runtime = { version = "LuaJIT" },
 						workspace = {
 							checkThirdParty = false,
-							-- Tells lua_ls where to find all the Lua files that you have loaded
-							-- for your neovim configuration.
 							library = {
-								"${3rd}/luv/library",
-								unpack(vim.api.nvim_get_runtime_file("", true)),
+								vim.env.VIMRUNTIME,
+								-- Depending on the usage, you might want to add additional paths here.
+								-- "${3rd}/luv/library",
+								-- "${3rd}/busted/library",
 							},
-							-- If lua_ls is really slow on your computer, you can try this instead:
-							-- library = { vim.env.VIMRUNTIME },
+							-- or pull in all of 'runtimepath'. NOTE: this is a lot slower
+							-- library = vim.api.nvim_get_runtime_file("", true),
 						},
 						completion = {
 							callSnippet = "Replace",
 						},
 						diagnostics = {
 							-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-							-- disable = { 'missing-fields' },
+							-- disable = { "missing-fields" },
 							-- Get the language server to recognize the `vim` global
 							globals = { "vim" },
 						},
