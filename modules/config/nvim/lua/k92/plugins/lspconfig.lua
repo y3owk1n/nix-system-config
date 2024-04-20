@@ -217,12 +217,12 @@ return {
 			-- Some languages (like typescript) have entire language plugins that can be useful:
 			--    https://github.com/pmizio/typescript-tools.nvim
 			--
-			eslint = {
-				settings = {
-					-- helps eslint find the eslintrc when it's placed in a subfolder instead of the cwd root
-					workingDirectory = { mode = "auto" },
-				},
-			},
+			-- eslint = {
+			-- 	settings = {
+			-- 		-- helps eslint find the eslintrc when it's placed in a subfolder instead of the cwd root
+			-- 		workingDirectory = { mode = "auto" },
+			-- 	},
+			-- },
 			-- But for many setups, the LSP (`tsserver`) will work just fine
 			tsserver = {
 				keys = {
