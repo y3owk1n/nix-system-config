@@ -12,6 +12,7 @@ function M.get_clients(opts)
 			ret = vim.tbl_filter(function(client)
 				return client.supports_method(
 					opts.method,
+					---@diagnostic disable-next-line: redundant-parameter
 					{ bufnr = opts.bufnr }
 				)
 			end, ret)

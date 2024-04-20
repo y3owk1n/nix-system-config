@@ -99,6 +99,7 @@ opt.shortmess:append({ s = true, I = true }) -- disable search count wrap and st
 
 opt.viewoptions:remove("curdir") -- disable saving current directory with views
 
+---@diagnostic disable-next-line: undefined-field
 opt.backspace:append({ "nostop" }) -- don't stop backspace at insert
 
 opt.whichwrap:append("<,>,[,],h,l")

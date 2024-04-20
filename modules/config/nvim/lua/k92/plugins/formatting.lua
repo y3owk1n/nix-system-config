@@ -14,6 +14,7 @@ return {
 		},
 		formatters = {
 			biome = {
+				---@diagnostic disable-next-line: unused-local
 				condition = function(self, ctx)
 					return find_root(ctx, { "biome.json" })
 				end,

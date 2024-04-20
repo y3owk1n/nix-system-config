@@ -52,6 +52,7 @@ return {
 			harpoon = true,
 			markdown = true,
 			mason = true,
+			neotree = true,
 			cmp = true,
 			native_lsp = {
 				enabled = true,

@@ -17,6 +17,7 @@ return {
 		},
 	},
 	config = function(_, opts)
+		---@diagnostic disable-next-line: different-requires
 		local harpoon = require("harpoon")
 		harpoon:setup(opts)
 

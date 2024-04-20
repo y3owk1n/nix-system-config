@@ -9,7 +9,7 @@ return {
 		local lint = require("lint")
 
 		lint.linters_by_ft = {
-			lua = { "luacheck" },
+			-- lua = { "luacheck" },
 			fish = { "fish" },
 			javascript = { "biomejs", "eslint_d" },
 			javascriptreact = { "biomejs", "eslint_d" },
