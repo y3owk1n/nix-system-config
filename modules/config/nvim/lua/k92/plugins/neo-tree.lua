@@ -12,7 +12,7 @@ return {
 	},
 	keys = {
 		{
-			"<leader>fe",
+			"<leader>e",
 			function()
 				require("neo-tree.command").execute({
 					toggle = true,
@@ -22,7 +22,7 @@ return {
 			desc = "Explorer NeoTree (Root Dir)",
 		},
 		{
-			"<leader>fE",
+			"<leader>E",
 			function()
 				require("neo-tree.command").execute({
 					toggle = true,
@@ -30,28 +30,6 @@ return {
 				})
 			end,
 			desc = "Explorer NeoTree (cwd)",
-		},
-		{
-			"<leader>e",
-			"<leader>fe",
-			desc = "Explorer NeoTree (Root Dir)",
-			remap = true,
-		},
-		{
-			"<leader>E",
-			"<leader>fE",
-			desc = "Explorer NeoTree (cwd)",
-			remap = true,
-		},
-		{
-			"<leader>ge",
-			function()
-				require("neo-tree.command").execute({
-					source = "git_status",
-					toggle = true,
-				})
-			end,
-			desc = "Git Explorer",
 		},
 	},
 	deactivate = function()
