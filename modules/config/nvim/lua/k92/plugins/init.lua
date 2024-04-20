@@ -29,23 +29,15 @@ return {
 		opts = {},
 	},
 	{
-		"tzachar/highlight-undo.nvim",
-		event = { "BufReadPre" },
-		opts = {
-			undo = {
-				hlgroup = "HighlightUndo",
-				mode = "n",
-				lhs = "u",
-				map = "undo",
-				opts = {},
-			},
-			redo = {
-				hlgroup = "HighlightUndo",
-				mode = "n",
-				lhs = "U",
-				map = "redo",
-				opts = {},
-			},
-		},
+		"lukas-reineke/indent-blankline.nvim",
+		event = { "BufReadPost", "BufNewFile", "BufWritePre" },
+		main = "ibl",
+		opts = {},
+	},
+	{
+		"folke/todo-comments.nvim",
+		event = { "BufReadPost", "BufNewFile", "BufWritePre" },
+		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = { signs = false },
 	},
 }
