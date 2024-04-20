@@ -22,12 +22,12 @@ in
       jq
       agkozak-zsh-prompt
       # --- neovim ---
-      luajit
-      luajitPackages.luarocks # for nvim
+      # luajit
+      # luajitPackages.luarocks # for nvim
       nixfmt-rfc-style # for nvim
       codespell # for nvim
       beautysh # for nvim
-      pngpaste # only used for obsidian.nvim, not using it for now
+      # pngpaste # only used for obsidian.nvim, not using it for now
       # --- extraNodePackages ---
       extraNodePackages.cpenv
       extraNodePackages.generate-release-note
