@@ -26,7 +26,7 @@ return {
 		end, { desc = "Harpoon Menu" })
 
 		map("n", "<leader>ha", function()
-			harpoon:list():append()
+			harpoon:list():add()
 		end, { desc = "Mark file with harpoon" })
 
 		map("n", "<leader>hc", function()

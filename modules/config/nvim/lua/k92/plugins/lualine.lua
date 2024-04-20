@@ -24,6 +24,7 @@ return {
 		local buffer_utils = require("k92.utils.buffer")
 		local codeium_util = require("k92.utils.codeium")
 		local startup_util = require("k92.utils.startup")
+		---@diagnostic disable-next-line: different-requires
 		local harpoon_util = require("k92.utils.harpoon")
 
 		vim.o.laststatus = vim.g.lualine_laststatus

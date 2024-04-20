@@ -3,15 +3,11 @@ return {
 	version = false, -- last release is way too old
 	lazy = true,
 	event = { "InsertEnter" },
-	-- event = { "BufReadPost", "BufNewFile" },
 	dependencies = {
 		{
 			"L3MON4D3/LuaSnip",
 			version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
 			build = (function()
-				-- Build Step is needed for regex support in snippets
-				-- This step is not supported in many windows environments
-				-- Remove the below condition to re-enable on windows
 				if
 					vim.fn.has("win32") == 1
 					or vim.fn.executable("make") == 0
