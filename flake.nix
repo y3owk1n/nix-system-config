@@ -51,24 +51,6 @@
     in
     {
       darwinConfigurations = {
-        demos-Virtual-Machine = darwinSystem {
-          system = "aarch64-darwin";
-          pkgs = import nixpkgs-unstable { system = "aarch64-darwin"; };
-          specialArgs = {
-            inherit inputs;
-          };
-          modules = [
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.demo.imports = [ ./modules/home-manager/default-personal.nix ];
-              };
-            }
-          ];
-          username = "demo";
-        };
-
         Kyles-MacBook-Air = darwinSystem {
           system = "aarch64-darwin";
           pkgs = import nixpkgs-unstable { system = "aarch64-darwin"; };
