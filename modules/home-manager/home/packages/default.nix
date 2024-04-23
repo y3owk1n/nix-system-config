@@ -23,7 +23,7 @@ in
       agkozak-zsh-prompt
       # --- neovim ---
       # luajit
-      # luajitPackages.luarocks # for nvim
+      luajitPackages.luarocks # for nvim
       nixfmt-rfc-style # for nvim
       codespell # for nvim
       beautysh # for nvim
