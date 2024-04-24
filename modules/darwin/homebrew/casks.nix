@@ -13,6 +13,7 @@
       "imageoptim"
       "whatsapp"
       "lulu"
+      "zerotier-one"
       # "obsidian"
       # "kawa"
       # "meetingbar"
