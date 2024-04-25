@@ -75,7 +75,7 @@ opt.updatetime = 50 -- Save swap file and trigger CursorHold
 
 -- words
 opt.iskeyword:append("-") -- consider string-string as whole words
-opt.isfnname:append("@-@")
+opt.isfname:append("@-@")
 opt.fillchars = {
 	foldopen = "",
 	foldclose = "",
