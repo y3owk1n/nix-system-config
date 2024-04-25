@@ -67,6 +67,7 @@ opt.splitbelow = true -- split horizontal window to the bottom
 -- undo
 opt.undofile = true
 opt.undolevels = 10000
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 
 -- turn off swapfile
 opt.swapfile = false
@@ -74,6 +75,7 @@ opt.updatetime = 50 -- Save swap file and trigger CursorHold
 
 -- words
 opt.iskeyword:append("-") -- consider string-string as whole words
+opt.isfnname:append("@-@")
 opt.fillchars = {
 	foldopen = "",
 	foldclose = "",
