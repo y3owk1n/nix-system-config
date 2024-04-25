@@ -108,3 +108,6 @@ map("n", "<leader>ch", function()
 end, {
 	desc = "Replace Hex With HSL",
 })
+
+-- No op
+map("n", "Q", "<nop>", { desc = "No op" })
