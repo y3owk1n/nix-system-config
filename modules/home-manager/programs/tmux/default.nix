@@ -100,7 +100,7 @@
 
         set -g status 2
 
-        set -g status-format[1] '#[align=centre]'''
+        set -g status-format[1] '#[align=centre]'
       '';
     };
   };
