@@ -1,7 +1,8 @@
 return {
 	{
 		"rcarriga/nvim-notify",
-		-- event = "VeryLazy",
+		lazy = true,
+		event = { "VeryLazy" }, -- to disable, comment this out
 		keys = {
 			{
 				"<leader>un",
@@ -33,7 +34,6 @@ return {
 	},
 	{
 		"mrded/nvim-lsp-notify",
-		-- event = "VeryLazy",
 		dependencies = {
 			"rcarriga/nvim-notify",
 		},

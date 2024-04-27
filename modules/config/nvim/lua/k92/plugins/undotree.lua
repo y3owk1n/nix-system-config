@@ -3,6 +3,7 @@ local map = keymap.map
 
 return {
 	"mbbill/undotree",
+	lazy = true,
 	event = { "BufReadPost", "BufNewFile", "BufWritePre" },
 	opts = {},
 	config = function()

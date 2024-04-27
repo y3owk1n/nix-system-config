@@ -1,5 +1,6 @@
 return {
 	"laytan/cloak.nvim",
+	lazy = true,
 	event = { "BufReadPost", "BufNewFile", "BufWritePre" },
 	opts = {
 		enabled = true,

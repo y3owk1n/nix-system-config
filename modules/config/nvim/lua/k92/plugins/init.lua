@@ -7,6 +7,7 @@ return {
 	},
 	{
 		"windwp/nvim-ts-autotag",
+		lazy = true,
 		event = { "BufReadPost", "BufNewFile", "BufWritePre" },
 		opts = {},
 	},
@@ -25,17 +26,20 @@ return {
 	},
 	{
 		"dmmulroy/ts-error-translator.nvim",
+		lazy = true,
 		event = { "BufReadPre", "BufNewFile" },
 		opts = {},
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
+		lazy = true,
 		event = { "BufReadPost", "BufNewFile", "BufWritePre" },
 		main = "ibl",
 		opts = {},
 	},
 	{
 		"folke/todo-comments.nvim",
+		lazy = true,
 		event = { "BufReadPost", "BufNewFile", "BufWritePre" },
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = { signs = false },

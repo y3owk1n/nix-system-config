@@ -1,6 +1,7 @@
 return {
 	"folke/trouble.nvim",
 	branch = "dev", -- IMPORTANT! using v3
+	lazy = true,
 	cmd = { "TroubleToggle", "Trouble" },
 	opts = {
 		-- auto_close = true, -- auto close when there are no items
