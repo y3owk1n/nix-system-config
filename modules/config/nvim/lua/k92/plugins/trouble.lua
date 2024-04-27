@@ -1,33 +1,48 @@
 return {
 	"folke/trouble.nvim",
+	branch = "dev", -- IMPORTANT! using v3
 	cmd = { "TroubleToggle", "Trouble" },
-	opts = { use_diagnostic_signs = true },
+	opts = {
+		-- auto_close = true, -- auto close when there are no items
+		-- auto_open = true, -- auto open when there are items
+		focus = true, -- Focus the window when opened
+	},
 	keys = {
 		{
 			"<leader>xx",
-			"<cmd>TroubleToggle document_diagnostics<cr>",
-			desc = "Document Diagnostics",
+			"<cmd>Trouble diagnostics toggle<cr>",
+			desc = "Diagnostics (Trouble)",
 		},
 		{
 			"<leader>xX",
-			"<cmd>TroubleToggle workspace_diagnostics<cr>",
-			desc = "Workspace Diagnostics",
+			"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+			desc = "Buffer Diagnostics (Trouble)",
 		},
 		{
-			"<leader>xL",
-			"<cmd>TroubleToggle loclist<cr>",
-			desc = "Location List",
+			"<leader>cs",
+			"<cmd>Trouble symbols toggle focus=true win.position=right win.size.width=50<cr>",
+			desc = "Symbols (Trouble)",
 		},
 		{
-			"<leader>xQ",
-			"<cmd>TroubleToggle quickfix<cr>",
-			desc = "Quickfix List",
+			"<leader>cl",
+			"<cmd>Trouble lsp toggle focus=true win.position=right win.size.width=50<cr>",
+			desc = "LSP Definitions / references / ... (Trouble)",
+		},
+		{
+			"<leader>xl",
+			"<cmd>Trouble loclist toggle<cr>",
+			desc = "Location List (Trouble)",
+		},
+		{
+			"<leader>xq",
+			"<cmd>Trouble qflist toggle<cr>",
+			desc = "Quickfix List (Trouble)",
 		},
 		{
 			"[q",
 			function()
 				if require("trouble").is_open() then
-					require("trouble").previous({
+					require("trouble").prev({
 						skip_groups = true,
 						jump = true,
 					})
