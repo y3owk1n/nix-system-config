@@ -109,11 +109,11 @@ return {
 			"n",
 			"<leader>sx",
 			builtin.resume,
-			{ desc = "[S]earch [R]esume" }
+			{ desc = "[S]earch Resume" }
 		)
 		keymap.set("n", "<leader>sc", function()
 			builtin.find_files({ cwd = vim.fn.stdpath("config") })
-		end, { desc = "[S]earch [N]eovim files" })
+		end, { desc = "[S]earch Neovim [C]onfig" })
 		keymap.set("n", "<leader>sn", function()
 			extensions.notify.notify()
 		end, { desc = "[S]earch [N]notifications" })
