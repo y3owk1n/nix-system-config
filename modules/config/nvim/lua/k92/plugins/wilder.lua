@@ -1,6 +1,8 @@
 return {
 	{
 		"gelguy/wilder.nvim",
+		lazy = true,
+		event = { "VeryLazy" },
 		keys = {
 			":",
 			"/",
@@ -45,7 +47,7 @@ return {
 						border = blue_highlight,
 						accent = blue_highlight,
 					},
-					pumblend = 5,
+					pumblend = 0,
 					min_width = "100%",
 					min_height = "25%",
 					max_height = "25%",

@@ -2,6 +2,7 @@ local lsp = require("k92.utils.lsp")
 
 return {
 	"nvim-neo-tree/neo-tree.nvim",
+	lazy = true,
 	branch = "v3.x",
 	cmd = "Neotree",
 	dependencies = {

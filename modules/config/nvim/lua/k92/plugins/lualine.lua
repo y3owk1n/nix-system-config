@@ -1,5 +1,6 @@
 return {
 	"nvim-lualine/lualine.nvim",
+	lazy = true,
 	event = { "VeryLazy" }, -- to disable, comment this out
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	init = function()

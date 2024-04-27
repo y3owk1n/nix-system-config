@@ -1,5 +1,7 @@
 return {
 	"nvimtools/none-ls.nvim",
+	lazy = true,
+	event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
 	dependencies = {
 		"nvimtools/none-ls-extras.nvim",
 		"mason.nvim",
