@@ -17,16 +17,16 @@ return {
 		},
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		{
-			"j-hui/fidget.nvim",
-			opts = {
-				notification = {
-					window = {
-						winblend = 0,
-					},
-				},
-			},
-		},
+		-- {
+		-- 	"j-hui/fidget.nvim",
+		-- 	opts = {
+		-- 		notification = {
+		-- 			window = {
+		-- 				winblend = 0,
+		-- 			},
+		-- 		},
+		-- 	},
+		-- },
 
 		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
