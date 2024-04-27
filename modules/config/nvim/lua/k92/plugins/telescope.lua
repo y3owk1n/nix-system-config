@@ -39,9 +39,10 @@ return {
 		})
 
 		telescope.load_extension("fzf")
-
+		telescope.load_extension("notify")
 		-- set keymaps
 		local builtin = require("telescope.builtin")
+		local extensions = require("telescope").extensions
 		local keymap = vim.keymap -- for conciseness
 
 		keymap.set(
@@ -110,8 +111,11 @@ return {
 			builtin.resume,
 			{ desc = "[S]earch [R]esume" }
 		)
-		keymap.set("n", "<leader>sn", function()
+		keymap.set("n", "<leader>sc", function()
 			builtin.find_files({ cwd = vim.fn.stdpath("config") })
 		end, { desc = "[S]earch [N]eovim files" })
+		keymap.set("n", "<leader>sn", function()
+			extensions.notify.notify()
+		end, { desc = "[S]earch [N]notifications" })
 	end,
 }

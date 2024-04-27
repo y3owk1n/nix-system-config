@@ -45,5 +45,3 @@ function M.on_rename(from, to)
 		end
 	end
 end
-
-return M
