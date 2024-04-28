@@ -106,17 +106,17 @@ autocmd({ "BufWritePre" }, {
 	end,
 })
 
--- Make cmdheight 1 if entering macro
-autocmd("RecordingEnter", {
-	pattern = "*",
-	command = "set cmdheight=2",
-})
-
--- Make cmdheight 0 if leaving macro
-autocmd("RecordingLeave", {
-	pattern = "*",
-	command = "set cmdheight=0",
-})
+-- -- Make cmdheight 1 if entering macro
+-- autocmd("RecordingEnter", {
+-- 	pattern = "*",
+-- 	command = "set cmdheight=2",
+-- })
+--
+-- -- Make cmdheight 0 if leaving macro
+-- autocmd("RecordingLeave", {
+-- 	pattern = "*",
+-- 	command = "set cmdheight=0",
+-- })
 
 -- Turn off paste mode when leaving insert
 autocmd("InsertLeave", {
