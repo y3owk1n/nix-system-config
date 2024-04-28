@@ -12,13 +12,11 @@ return {
 		},
 		"nvim-tree/nvim-web-devicons",
 		"nvim-telescope/telescope-file-browser.nvim",
-		"jonarrien/telescope-cmdline.nvim",
 	},
 	config = function()
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
 		local open_with_trouble = require("trouble.sources.telescope").open
-		-- local fb_actions = require("telescope._extensions.file_browser.actions")
 
 		-- Use this to add more results without clearing the trouble list
 		local add_to_trouble = require("trouble.sources.telescope").add
@@ -95,7 +93,6 @@ return {
 		telescope.load_extension("fzf")
 		telescope.load_extension("notify")
 		telescope.load_extension("file_browser")
-		telescope.load_extension("cmdline")
 		-- set keymaps
 		local builtin = require("telescope.builtin")
 		local extensions = require("telescope").extensions
@@ -170,9 +167,11 @@ return {
 		keymap.set("n", "<leader>sc", function()
 			builtin.find_files({ cwd = vim.fn.stdpath("config") })
 		end, { desc = "[S]earch Neovim [C]onfig" })
+
 		keymap.set("n", "<leader>sn", function()
 			extensions.notify.notify()
 		end, { desc = "[S]earch [N]notifications" })
+
 		keymap.set("n", "<leader><space>", function()
 			local function telescope_buffer_dir()
 				return vim.fn.expand("%:p:h")
@@ -187,13 +186,6 @@ return {
 				initial_mode = "insert",
 				layout_config = { height = 40 },
 			})
-		end, { desc = "Open File Browser with the path of the current buffer" })
-
-		keymap.set(
-			"n",
-			":",
-			"<cmd>Telescope cmdline<cr>",
-			{ desc = "CMD Line" }
-		)
+		end, { desc = "Open File Browser" })
 	end,
 }
