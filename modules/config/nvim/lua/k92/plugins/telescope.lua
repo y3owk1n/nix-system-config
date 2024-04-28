@@ -14,6 +14,10 @@ return {
 	},
 	config = function()
 		local telescope = require("telescope")
+		local open_with_trouble = require("trouble.sources.telescope").open
+
+		-- Use this to add more results without clearing the trouble list
+		local add_to_trouble = require("trouble.sources.telescope").add
 
 		telescope.setup({
 			defaults = {
@@ -24,7 +28,14 @@ return {
 				sorting_strategy = "ascending",
 				winblend = 0,
 				mappings = {
-					n = {},
+					i = {
+						["<c-a>"] = open_with_trouble,
+						["<c-A>"] = add_to_trouble,
+					},
+					n = {
+						["<c-a>"] = open_with_trouble,
+						["<c-A>"] = add_to_trouble,
+					},
 				},
 			},
 			pickers = {
