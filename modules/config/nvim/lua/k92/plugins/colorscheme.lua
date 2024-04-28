@@ -63,6 +63,7 @@ return {
 					information = { "undercurl" },
 				},
 			},
+			noice = true,
 			notify = true,
 			treesitter = true,
 			treesitter_context = true,
