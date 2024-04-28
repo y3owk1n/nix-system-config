@@ -112,14 +112,14 @@ return {
 				map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
 				map(
-					"[d",
+					"<C-j>",
 					vim.diagnostic.goto_prev,
-					"Go to previous [D]iagnostic message"
+					"Go to previous Diagnostic message"
 				)
 				map(
-					"]d",
+					"<C-k>",
 					vim.diagnostic.goto_next,
-					"Go to next [D]iagnostic message"
+					"Go to next Diagnostic message"
 				)
 
 				local client = vim.lsp.get_client_by_id(event.data.client_id)
