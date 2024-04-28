@@ -106,9 +106,7 @@ opt.backspace:append({ "nostop" }) -- don't stop backspace at insert
 
 opt.whichwrap:append("<,>,[,],h,l")
 
-if fn.has("nvim-0.8") == 1 then
-	opt.cmdheight = 0
-end
+opt.cmdheight = 0
 
 -- Add border
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
