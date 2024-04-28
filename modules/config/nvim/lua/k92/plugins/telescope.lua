@@ -32,12 +32,44 @@ return {
 				winblend = 0,
 				mappings = {
 					i = {
-						["<c-a>"] = open_with_trouble,
-						["<c-A>"] = add_to_trouble,
-						["<c-j>"] = actions.move_selection_next,
-						["<c-k>"] = actions.move_selection_previous,
-						["<C-y>"] = actions.select_horizontal,
-						["<C-x>"] = actions.select_vertical,
+						-- do not allow any actions during insert mode
+						-- mappings from https://github.com/nvim-telescope/telescope.nvim/blob/master/lua/telescope/mappings.lua
+						["<LeftMouse>"] = actions.nop,
+						["<2-LeftMouse>"] = actions.nop,
+
+						["<C-n>"] = actions.nop,
+						["<C-p>"] = actions.nop,
+
+						["<C-c>"] = actions.nop,
+
+						["<Down>"] = actions.nop,
+						["<Up>"] = actions.nop,
+
+						["<CR>"] = actions.nop,
+						["<C-x>"] = actions.nop,
+						["<C-v>"] = actions.nop,
+						["<C-t>"] = actions.nop,
+
+						["<C-u>"] = actions.nop,
+						["<C-d>"] = actions.nop,
+						["<C-f>"] = actions.nop,
+						["<C-k>"] = actions.nop,
+
+						["<PageUp>"] = actions.nop,
+						["<PageDown>"] = actions.nop,
+						["<M-f>"] = actions.nop,
+						["<M-k>"] = actions.nop,
+
+						["<Tab>"] = actions.nop,
+						["<S-Tab>"] = actions.nop,
+						["<C-q>"] = actions.nop,
+						["<M-q>"] = actions.nop,
+						["<C-l>"] = actions.nop,
+						["<C-/>"] = actions.nop,
+						["<C-_>"] = actions.nop,
+						["<C-w>"] = actions.nop,
+						["<C-r><C-w>"] = actions.nop,
+						["<C-j>"] = actions.nop,
 					},
 					n = {
 						["<c-a>"] = open_with_trouble,
@@ -67,12 +99,12 @@ return {
 		local extensions = require("telescope").extensions
 		local keymap = vim.keymap -- for conciseness
 
-		keymap.set(
-			"n",
-			"<leader><space>",
-			builtin.find_files,
-			{ desc = "[S]earch [F]iles" }
-		)
+		-- keymap.set(
+		-- 	"n",
+		-- 	"<leader><space>",
+		-- 	builtin.find_files,
+		-- 	{ desc = "[S]earch [F]iles" }
+		-- )
 		keymap.set(
 			"n",
 			"<leader>sf",
@@ -139,18 +171,18 @@ return {
 		keymap.set("n", "<leader>sn", function()
 			extensions.notify.notify()
 		end, { desc = "[S]earch [N]notifications" })
-		keymap.set("n", "<leader>e", function()
+		keymap.set("n", "<leader><space>", function()
 			local function telescope_buffer_dir()
 				return vim.fn.expand("%:p:h")
 			end
 
-			telescope.extensions.file_browser.file_browser({
+			extensions.file_browser.file_browser({
 				path = "%:p:h",
 				cwd = telescope_buffer_dir(),
 				grouped = true,
 				previewer = false,
 				auto_depth = true,
-				initial_mode = "normal",
+				initial_mode = "insert",
 				layout_config = { height = 40 },
 			})
 		end, { desc = "Open File Browser with the path of the current buffer" })
