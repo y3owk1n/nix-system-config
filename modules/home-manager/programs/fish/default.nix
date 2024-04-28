@@ -30,11 +30,13 @@
         nixup = "pushd ~/nix-system-config; nix flake update; nixswitch; popd";
         nixcleanup = "bash ~/nix-system-config/cleanup.sh";
         cat = "bat";
+        n = "nvim";
         nim = "nvim";
         vim = "nvim";
         nvm = "nvim";
         vi = "nvim";
         nvi = "nvim";
+        nivm = "nvim";
       };
       plugins = [
         {
