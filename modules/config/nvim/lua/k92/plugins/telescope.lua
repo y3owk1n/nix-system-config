@@ -11,10 +11,13 @@ return {
 			end,
 		},
 		"nvim-tree/nvim-web-devicons",
+		"nvim-telescope/telescope-file-browser.nvim",
 	},
 	config = function()
 		local telescope = require("telescope")
+		local actions = require("telescope.actions")
 		local open_with_trouble = require("trouble.sources.telescope").open
+		-- local fb_actions = require("telescope._extensions.file_browser.actions")
 
 		-- Use this to add more results without clearing the trouble list
 		local add_to_trouble = require("trouble.sources.telescope").add
@@ -31,16 +34,23 @@ return {
 					i = {
 						["<c-a>"] = open_with_trouble,
 						["<c-A>"] = add_to_trouble,
+						["<c-j>"] = actions.move_selection_next,
+						["<c-k>"] = actions.move_selection_previous,
+						["<C-y>"] = actions.select_horizontal,
+						["<C-x>"] = actions.select_vertical,
 					},
 					n = {
 						["<c-a>"] = open_with_trouble,
 						["<c-A>"] = add_to_trouble,
+						["q"] = actions.close,
+						["-"] = actions.select_horizontal,
+						["/"] = actions.select_vertical,
 					},
 				},
 			},
 			pickers = {
 				diagnostics = {
-					theme = "ivy",
+					theme = "dropdown",
 					initial_mode = "normal",
 					layout_config = {
 						preview_cutoff = 9999,
@@ -51,6 +61,7 @@ return {
 
 		telescope.load_extension("fzf")
 		telescope.load_extension("notify")
+		telescope.load_extension("file_browser")
 		-- set keymaps
 		local builtin = require("telescope.builtin")
 		local extensions = require("telescope").extensions
@@ -128,5 +139,20 @@ return {
 		keymap.set("n", "<leader>sn", function()
 			extensions.notify.notify()
 		end, { desc = "[S]earch [N]notifications" })
+		keymap.set("n", "<leader>e", function()
+			local function telescope_buffer_dir()
+				return vim.fn.expand("%:p:h")
+			end
+
+			telescope.extensions.file_browser.file_browser({
+				path = "%:p:h",
+				cwd = telescope_buffer_dir(),
+				grouped = true,
+				previewer = false,
+				auto_depth = true,
+				initial_mode = "normal",
+				layout_config = { height = 40 },
+			})
+		end, { desc = "Open File Browser with the path of the current buffer" })
 	end,
 }
