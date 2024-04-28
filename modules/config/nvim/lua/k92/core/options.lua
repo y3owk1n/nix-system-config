@@ -1,7 +1,6 @@
 local opt = vim.opt -- for conciseness
 local global = vim.g
 local cmd = vim.cmd
-local fn = vim.fn
 
 -- disable some extension providers
 global.loaded_python3_provider = 0
@@ -63,6 +62,10 @@ opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 -- split windows
 opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
+opt.splitkeep = "cursor"
+
+-- mouse
+opt.mouse = ""
 
 -- undo
 opt.undofile = true
@@ -74,6 +77,7 @@ opt.swapfile = false
 opt.updatetime = 50 -- Save swap file and trigger CursorHold
 
 -- words
+opt.path:append("**")
 opt.iskeyword:append("-") -- consider string-string as whole words
 opt.isfname:append("@-@")
 opt.fillchars = {
@@ -85,6 +89,7 @@ opt.fillchars = {
 	diff = "╱",
 	eob = " ",
 }
+opt.wildignore:append("**/node_modules/**")
 
 -- enable undercurl
 cmd([[let &t_Cs = "\e[4:3m]"]])
