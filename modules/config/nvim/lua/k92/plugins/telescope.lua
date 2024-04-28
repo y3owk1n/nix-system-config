@@ -12,6 +12,7 @@ return {
 		},
 		"nvim-tree/nvim-web-devicons",
 		"nvim-telescope/telescope-file-browser.nvim",
+		"jonarrien/telescope-cmdline.nvim",
 	},
 	config = function()
 		local telescope = require("telescope")
@@ -45,7 +46,7 @@ return {
 						["<Down>"] = actions.nop,
 						["<Up>"] = actions.nop,
 
-						["<CR>"] = actions.nop,
+						-- ["<CR>"] = actions.nop,
 						["<C-x>"] = actions.nop,
 						["<C-v>"] = actions.nop,
 						["<C-t>"] = actions.nop,
@@ -76,7 +77,7 @@ return {
 						["<c-A>"] = add_to_trouble,
 						["q"] = actions.close,
 						["-"] = actions.select_horizontal,
-						["/"] = actions.select_vertical,
+						["\\"] = actions.select_vertical,
 					},
 				},
 			},
@@ -94,6 +95,7 @@ return {
 		telescope.load_extension("fzf")
 		telescope.load_extension("notify")
 		telescope.load_extension("file_browser")
+		telescope.load_extension("cmdline")
 		-- set keymaps
 		local builtin = require("telescope.builtin")
 		local extensions = require("telescope").extensions
@@ -186,5 +188,12 @@ return {
 				layout_config = { height = 40 },
 			})
 		end, { desc = "Open File Browser with the path of the current buffer" })
+
+		keymap.set(
+			"n",
+			":",
+			"<cmd>Telescope cmdline<cr>",
+			{ desc = "CMD Line" }
+		)
 	end,
 }
