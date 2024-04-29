@@ -187,5 +187,15 @@ return {
 				layout_config = { height = 40 },
 			})
 		end, { desc = "Open File Browser" })
+
+		keymap.set("n", "<leader>e", function()
+			extensions.file_browser.file_browser({
+				grouped = true,
+				previewer = false,
+				auto_depth = true,
+				initial_mode = "insert",
+				layout_config = { height = 40 },
+			})
+		end, { desc = "Open File Browser from cwd" })
 	end,
 }
