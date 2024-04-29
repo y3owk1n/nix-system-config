@@ -98,24 +98,6 @@ return {
 		local extensions = require("telescope").extensions
 		local keymap = vim.keymap -- for conciseness
 
-		-- keymap.set(
-		-- 	"n",
-		-- 	"<leader><space>",
-		-- 	builtin.find_files,
-		-- 	{ desc = "[S]earch [F]iles" }
-		-- )
-		keymap.set(
-			"n",
-			"<leader>sf",
-			builtin.find_files,
-			{ desc = "[S]earch [F]iles" }
-		)
-		keymap.set(
-			"n",
-			"<leader>s.",
-			builtin.oldfiles,
-			{ desc = "[S]earch Recent Files" }
-		)
 		keymap.set(
 			"n",
 			"<leader>sd",
@@ -133,12 +115,6 @@ return {
 			"<leader>sw",
 			builtin.grep_string,
 			{ desc = "[S]earch current [W]ord" }
-		)
-		keymap.set(
-			"n",
-			"<leader>sb",
-			"<cmd>Telescope current_buffer_fuzzy_find<cr>",
-			{ desc = "[S]earch current [B]buffer Fuzzy" }
 		)
 		keymap.set(
 			"n",
