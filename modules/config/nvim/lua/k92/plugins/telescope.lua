@@ -11,7 +11,6 @@ return {
 			end,
 		},
 		"nvim-tree/nvim-web-devicons",
-		"nvim-telescope/telescope-file-browser.nvim",
 	},
 	config = function()
 		local telescope = require("telescope")
@@ -88,29 +87,22 @@ return {
 					},
 				},
 			},
-			extensions = {
-				file_browser = {
-					-- disables netrw and use telescope-file-browser in its place
-					hijack_netrw = true,
-					select_buffer = true,
-					use_ui_input = false,
-					grouped = true,
-					previewer = false,
-					auto_depth = true,
-					initial_mode = "insert",
-					layout_config = { height = 40 },
-				},
-			},
 		})
 
 		telescope.load_extension("fzf")
 		telescope.load_extension("notify")
-		telescope.load_extension("file_browser")
+		-- telescope.load_extension("file_browser")
 		-- set keymaps
 		local builtin = require("telescope.builtin")
 		local extensions = require("telescope").extensions
 		local keymap = vim.keymap -- for conciseness
 
+		keymap.set(
+			"n",
+			"<leader><space>",
+			builtin.find_files,
+			{ desc = "[S]earch [F]iles" }
+		)
 		keymap.set(
 			"n",
 			"<leader>sd",
@@ -160,20 +152,5 @@ return {
 		keymap.set("n", "<leader>sn", function()
 			extensions.notify.notify()
 		end, { desc = "[S]earch [N]notifications" })
-
-		keymap.set("n", "<leader>e", function()
-			local function telescope_buffer_dir()
-				return vim.fn.expand("%:p:h")
-			end
-
-			extensions.file_browser.file_browser({
-				path = "%:p:h",
-				cwd = telescope_buffer_dir(),
-			})
-		end, { desc = "Open File Browser" })
-
-		keymap.set("n", "<leader><space>", function()
-			extensions.file_browser.file_browser()
-		end, { desc = "Open File Browser from cwd" })
 	end,
 }
