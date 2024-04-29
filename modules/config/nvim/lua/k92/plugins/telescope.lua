@@ -88,6 +88,19 @@ return {
 					},
 				},
 			},
+			extensions = {
+				file_browser = {
+					-- disables netrw and use telescope-file-browser in its place
+					hijack_netrw = true,
+					select_buffer = true,
+					use_ui_input = false,
+					grouped = true,
+					previewer = false,
+					auto_depth = true,
+					initial_mode = "insert",
+					layout_config = { height = 40 },
+				},
+			},
 		})
 
 		telescope.load_extension("fzf")
@@ -148,7 +161,7 @@ return {
 			extensions.notify.notify()
 		end, { desc = "[S]earch [N]notifications" })
 
-		keymap.set("n", "<leader><space>", function()
+		keymap.set("n", "<leader>e", function()
 			local function telescope_buffer_dir()
 				return vim.fn.expand("%:p:h")
 			end
@@ -156,22 +169,11 @@ return {
 			extensions.file_browser.file_browser({
 				path = "%:p:h",
 				cwd = telescope_buffer_dir(),
-				grouped = true,
-				previewer = false,
-				auto_depth = true,
-				initial_mode = "insert",
-				layout_config = { height = 40 },
 			})
 		end, { desc = "Open File Browser" })
 
-		keymap.set("n", "<leader>e", function()
-			extensions.file_browser.file_browser({
-				grouped = true,
-				previewer = false,
-				auto_depth = true,
-				initial_mode = "insert",
-				layout_config = { height = 40 },
-			})
+		keymap.set("n", "<leader><space>", function()
+			extensions.file_browser.file_browser()
 		end, { desc = "Open File Browser from cwd" })
 	end,
 }
