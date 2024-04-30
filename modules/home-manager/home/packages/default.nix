@@ -21,6 +21,7 @@ in
       minio
       jq
       agkozak-zsh-prompt
+      tree
       # --- neovim ---
       luajit
       luajitPackages.luarocks # for nvim
