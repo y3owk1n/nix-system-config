@@ -77,7 +77,7 @@
         bind - split-window -v -c "#{pane_current_path}"
 
         unbind r
-        bind R source-file ~/.config/tmux/tmux.conf \; display-message "Config reloaded..."
+        bind R source-file ~/.config/tmux.conf \; display-message "Config reloaded..."
 
         bind -r j resize-pane -D 5
         bind -r k resize-pane -U 5
