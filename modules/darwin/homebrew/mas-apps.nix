@@ -8,6 +8,7 @@
       "Consent-O-Matic" = 1606897889;
       "JSON Peep for Safari" = 1458969831;
       "Vimlike" = 1584519802;
+      "Tailscale" = 1475387142;
     };
   };
 }
