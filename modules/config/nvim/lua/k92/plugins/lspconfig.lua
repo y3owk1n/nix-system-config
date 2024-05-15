@@ -112,12 +112,12 @@ return {
 				map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
 				map(
-					"<C-j>",
+					"[d",
 					vim.diagnostic.goto_prev,
 					"Go to previous Diagnostic message"
 				)
 				map(
-					"<C-k>",
+					"]d",
 					vim.diagnostic.goto_next,
 					"Go to next Diagnostic message"
 				)
