@@ -7,7 +7,7 @@ in
   environment = {
     systemPackages = with pkgs; [
       coreutils
-      kanata
+      #kanata
     ];
     shells = with pkgs; [
       bash
