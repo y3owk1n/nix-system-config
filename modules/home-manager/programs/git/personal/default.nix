@@ -2,6 +2,7 @@
 {
   programs = {
     git = {
+      enable = true;
       userName = "y3owk1n";
       userEmail = "wongyeowkin@gmail.com";
       extraConfig = {
