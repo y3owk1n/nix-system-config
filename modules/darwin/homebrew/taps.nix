@@ -4,7 +4,7 @@
     taps = [
       "homebrew/services"
       "homebrew/cask-fonts"
-      "homebrew/cask-versions"
+      # "homebrew/cask-versions"
       "FelixKratz/formulae"
     ];
   };

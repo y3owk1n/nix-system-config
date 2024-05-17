@@ -21,7 +21,7 @@
 
       # browser
       "brave-browser"
-      "firefox-nightly"
+      "firefox@nightly"
 
       # fonts
       "font-inter"
