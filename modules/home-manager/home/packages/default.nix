@@ -11,7 +11,7 @@ in
       nodejs_18
       bun
       fd
-      stats
+      # stats
       minio
       nodePackages.pnpm
       rm-improved
