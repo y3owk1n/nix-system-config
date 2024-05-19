@@ -22,6 +22,7 @@ in
       jq
       agkozak-zsh-prompt
       tree
+      stripe-cli
       # --- neovim ---
       luajit
       luajitPackages.luarocks # for nvim
