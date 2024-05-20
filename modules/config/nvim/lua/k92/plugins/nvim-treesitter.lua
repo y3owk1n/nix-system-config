@@ -15,9 +15,9 @@ return {
 			require("lazy.core.loader").add_to_rtp(plugin)
 			require("nvim-treesitter.query_predicates")
 		end,
-		dependencies = {
-			"windwp/nvim-ts-autotag",
-		},
+		-- dependencies = {
+		-- 	"windwp/nvim-ts-autotag",
+		-- },
 		config = function()
 			-- import nvim-treesitter plugin
 			local treesitter = require("nvim-treesitter.configs")
@@ -31,9 +31,9 @@ return {
 				-- enable indentation
 				indent = { enable = true },
 				-- enable autotagging (w/ nvim-ts-autotag plugin)
-				autotag = {
-					enable = true,
-				},
+				-- autotag = {
+				-- 	enable = true,
+				-- },
 				-- ensure these language parsers are installed
 				ensure_installed = {
 					"bash",

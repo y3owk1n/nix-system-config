@@ -10,6 +10,7 @@ return {
 		lazy = true,
 		event = { "BufReadPost", "BufNewFile", "BufWritePre" },
 		opts = {},
+		config = true,
 	},
 	{
 		"kylechui/nvim-surround",
