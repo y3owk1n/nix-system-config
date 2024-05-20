@@ -81,8 +81,6 @@
         wvous-tr-corner = 5;
         # mouse in top left corner will (13) start lock screen
         wvous-tl-corner = 13;
-        # with modifier (shift) key
-        wvous-tl-modifier = 131072;
       };
 
       screencapture = {
