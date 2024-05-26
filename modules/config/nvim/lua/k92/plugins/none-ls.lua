@@ -9,6 +9,8 @@ return {
 	opts = function(_, opts)
 		local nls = require("null-ls")
 
+		local find_root = require("k92.utils.file").find_root
+
 		opts.root_dir = opts.root_dir
 			or require("null-ls.utils").root_pattern(
 				".null-ls-root",
@@ -31,12 +33,16 @@ return {
 		opts.sources = vim.list_extend(opts.sources or {}, {
 			require("none-ls.code_actions.eslint_d").with({
 				condition = function(utils)
-					return utils.root_has_file(eslint_configs_files)
+					local ctx = {}
+					ctx.filename = vim.fn.expand("%:p")
+					return find_root(ctx, eslint_configs_files)
 				end,
 			}),
 			require("none-ls.diagnostics.eslint_d").with({
 				condition = function(utils)
-					return utils.root_has_file(eslint_configs_files)
+					local ctx = {}
+					ctx.filename = vim.fn.expand("%:p")
+					return find_root(ctx, eslint_configs_files)
 				end,
 			}),
 			require("none-ls.diagnostics.yamllint"),
