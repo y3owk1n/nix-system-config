@@ -3,12 +3,12 @@
   homebrew = {
     casks = [
       # "raycast"
-      "appcleaner"
-      "keka"
-      "kekaexternalhelper"
+      # "appcleaner" # install from nix
+      # "keka"
+      # "kekaexternalhelper"
       "orbstack"
       "spaceid"
-      "stats"
+      # "stats"
       "onyx"
       "imageoptim"
       "whatsapp"

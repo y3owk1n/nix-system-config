@@ -26,6 +26,10 @@ in
       agkozak-zsh-prompt
       tree
       stripe-cli
+      # --- apps ---
+      appcleaner
+      keka
+      stats
       # --- neovim ---
       luajit
       luajitPackages.luarocks # for nvim
