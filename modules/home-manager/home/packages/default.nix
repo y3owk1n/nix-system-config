@@ -8,12 +8,15 @@ in
       ripgrep
       # cargo
       rustup
-      nodejs_18
+      corepack_latest
+      nodePackages_latest.vercel
+      nodePackages_latest.nodejs
+      # nodePackages_latest.nodejs.pkgs.pnpm
       bun
       fd
       # stats
       minio
-      nodePackages.pnpm
+      # nodePackages.pnpm
       rm-improved
       fd
       curl
