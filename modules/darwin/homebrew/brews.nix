@@ -3,7 +3,7 @@
   homebrew = {
     brews = [
       "sqlite"
-      "vercel-cli"
+      # "vercel-cli" # install it from nix
       "gnu-sed"
       {
         name = "svim";
