@@ -7,6 +7,7 @@ return {
 		-- auto_close = true, -- auto close when there are no items
 		-- auto_open = true, -- auto open when there are items
 		focus = true, -- Focus the window when opened
+		use_diagnostic_signs = true,
 	},
 	keys = {
 		{
