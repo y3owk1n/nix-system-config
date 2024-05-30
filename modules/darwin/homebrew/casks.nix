@@ -14,6 +14,7 @@
       "whatsapp"
       "lulu"
       "zerotier-one"
+      "gitbutler"
       # "obsidian"
       # "kawa"
       # "meetingbar"
