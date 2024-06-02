@@ -31,6 +31,7 @@ in
       keka
       stats
       # --- neovim ---
+      eslint_d
       luajit
       luajitPackages.luarocks # for nvim
       nixfmt-rfc-style # for nvim
