@@ -52,7 +52,7 @@ return {
 				map(
 					"gd",
 					require("telescope.builtin").lsp_definitions,
-					"[G]oto [D]efinition"
+					"[G]oto [D]efinition" -- codespell:ignore
 				)
 
 				-- Find references for the word under your cursor.
@@ -76,7 +76,7 @@ return {
 				map(
 					"<leader>lbt",
 					require("telescope.builtin").lsp_type_definitions,
-					"[T]ype [D]efinition"
+					"[T]ype [D]efinition" -- codespell:ignore
 				)
 
 				-- Fuzzy find all the symbols in your current document.
@@ -84,7 +84,7 @@ return {
 				map(
 					"<leader>lbd",
 					require("telescope.builtin").lsp_document_symbols,
-					"[D]ocument [S]symbols"
+					"[D]ocument [S]ymbols" -- codespell:ignore
 				)
 
 				-- Fuzzy find all the symbols in your current workspace
@@ -92,7 +92,7 @@ return {
 				map(
 					"<leader>lbs",
 					require("telescope.builtin").lsp_dynamic_workspace_symbols,
-					"[W]orkspace [S]symbols"
+					"[W]orkspace [S]ymbols" --codespell:ignore
 				)
 
 				-- Rename the variable under your cursor
@@ -105,7 +105,7 @@ return {
 
 				-- Opens a popup that displays documentation about the word under your cursor
 				--  See `:help K` for why this keymap
-				map("K", vim.lsp.buf.hover, "Hover Documentation")
+				map("K", vim.lsp.buf.hover, "[H]over Documentation")
 
 				-- WARN: This is not Goto Definition, this is Goto Declaration.
 				--  For example, in C this would take you to the header
@@ -259,7 +259,7 @@ return {
 		vim.list_extend(ensure_installed, {
 			"biome",
 			"jsonls",
-			"eslint_d",
+			-- "eslint_d", -- install it on os level to enable restart
 			"lua_ls",
 			"marksman",
 			"prismals",
