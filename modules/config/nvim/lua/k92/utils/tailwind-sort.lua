@@ -3,14 +3,6 @@ local parsers = require("nvim-treesitter.parsers")
 local M = {}
 
 local supported_filetypes = {
-	"html",
-	"css",
-	"php",
-	"twig",
-	"vue",
-	"svelte",
-	"astro",
-	"htmldjango",
 	"javascriptreact",
 	"typescriptreact",
 }
@@ -134,6 +126,14 @@ M.run = function()
 
 			for i, edit in pairs(result.classLists) do
 				local lines = vim.split(edit, "\n")
+
+				for j, line in ipairs(lines) do
+					-- Remove extra spaces between class names
+					line = line:gsub("%s+", " ")
+					-- Trim leading and trailing spaces
+					line = line:gsub("^%s*(.-)%s*$", "%1")
+					lines[j] = line
+				end
 
 				local start_row, start_col, end_row, end_col =
 					unpack(class_ranges[i])
