@@ -164,7 +164,7 @@ autocmd("FileType", {
 	end,
 })
 
--- Autosort tailwind classes
+-- Autosort tailwind classes and trim trailing whitespace
 autocmd("BufWritePre", {
 	group = augroup("autosort_tailwind"),
 	pattern = { "*.tsx", "*.jsx" },
