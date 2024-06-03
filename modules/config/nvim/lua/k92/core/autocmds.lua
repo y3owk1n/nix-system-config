@@ -181,6 +181,16 @@ autocmd("BufWritePre", {
 			return
 		end
 
+		local has_prettier_plugin = tailwind_sort.check_prettier_tw_plugin()
+
+		if has_prettier_plugin then
+			vim.notify(
+				"Has prettier tw plugin, won't run tailwind sort",
+				vim.log.levels.INFO
+			)
+			return
+		end
+
 		vim.schedule(
 			function() -- Schedule to run after current operations complete
 				tailwind_sort.run()

@@ -27,6 +27,50 @@ M.toggle_status = function(status)
 	return status
 end
 
+---@return boolean
+M.check_prettier_tw_plugin = function()
+	local file_util = require("k92.utils.file")
+
+	local prettier_file_pattern = {
+		"prettier",
+		".prettierrc",
+		".prettierrc.json",
+		".prettierrc.yml",
+		".prettierrc.yaml",
+		".prettierrc.json5",
+		".prettierrc.js",
+		"prettier.config.js",
+		".prettierrc.mjs",
+		"prettier.config.mjs",
+		".prettierrc.cjs",
+		"prettier.config.cjs",
+		".prettierrc.toml",
+	}
+
+	local ctx = {}
+	ctx.filename = vim.fn.expand("%:p")
+
+	local prettier_root = file_util.find_root(ctx, prettier_file_pattern)
+
+	if not prettier_root then
+		return false
+	end
+
+	local prettier_root_path =
+		file_util.current_file_path_absolute(prettier_root)
+
+	local result = file_util.find_text_in_file(
+		"prettier-plugin-tailwindcss",
+		prettier_root_path
+	)
+
+	if not result then
+		return false
+	end
+
+	return true
+end
+
 ---@return vim.lsp.Client?
 M.get_tw_lsp_client = function()
 	---@diagnostic disable-next-line: deprecated
