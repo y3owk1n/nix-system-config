@@ -128,11 +128,32 @@ M.run = function()
 				local lines = vim.split(edit, "\n")
 
 				for j, line in ipairs(lines) do
+					-- Split the line into individual classNames
+					local classNames = {}
+					for className in line:gmatch("%S+") do
+						table.insert(classNames, className)
+					end
+
+					-- Remove duplicates
+					local seen = {}
+					local uniqueClassNames = {}
+					for _, className in ipairs(classNames) do
+						if not seen[className] then
+							seen[className] = true
+							table.insert(uniqueClassNames, className)
+						end
+					end
+
+					-- Join unique classNames back together with single spaces
+					lines[j] = table.concat(uniqueClassNames, " ")
+				end
+
+				for k, line in ipairs(lines) do
 					-- Remove extra spaces between class names
 					line = line:gsub("%s+", " ")
 					-- Trim leading and trailing spaces
 					line = line:gsub("^%s*(.-)%s*$", "%1")
-					lines[j] = line
+					lines[k] = line
 				end
 
 				local start_row, start_col, end_row, end_col =
