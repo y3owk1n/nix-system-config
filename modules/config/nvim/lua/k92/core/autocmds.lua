@@ -175,6 +175,12 @@ autocmd("BufWritePre", {
 			return
 		end
 
+		local client = tailwind_sort.get_tw_lsp_client()
+
+		if not client then
+			return
+		end
+
 		vim.schedule(
 			function() -- Schedule to run after current operations complete
 				tailwind_sort.run()
