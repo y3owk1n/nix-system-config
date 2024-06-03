@@ -163,3 +163,22 @@ autocmd("FileType", {
 		vim.cmd.wincmd("=")
 	end,
 })
+
+-- Autosort tailwind classes
+autocmd("BufWritePre", {
+	group = augroup("autosort_tailwind"),
+	pattern = { "*.tsx", "*.jsx" },
+	callback = function()
+		local tailwind_sort = require("k92.utils.tailwind-sort")
+
+		if not tailwind_sort.get_status() then
+			return
+		end
+
+		vim.schedule(
+			function() -- Schedule to run after current operations complete
+				tailwind_sort.run()
+			end
+		)
+	end,
+})
