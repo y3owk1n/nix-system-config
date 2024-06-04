@@ -63,22 +63,30 @@ M.check_prettier_tw_plugin = function()
 	return true
 end
 
----@return vim.lsp.Client?
+---@return vim.lsp.Client|nil
 M.get_tw_lsp_client = function()
 	---@diagnostic disable-next-line: deprecated
 	local get_client = vim.lsp.get_clients or vim.lsp.get_active_clients
 	local clients = get_client({ name = "tailwindcss" })
-	return clients[1]
+
+	local tw_client = clients[1]
+
+	if not tw_client then
+		vim.notify(
+			"Required tailwind-language-server is not running",
+			vim.log.levels.WARN
+		)
+		return
+	end
+
+	return tw_client
 end
 
 M.run = function()
 	local client = M.get_tw_lsp_client()
 
 	if not client then
-		return vim.notify(
-			"tailwind-language-server is not running, run :TailwindSortDisable to disable auto run",
-			vim.log.levels.WARN
-		)
+		return
 	end
 
 	local bufnr = vim.api.nvim_get_current_buf()
@@ -126,6 +134,7 @@ M.run = function()
 
 			for i, edit in pairs(result.classLists) do
 				local lines = vim.split(edit, "\n")
+				local original_lines = vim.split(class_text[i], "\n")
 
 				for j, line in ipairs(lines) do
 					-- Split the line into individual classNames
@@ -159,21 +168,35 @@ M.run = function()
 				local start_row, start_col, end_row, end_col =
 					unpack(class_ranges[i])
 
-				local set_text = function()
-					vim.api.nvim_buf_set_text(
-						bufnr,
-						start_row,
-						start_col,
-						end_row,
-						end_col,
-						lines
+				-- Only replace the lines if they are different
+				local lines_changed = false
+				for k, line in ipairs(lines) do
+					if line ~= original_lines[k] then
+						lines_changed = true
+						break
+					end
+				end
+
+				if lines_changed then
+					local set_text = function()
+						vim.api.nvim_buf_set_text(
+							bufnr,
+							start_row,
+							start_col,
+							end_row,
+							end_col,
+							lines
+						)
+					end
+
+					-- Dismiss useless error messages when undoing in nightly
+					pcall(set_text)
+					vim.notify(
+						"Tailwind class sorted at line " .. (start_row + 1),
+						vim.log.levels.INFO
 					)
 				end
-				-- Dismiss useless error messages when undoing in nightly
-				pcall(set_text)
 			end
-
-			vim.notify("Tailwind class sorted", vim.log.levels.INFO)
 		end,
 		bufnr
 	)
@@ -209,13 +232,6 @@ M.get_class_nodes = function(bufnr, all)
 
 		for _, query_name in ipairs(queries) do
 			local query = vim.treesitter.query.get(lang, query_name)
-
-			-- if not query then
-			-- 	return vim.notify(
-			-- 		"No query for " .. query_name,
-			-- 		vim.log.levels.WARN
-			-- 	)
-			-- end
 
 			if query then
 				for id, node in
