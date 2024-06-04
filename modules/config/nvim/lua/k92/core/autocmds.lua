@@ -163,38 +163,3 @@ autocmd("FileType", {
 		vim.cmd.wincmd("=")
 	end,
 })
-
--- Autosort tailwind classes and trim trailing whitespace
-autocmd("BufWritePre", {
-	group = augroup("autosort_tailwind"),
-	pattern = { "*.tsx", "*.jsx" },
-	callback = function()
-		local tailwind_sort = require("k92.utils.tailwind-sort")
-
-		-- Check if auto format is enabled
-		if not tailwind_sort.get_status() then
-			vim.notify(
-				"Auto format for TailwindSort is disabled, run :TailwindSortEnable to enable auto format",
-				vim.log.levels.INFO
-			)
-
-			return
-		end
-
-		-- Check if prettier tailwind plugin is installed
-		if tailwind_sort.check_prettier_tw_plugin() then
-			vim.notify(
-				"Has prettier tailwind plugin, abort!",
-				vim.log.levels.WARN
-			)
-
-			return
-		end
-
-		vim.schedule(
-			function() -- Schedule to run after current operations complete
-				tailwind_sort.run()
-			end
-		)
-	end,
-})
