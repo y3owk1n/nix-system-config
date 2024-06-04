@@ -34,7 +34,7 @@ in
       eslint_d
       luajit
       luajitPackages.luarocks # for nvim
-      luajitPackages.busted # for nvim
+      luajitPackages.vusted # for nvim
       nixfmt-rfc-style # for nvim
       codespell # for nvim
       beautysh # for nvim
