@@ -44,6 +44,6 @@ return {
 		lazy = true,
 		event = { "LspAttach" },
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
-		opts = { autosort_on_save = { enabled = true } },
+		opts = {},
 	},
 }
