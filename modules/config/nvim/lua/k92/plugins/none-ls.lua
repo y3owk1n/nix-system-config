@@ -46,6 +46,7 @@ return {
 				end,
 			}),
 			require("none-ls.diagnostics.yamllint"),
+			nls.builtins.diagnostics.actionlint,
 			nls.builtins.diagnostics.fish,
 			nls.builtins.diagnostics.markdownlint,
 		})

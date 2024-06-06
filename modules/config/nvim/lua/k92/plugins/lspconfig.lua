@@ -260,6 +260,7 @@ return {
 			"biome",
 			"jsonls",
 			-- "eslint_d", -- install it on os level to enable restart
+			"actionlint",
 			"lua_ls",
 			"marksman",
 			"prismals",
