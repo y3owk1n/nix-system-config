@@ -91,11 +91,29 @@ return {
 						lookahead = true,
 
 						keymaps = {
+
 							["aa"] = {
+								query = "@assignment.outer",
+								desc = "Select outer part of an assignment",
+							},
+							["ia"] = {
+								query = "@assignment.inner",
+								desc = "Select inner part of an assignment",
+							},
+							["ll"] = {
+								query = "@assignment.lhs",
+								desc = "Select left hand side of an assignment",
+							},
+							["rr"] = {
+								query = "@assignment.rhs",
+								desc = "Select right hand side of an assignment",
+							},
+
+							["ap"] = {
 								query = "@parameter.outer",
 								desc = "Select outer part of a parameter/argument",
 							},
-							["ia"] = {
+							["ip"] = {
 								query = "@parameter.inner",
 								desc = "Select inner part of a parameter/argument",
 							},
