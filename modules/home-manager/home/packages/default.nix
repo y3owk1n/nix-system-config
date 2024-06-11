@@ -26,6 +26,7 @@ in
       agkozak-zsh-prompt
       tree
       stripe-cli
+      postgresql
       # --- apps ---
       appcleaner
       keka
