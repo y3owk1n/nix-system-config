@@ -2,23 +2,15 @@
 {
   homebrew = {
     casks = [
-      # "raycast"
-      # "appcleaner" # install from nix
-      # "keka"
-      # "kekaexternalhelper"
       "orbstack"
       "spaceid"
-      # "stats"
       "onyx"
       "imageoptim"
       "whatsapp"
       "lulu"
       "zerotier-one"
       "gitbutler"
-      # "obsidian"
-      # "kawa"
-      # "meetingbar"
-      # "hiddenbar"
+      # "pgadmin4"
 
       # browser
       "brave-browser"
