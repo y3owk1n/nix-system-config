@@ -10,6 +10,7 @@
       "lulu"
       "zerotier-one"
       "gitbutler"
+      "stats"
       # "pgadmin4"
 
       # browser

@@ -14,7 +14,6 @@ in
       # nodePackages_latest.nodejs.pkgs.pnpm
       bun
       fd
-      # stats
       minio
       # nodePackages.pnpm
       rm-improved
@@ -30,7 +29,7 @@ in
       # --- apps ---
       appcleaner
       keka
-      stats
+      # stats
       # --- neovim ---
       eslint_d
       luajit
