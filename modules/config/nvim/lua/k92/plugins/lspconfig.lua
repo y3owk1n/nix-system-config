@@ -84,7 +84,7 @@ return {
 				map(
 					"<leader>lbd",
 					require("telescope.builtin").lsp_document_symbols,
-					"[D]ocument [S]ymbols" -- codespell:ignore
+					"[D]ocument [S]symbols" -- codespell:ignore
 				)
 
 				-- Fuzzy find all the symbols in your current workspace
@@ -92,7 +92,7 @@ return {
 				map(
 					"<leader>lbs",
 					require("telescope.builtin").lsp_dynamic_workspace_symbols,
-					"[W]orkspace [S]ymbols" --codespell:ignore
+					"[W]orkspace [S]symbols" --codespell:ignore
 				)
 
 				-- Rename the variable under your cursor
