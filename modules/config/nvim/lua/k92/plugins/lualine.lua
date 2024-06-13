@@ -23,7 +23,6 @@ return {
 		local catppuccin_palettes = require("catppuccin.palettes").get_palette()
 
 		local buffer_utils = require("k92.utils.buffer")
-		local codeium_util = require("k92.utils.codeium")
 		local startup_util = require("k92.utils.startup")
 		---@diagnostic disable-next-line: different-requires
 		local harpoon_util = require("k92.utils.harpoon")
@@ -99,10 +98,6 @@ return {
 						color = {
 							fg = catppuccin_palettes.rosewater,
 						},
-					},
-					{
-						codeium_util.show_codeium_status_string,
-						cond = buffer_utils.is_writing_in_buffer_only,
 					},
 					{
 						"filetype",
