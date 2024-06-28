@@ -5,13 +5,13 @@ return {
 		lazy = true,
 		version = false, -- last release is way too old
 	},
-	{
-		"windwp/nvim-ts-autotag",
-		lazy = true,
-		event = { "BufReadPost", "BufNewFile", "BufWritePre" },
-		opts = {},
-		config = true,
-	},
+	-- {
+	-- 	"windwp/nvim-ts-autotag",
+	-- 	lazy = true,
+	-- 	event = { "BufReadPost", "BufNewFile", "BufWritePre" },
+	-- 	opts = {},
+	-- 	config = true,
+	-- },
 	{
 		"kylechui/nvim-surround",
 		lazy = true,
