@@ -35,37 +35,6 @@ settings.scrollStepSize = 200;
 settings.tabsThreshold = 0;
 settings.modeAfterYank = "Normal";
 
-map("u", "f");
-map("P", "cc");
-map("gi", "i");
-map("U", "gf");
-map("gf", "w");
-map("`", "'");
-// save default key `t` to temp key `>_t`
-map(">_t", "t");
-// create a new key `t` for default key `on`
-map("t", "on");
-// create a new key `o` for saved temp key `>_t`
-map("o", ">_t");
-// save default key `H` to temp key `>_H`
-map(">_H", "H");
-map("H", "S");
-map("L", "D");
-map("gt", "R");
-map("gT", "E");
-mapkey("<Ctrl-d>", "Scroll down", () => {
-  Normal.scroll("pageDown");
-});
-mapkey("<Ctrl-u>", "Scroll up", () => {
-  Normal.scroll("pageUp");
-});
-// save default key `R` to temp key `>_R`
-map(">_R", "R");
-map("J", "R");
-// save default key `E` to temp key `>_E`
-map(">_E", "E");
-map("K", "E");
-
 // ---- Unmap -----
 // Proxy Stuff
 unmap("spa");
@@ -77,22 +46,42 @@ unmap("cp");
 unmap(";cp");
 unmap(";ap");
 
+unmap("H"); // just in case
+unmap("L"); // just in case
+unmap("J"); // just in case
+unmap("K"); // just in case
+unmap("d"); // just in case
+
+unmap("i");
+unmap("t");
+unmap("x");
+unmap(":");
+unmap("gf");
+unmap("af");
+unmap("C");
+unmap("I");
+unmap("u");
+unmap("F"); // Go one tab history forward
+unmap("d"); // Scroll half page down
+unmap("e"); // Scroll half page up
+unmap("U"); // Scroll full page up
+unmap("P"); // Scroll full page down
+
 // Emoji
 iunmap(":");
 
-// Misc
-unmap(";t");
-unmap("si");
-unmap("ga");
-unmap("gc");
-unmap("gn");
-unmap("gr");
-unmap("ob");
-unmap("og");
-unmap("od");
-unmap("oy");
-unmap("d");
-unmap("f");
+// ---- Map ----
+map("H", "S");
+map("L", "D");
+map("J", "R");
+map("K", "E");
+map("F", "gf");
+mapkey("<Ctrl-d>", "Scroll down", () => {
+  Normal.scroll("pageDown");
+});
+mapkey("<Ctrl-u>", "Scroll up", () => {
+  Normal.scroll("pageUp");
+});
 
 // ---- Search Engines -----
 removeSearchAlias("b", "s");
@@ -102,13 +91,3 @@ removeSearchAlias("h", "s");
 removeSearchAlias("w", "s");
 removeSearchAlias("y", "s");
 removeSearchAlias("s", "s");
-
-const hintsCss =
-  "font-size: 10pt; font-family: 'GeistMono Nerd Font', Ubuntu, sans-serif; border: 0px; color: #f0c6c6 !important; background: #24273a; background-color: #24273a";
-
-api.Hints.style(hintsCss);
-api.Hints.style(hintsCss, "text");
-
-settings.theme = `
-/* Edit these variables for easy theme making */
-`;
