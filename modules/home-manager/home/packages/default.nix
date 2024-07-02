@@ -9,7 +9,7 @@ in
       # cargo
       rustup
       corepack_latest
-      nodePackages_latest.vercel
+      # nodePackages_latest.vercel
       nodePackages_latest.nodejs
       # nodePackages_latest.nodejs.pkgs.pnpm
       bun
