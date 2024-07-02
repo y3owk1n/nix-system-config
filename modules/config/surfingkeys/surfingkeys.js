@@ -83,6 +83,12 @@ mapkey("<Ctrl-u>", "Scroll up", () => {
   Normal.scroll("pageUp");
 });
 
+// ---- Post Unmap ----
+unmap("S");
+unmap("D");
+unmap("R");
+unmap("E");
+
 // ---- Search Engines -----
 removeSearchAlias("b", "s");
 removeSearchAlias("d", "s");
