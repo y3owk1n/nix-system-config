@@ -73,8 +73,8 @@ iunmap(":");
 // ---- Map ----
 map("H", "S");
 map("L", "D");
-map("J", "R");
-map("K", "E");
+// map("J", "R"); <-- Using arc default keymap to switch tabs
+// map("K", "E"); <-- Using arc default keymap to switch tabs
 map("F", "gf");
 mapkey("<Ctrl-d>", "Scroll down", () => {
   Normal.scroll("pageDown");
