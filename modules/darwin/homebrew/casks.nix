@@ -16,7 +16,7 @@
       # browser
       "brave-browser"
       "firefox@nightly"
-      # "arc"
+      "arc"
 
       # fonts
       "font-inter"
