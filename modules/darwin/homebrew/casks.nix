@@ -14,7 +14,7 @@
       # "pgadmin4"
 
       # browser
-      "brave-browser"
+      # "brave-browser"
       "firefox@nightly"
       "arc"
 
