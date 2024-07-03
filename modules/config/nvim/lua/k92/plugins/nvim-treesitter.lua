@@ -100,14 +100,14 @@ return {
 								query = "@assignment.inner",
 								desc = "Select inner part of an assignment",
 							},
-							["ll"] = {
-								query = "@assignment.lhs",
-								desc = "Select left hand side of an assignment",
-							},
-							["rr"] = {
-								query = "@assignment.rhs",
-								desc = "Select right hand side of an assignment",
-							},
+							-- ["ll"] = {
+							-- 	query = "@assignment.lhs",
+							-- 	desc = "Select left hand side of an assignment",
+							-- },
+							-- ["rr"] = {
+							-- 	query = "@assignment.rhs",
+							-- 	desc = "Select right hand side of an assignment",
+							-- },
 
 							["ap"] = {
 								query = "@parameter.outer",
