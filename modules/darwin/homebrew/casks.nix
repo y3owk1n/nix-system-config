@@ -11,14 +11,12 @@
       "zerotier-one"
       "gitbutler"
       "stats"
-      # "pgadmin4"
 
-      # browser
-      # "brave-browser"
+      # --- browser ---
       "firefox@nightly"
       "arc"
 
-      # fonts
+      # --- fonts ---
       "font-inter"
       "font-poppins"
       "font-geist"
