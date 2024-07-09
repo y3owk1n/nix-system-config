@@ -13,7 +13,7 @@
       "stats"
 
       # --- browser ---
-      "firefox@nightly"
+      # "firefox@nightly"
       "arc"
 
       # --- fonts ---
