@@ -15,8 +15,8 @@ return {
     }
 
     opts.window = {
-      completion = cmp.config.window.bordered(opts),
-      documentation = cmp.config.window.bordered(opts),
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
     }
 
     opts.mapping = vim.tbl_extend("force", opts.mapping, {
