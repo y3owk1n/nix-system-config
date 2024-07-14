@@ -24,7 +24,7 @@ vim.keymap.del("n", "<S-l>")
 vim.keymap.del("n", "[b")
 vim.keymap.del("n", "]b")
 vim.keymap.del("n", "<leader>bb")
-vim.keymap.del("n", "<leader>`")
+vim.keymap.del("n", "<leader>,")
 vim.keymap.del("n", "<leader>bd")
 vim.keymap.del("n", "<leader>bD")
 
@@ -100,3 +100,6 @@ vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move line down" })
 
 -- No op
 vim.keymap.set("n", "Q", "<nop>", { desc = "No op" })
+
+-- Mason
+vim.keymap.set("n", "<leader>m", "<cmd>Mason<cr>", { desc = "Mason" })
