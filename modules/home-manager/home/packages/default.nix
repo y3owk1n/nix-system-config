@@ -31,13 +31,13 @@ in
       keka
       # stats
       # --- neovim ---
-      eslint_d
-      luajit
-      luajitPackages.luarocks # for nvim
-      luajitPackages.vusted # for nvim
+      # eslint_d
+      # luajit
+      # luajitPackages.luarocks # for nvim
+      # luajitPackages.vusted # for nvim
       nixfmt-rfc-style # for nvim
-      codespell # for nvim
-      beautysh # for nvim
+      # codespell # for nvim
+      # beautysh # for nvim
       # pngpaste # only used for obsidian.nvim, not using it for now
       # --- extraNodePackages ---
       extraNodePackages.cpenv
