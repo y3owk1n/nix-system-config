@@ -22,7 +22,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.ui.treesitter-context" },
     -- add extras coding
     { import = "lazyvim.plugins.extras.coding.neogen" },
-    { import = "lazyvim.plugins.extras.coding.luasnip" },
+    -- { import = "lazyvim.plugins.extras.coding.luasnip" },
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
     -- add extras editor
     { import = "lazyvim.plugins.extras.editor.harpoon2" },
