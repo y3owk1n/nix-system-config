@@ -59,6 +59,7 @@ require("lazy").setup({
   checker = { enabled = true }, -- automatically check for plugin updates
   ui = {
     border = "rounded",
+    backdrop = 100,
   },
   performance = {
     rtp = {
