@@ -47,7 +47,6 @@ vim.keymap.del("t", "<C-/>")
 vim.keymap.del("t", "<c-_>")
 
 --- Window management
-vim.keymap.del("n", "<leader>wd")
 vim.keymap.del("n", "<leader>-")
 vim.keymap.del("n", "<leader>|")
 
