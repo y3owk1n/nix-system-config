@@ -1,27 +1,27 @@
 // Compatibility Prefix
 const {
-  Clipboard,
-  Front,
-  Hints,
-  Normal,
-  RUNTIME,
-  Visual,
-  aceVimMap,
-  addSearchAlias,
-  cmap,
-  getClickableElements,
-  imap,
-  imapkey,
-  iunmap,
-  map,
-  mapkey,
-  readText,
-  removeSearchAlias,
-  tabOpenLink,
-  unmap,
-  unmapAllExcept,
-  vmapkey,
-  vunmap,
+    Clipboard,
+    Front,
+    Hints,
+    Normal,
+    RUNTIME,
+    Visual,
+    aceVimMap,
+    addSearchAlias,
+    cmap,
+    getClickableElements,
+    imap,
+    imapkey,
+    iunmap,
+    map,
+    mapkey,
+    readText,
+    removeSearchAlias,
+    tabOpenLink,
+    unmap,
+    unmapAllExcept,
+    vmapkey,
+    vunmap,
 } = api;
 
 // ---- Settings ----
@@ -31,6 +31,7 @@ settings.hintAlign = "left";
 settings.omnibarPosition = "bottom";
 settings.focusFirstCandidate = false;
 settings.focusAfterClosed = "last";
+settings.stealFocusOnLoad = false;
 settings.scrollStepSize = 200;
 settings.tabsThreshold = 0;
 settings.modeAfterYank = "Normal";
@@ -77,10 +78,10 @@ map("L", "D");
 // map("K", "E"); <-- Using arc default keymap to switch tabs
 map("F", "gf");
 mapkey("<Ctrl-d>", "Scroll down", () => {
-  Normal.scroll("pageDown");
+    Normal.scroll("pageDown");
 });
 mapkey("<Ctrl-u>", "Scroll up", () => {
-  Normal.scroll("pageUp");
+    Normal.scroll("pageUp");
 });
 
 // ---- Post Unmap ----
