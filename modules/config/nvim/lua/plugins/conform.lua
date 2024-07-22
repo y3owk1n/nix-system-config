@@ -33,12 +33,12 @@ return {
       },
     },
     formatters_by_ft = {
-      javascript = { { "biome", "prettier" } },
-      javascriptreact = { { "biome", "prettier" } },
-      typescript = { { "biome", "prettier" } },
-      typescriptreact = { { "biome", "prettier" } },
-      json = { { "biome", "prettier" } },
-      jsonc = { { "biome", "prettier" } },
+      javascript = { "biome", "prettier", stop_after_first = true },
+      javascriptreact = { "biome", "prettier", stop_after_first = true },
+      typescript = { "biome", "prettier", stop_after_first = true },
+      typescriptreact = { "biome", "prettier", stop_after_first = true },
+      json = { "biome", "prettier", stop_after_first = true },
+      jsonc = { "biome", "prettier", stop_after_first = true },
     },
   },
 }
