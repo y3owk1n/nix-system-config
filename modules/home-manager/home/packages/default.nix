@@ -29,6 +29,7 @@ in
       # --- apps ---
       appcleaner
       keka
+      obsidian
       # stats
       # --- neovim ---
       # eslint_d
