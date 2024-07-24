@@ -34,7 +34,8 @@ in
       # --- neovim ---
       # eslint_d
       # luajit
-      # luajitPackages.luarocks # for nvim
+      lua51Packages.lua
+      luajitPackages.luarocks # for nvim
       # luajitPackages.vusted # for nvim
       nixfmt-rfc-style # for nvim
       # codespell # for nvim
