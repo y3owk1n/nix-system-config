@@ -1,7 +1,7 @@
 return {
-  "nvimdev/dashboard-nvim",
-  opts = function(_, opts)
-    local logo = [[
+	"nvimdev/dashboard-nvim",
+	opts = function(_, opts)
+		local logo = [[
 ██╗  ██╗██╗   ██╗██╗     ███████╗
 ██║ ██╔╝╚██╗ ██╔╝██║     ██╔════╝
 █████╔╝  ╚████╔╝ ██║     █████╗  
@@ -10,9 +10,9 @@ return {
 ╚═╝  ╚═╝   ╚═╝   ╚══════╝╚══════╝
     ]]
 
-    logo = string.rep("\n", 8) .. logo .. "\n\n"
+		logo = string.rep("\n", 8) .. logo .. "\n\n"
 
-    opts.config.header = vim.split(logo, "\n")
+		opts.config.header = vim.split(logo, "\n")
 
     -- stylua: ignore
     opts.config.center = {
@@ -26,5 +26,5 @@ return {
         { action = "Lazy",                                           desc = " Lazy",            icon = "󰒲 ", key = "l" },
         { action = function() vim.api.nvim_input("<cmd>qa<cr>") end, desc = " Quit",            icon = " ", key = "q" },
     }
-  end,
+	end,
 }
