@@ -20,7 +20,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	end
 end
 vim.opt.rtp:prepend(lazypath)
-
 require("lazy").setup({
 	spec = {
 		-- add LazyVim and import its plugins
@@ -29,7 +28,7 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.ui.treesitter-context" },
 		-- add extras coding
 		{ import = "lazyvim.plugins.extras.coding.neogen" },
-		-- { import = "lazyvim.plugins.extras.coding.luasnip" },
+		{ import = "lazyvim.plugins.extras.coding.yanky" },
 		{ import = "lazyvim.plugins.extras.coding.mini-surround" },
 		-- add extras editor
 		{ import = "lazyvim.plugins.extras.editor.harpoon2" },
@@ -41,6 +40,7 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.linting.eslint" },
 		-- add extras util
 		{ import = "lazyvim.plugins.extras.util.startuptime" },
+		{ import = "lazyvim.plugins.extras.util.mini-hipatterns" },
 		-- add extras lang
 		{ import = "lazyvim.plugins.extras.lang.docker" },
 		{ import = "lazyvim.plugins.extras.lang.git" },
