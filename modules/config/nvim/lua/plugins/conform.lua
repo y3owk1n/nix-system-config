@@ -2,6 +2,8 @@ local find_root = require("utils.file").find_root
 
 return {
   "stevearc/conform.nvim",
+  ---@module "conform"
+  ---@type conform.setupOpts
   opts = {
     -- log_level = vim.log.levels.INFO,
     formatters = {
