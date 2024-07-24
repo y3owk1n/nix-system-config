@@ -70,7 +70,7 @@ vim.keymap.set("x", "y", "ygv<Esc>", { desc = "Yank block and remain cursor", no
 
 vim.keymap.set("n", "-", "<C-W>s", { desc = "Split Window Below", remap = true })
 vim.keymap.set("n", "\\", "<C-W>v", { desc = "Split Window Right", remap = true })
-vim.keymap.set("n", "<leader>wx", "<C-W>c", { desc = "Close current split", remap = true })
+-- vim.keymap.set("n", "<leader>wx", "<C-W>c", { desc = "Close current split", remap = true })
 
 --- Select all
 vim.keymap.set("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
