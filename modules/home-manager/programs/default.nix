@@ -13,5 +13,6 @@
     ./fish
     ./zsh
     ./neovim
+    ./kitty
   ];
 }
