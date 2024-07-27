@@ -80,7 +80,7 @@ keybinds clear-defaults=true {
         bind "\\" { NewPane "Right"; SwitchToMode "Normal"; }
         bind "m" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
         bind "p" { SwitchToMode "Pane"; }
-        bind "n" { SwitchToMode "Resize"; }
+        bind "r" { SwitchToMode "Resize"; }
         bind "h" { SwitchToMode "Move"; }
         bind "s" { SwitchToMode "Session"; }
         bind "q" { Quit; }
