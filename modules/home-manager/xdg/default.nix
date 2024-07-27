@@ -23,5 +23,9 @@
     #   source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-system-config/modules/config/tridactyl";
     #   recursive = true;
     # };
+    zellij = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-system-config/modules/config/zellij";
+      recursive = true;
+    };
   };
 }

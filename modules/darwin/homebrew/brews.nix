@@ -3,6 +3,7 @@
   homebrew = {
     brews = [
       "sqlite"
+      "zellij"
       # "vercel-cli" # install it from nix
       "gnu-sed"
       # {

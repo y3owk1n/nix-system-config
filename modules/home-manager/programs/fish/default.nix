@@ -5,10 +5,11 @@
       enable = true;
       interactiveShellInit = ''
         set fish_greeting # Disable greeting\n
+        __autozellij_hook
       '';
       shellInit = ''
         __load-em
-        __autotmux_hook
+        # __autotmux_hook
         __autols_hook
         __set_tide_variables
       '';
@@ -128,6 +129,44 @@
                         # If no sessions exist, create and attach to "Hack"
                         tmux new-session -s Hack
                     end
+                end
+            end
+          '';
+        };
+        __autozellij_hook = {
+          description = "Auto load zellij";
+          body = ''
+            if not set -q ZELLIJ
+                if command -v zellij >/dev/null 2>&1
+                    echo "Zellij is installed"
+
+                    # Get the list of zellij sessions
+                    set sessions (zellij list-sessions 2>/dev/null)
+                    echo "Sessions: $sessions"
+
+                    if set -q sessions[1]
+                        echo "Sessions found"
+
+                        # Check if "Hack" session exists in the list
+                        if string match -q "*Hack*" "$sessions"
+                            echo "Hack session found"
+                            echo "Attaching to Hack session"
+                            zellij attach Hack
+                        else
+                            echo "Hack session not found"
+                            # If "Hack" session not found, attach to the first one
+                            set first_session (string split ' ' $sessions[1])[1]
+                            echo "First session: $first_session"
+                            echo "Attaching to first session"
+                            zellij attach $first_session
+                        end
+                    else
+                        echo "No sessions found"
+                        echo "Creating and attaching to Hack session"
+                        zellij attach Hack --create
+                    end
+                else
+                    echo "Zellij is not installed"
                 end
             end
           '';
