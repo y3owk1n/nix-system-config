@@ -2,7 +2,7 @@
 {
   programs = {
     tmux = {
-      enable = true;
+      enable = false;
       aggressiveResize = true;
       baseIndex = 1;
       escapeTime = 0;

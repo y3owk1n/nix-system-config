@@ -1,19 +1,32 @@
 return {
+	-- {
+	-- 	"christoomey/vim-tmux-navigator",
+	-- 	cmd = {
+	-- 		"TmuxNavigateLeft",
+	-- 		"TmuxNavigateDown",
+	-- 		"TmuxNavigateUp",
+	-- 		"TmuxNavigateRight",
+	-- 		"TmuxNavigatePrevious",
+	-- 	},
+	-- 	keys = {
+	-- 		{ "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+	-- 		{ "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+	-- 		{ "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+	-- 		{ "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+	-- 		{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+	-- 	},
+	-- },
 	{
-		"christoomey/vim-tmux-navigator",
-		cmd = {
-			"TmuxNavigateLeft",
-			"TmuxNavigateDown",
-			"TmuxNavigateUp",
-			"TmuxNavigateRight",
-			"TmuxNavigatePrevious",
-		},
+		"GR3YH4TT3R93/zellij-nav.nvim",
+		init = function() -- Only needed if you want to override default keymaps otherwise just call opts = {}
+			vim.g.zellij_nav_default_mappings = false -- Default: true
+		end,
+		opts = {},
 		keys = {
-			{ "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
-			{ "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
-			{ "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
-			{ "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
-			{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+			{ "<c-h>", "<cmd>:ZellijNavigateLeft<cr>" },
+			{ "<c-j>", "<cmd>:ZellijNavigateDown<cr>" },
+			{ "<c-k>", "<cmd>:ZellijNavigateUp<cr>" },
+			{ "<c-l>", "<cmd>:ZellijNavigateRight<cr>" },
 		},
 	},
 	{
