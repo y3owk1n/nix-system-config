@@ -4,13 +4,13 @@
     yabai = {
       enable = true;
       #package = (
-        #pkgs.yabai.overrideAttrs (o: rec {
-          #version = "7.1.0";
-          #src = builtins.fetchTarball {
-            #url = "https://github.com/koekeishiya/yabai/releases/download/v${version}/yabai-v${version}.tar.gz";
-            #sha256 = "sha256:09r2xjd8hhbvxd3lsqf01vds27hfplrgk8cy9c9r6a3ns0ys04qn";
-          #};
-        #})
+      #pkgs.yabai.overrideAttrs (o: rec {
+      #version = "7.1.0";
+      #src = builtins.fetchTarball {
+      #url = "https://github.com/koekeishiya/yabai/releases/download/v${version}/yabai-v${version}.tar.gz";
+      #sha256 = "sha256:09r2xjd8hhbvxd3lsqf01vds27hfplrgk8cy9c9r6a3ns0ys04qn";
+      #};
+      #})
       #);
       enableScriptingAddition = true;
       config = {
@@ -52,7 +52,7 @@
         # Web browsers
         yabai -m rule --add app="^(Google Chrome|Safari|Arc|Microsoft Edge|Safari Technology Preview|Firefox|Firefox Nightly|Brave Browser|Floorp)$" space=1
         # Terminal
-        yabai -m rule --add app="^(Terminal|Alacritty)$" space=2
+        yabai -m rule --add app="^(Terminal|Alacritty|wezTerm)$" space=2
         # Notes
         yabai -m rule --add app="^(Notes|Reminders|Obsidian|GitButler)$" space=3
         # Social

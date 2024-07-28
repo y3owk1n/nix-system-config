@@ -12,6 +12,8 @@
       "gitbutler"
       "stats"
 
+      "wezterm"
+
       # --- browser ---
       # "firefox@nightly"
       "arc"
