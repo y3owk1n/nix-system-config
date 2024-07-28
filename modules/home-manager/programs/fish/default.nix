@@ -21,6 +21,13 @@
         fpfh = "_fzf_file_picker --allow-open-in-editor --show-hidden-files --prompt-name Files+";
         fpc = "_fzf_cmd_history --allow-execute";
         gg = "lazygit";
+        za = "zellij attach --create";
+        zls = "zellij list-sessions";
+        zd = "zellij delete-session";
+        zr = "zellij run --";
+        zrr = "zellij run --direction right --";
+        zrd = "zellij run --direction down --";
+        zrf = "zellij run --floating --";
       };
       shellAliases = {
         # "obs-kyle" =
