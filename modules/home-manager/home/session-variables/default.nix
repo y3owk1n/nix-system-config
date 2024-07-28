@@ -11,7 +11,8 @@
       GIT_EDITOR = "nvim";
       SYSTEMD_COLORS = "true";
       COLORTERM = "truecolor";
-      TERMINAL = "alacritty";
+      # TERMINAL = "alacritty";
+      TERMINAL = "wezterm";
       # BROWSER = "qutebrowser";
       HOMEBREW_NO_AUTO_UPDATE = 1;
       PAGER = "less";
