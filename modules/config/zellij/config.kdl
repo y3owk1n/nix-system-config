@@ -22,6 +22,7 @@ keybinds clear-defaults=true {
     pane {
         bind "Esc" { SwitchToMode "Normal"; }
         bind "f" { ToggleFloatingPanes; SwitchToMode "Normal"; }
+        bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
     }
     move {
@@ -87,8 +88,8 @@ keybinds clear-defaults=true {
         bind "t" { ToggleFloatingPanes; SwitchToMode "Normal"; }
         bind "q" { Quit; }
         bind "d" { Detach; }
-        // bind "p" { PreviousSwapLayout; }
-        // bind "n" { NextSwapLayout; }
+        bind "p" { PreviousSwapLayout; }
+        bind "n" { NextSwapLayout; }
     }
     locked {
         bind "Ctrl t" { SwitchToMode "Tmux"; }
