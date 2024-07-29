@@ -9,9 +9,11 @@
       "whatsapp"
       "lulu"
       "zerotier-one"
-      "gitbutler"
       "stats"
 
+      # "gitbutler"
+
+      # --- terminal ---
       "wezterm"
 
       # --- browser ---
