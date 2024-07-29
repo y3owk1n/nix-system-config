@@ -14,5 +14,6 @@
     ./zsh
     ./neovim
     ./kitty
+    ./gh
   ];
 }

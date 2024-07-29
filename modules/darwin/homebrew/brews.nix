@@ -4,7 +4,6 @@
     brews = [
       "sqlite"
       "zellij"
-      "gh"
       # "vercel-cli" # install it from nix
       "gnu-sed"
       # {
