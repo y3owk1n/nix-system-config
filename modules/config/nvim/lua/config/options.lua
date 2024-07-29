@@ -3,6 +3,7 @@
 -- Add any additional options here
 
 local opt = vim.opt
+vim.g.maplocalleader = ","
 
 -- Lazygit
 vim.g.lazygit_config = false
