@@ -14,7 +14,8 @@
       # "gitbutler"
 
       # --- terminal ---
-      "wezterm"
+      # "wezterm"
+      "wezterm@nightly"
 
       # --- browser ---
       # "firefox@nightly"
