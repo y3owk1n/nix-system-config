@@ -9,7 +9,12 @@ return {
 
 		return {
 			defaults = {
-				path_display = { "truncate " },
+				-- path_display = { "truncate " },
+				path_display = {
+					filename_first = {
+						reverse_directories = true,
+					},
+				},
 				wrap_results = true,
 				layout_strategy = "horizontal",
 				layout_config = { prompt_position = "top" },
