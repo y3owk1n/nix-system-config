@@ -58,6 +58,7 @@ return {
 			-- optional, if using telescope for vim.ui.select
 			"stevearc/dressing.nvim",
 		},
+		-- can reset the database by deleting ~/.local/share/nvim/telescope-all-recent.sqlite3
 		opts = {
 			-- your config goes here
 			default = {
