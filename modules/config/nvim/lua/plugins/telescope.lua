@@ -1,5 +1,22 @@
 return {
 	"nvim-telescope/telescope.nvim",
+	keys = {
+		{
+			"<leader><space>",
+			LazyVim.pick("files", { root = false }),
+			desc = "Find Files (cwd)",
+		},
+		{
+			"<leader>ff",
+			LazyVim.pick("files", { root = false }),
+			desc = "Find Files (cwd)",
+		},
+		{
+			"<leader>fF",
+			LazyVim.pick("files"),
+			desc = "Find Files (root)",
+		},
+	},
 	opts = function()
 		local actions = require("telescope.actions")
 		local open_with_trouble = require("trouble.sources.telescope").open
