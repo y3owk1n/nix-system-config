@@ -15,5 +15,6 @@
     ./neovim
     ./kitty
     ./gh
+    ./starship
   ];
 }
