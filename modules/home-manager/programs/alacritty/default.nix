@@ -2,7 +2,7 @@
 {
   programs = {
     alacritty = {
-      enable = true;
+      enable = false;
       settings = {
         cursor.style = {
           blinking = "Off";
@@ -29,10 +29,6 @@
           size = 14;
         };
         mouse.hide_when_typing = true;
-        scrolling = {
-          history = 10000;
-          multiplier = 3;
-        };
         window = {
           decorations = "buttonless";
           dynamic_title = true;
