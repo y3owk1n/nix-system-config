@@ -38,9 +38,6 @@
           };
 
         };
-        git_metrics = {
-          disabled = false;
-        };
         git_status = {
           ahead = "⇡$count";
           behind = "⇣$count";
