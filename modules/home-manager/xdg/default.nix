@@ -31,5 +31,9 @@
     #   source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-system-config/modules/config/wezterm";
     #   recursive = true;
     # };
+    alacritty = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-system-config/modules/config/alacritty";
+      recursive = true;
+    };
   };
 }
