@@ -11,7 +11,7 @@
         __load-em
         # __autotmux_hook
         __autols_hook
-        __set_tide_variables
+        # __set_tide_variables
       '';
       shellAbbrs = {
         c = "clear";
@@ -48,10 +48,10 @@
         nivm = "nvim";
       };
       plugins = [
-        {
-          name = "tide";
-          src = pkgs.fishPlugins.tide.src;
-        }
+        # {
+        #   name = "tide";
+        #   src = pkgs.fishPlugins.tide.src;
+        # }
         {
           name = "pisces";
           src = pkgs.fishPlugins.pisces.src;
@@ -194,20 +194,20 @@
             end
           '';
         };
-        __set_tide_variables = {
-          body = ''
-            set -U tide_git_color_branch magenta
-            set -U tide_left_prompt_frame_enabled false
-            set -U tide_left_prompt_separator_diff_color \x20
-            set -U tide_left_prompt_separator_same_color \x20
-            set -U tide_left_prompt_suffix \x20
-            set -U tide_right_prompt_frame_enabled false
-            set -U tide_right_prompt_prefix \x20
-            set -U tide_right_prompt_separator_diff_color \x20
-            set -U tide_right_prompt_separator_same_color \x20
-            set -U tide_right_prompt_suffix 
-          '';
-        };
+        # __set_tide_variables = {
+        #   body = ''
+        #     set -U tide_git_color_branch magenta
+        #     set -U tide_left_prompt_frame_enabled false
+        #     set -U tide_left_prompt_separator_diff_color \x20
+        #     set -U tide_left_prompt_separator_same_color \x20
+        #     set -U tide_left_prompt_suffix \x20
+        #     set -U tide_right_prompt_frame_enabled false
+        #     set -U tide_right_prompt_prefix \x20
+        #     set -U tide_right_prompt_separator_diff_color \x20
+        #     set -U tide_right_prompt_separator_same_color \x20
+        #     set -U tide_right_prompt_suffix 
+        #   '';
+        # };
       };
     };
   };
