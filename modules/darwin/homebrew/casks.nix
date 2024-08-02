@@ -15,7 +15,7 @@
 
       # --- terminal ---
       # "wezterm"
-      "wezterm@nightly"
+      # "wezterm@nightly"
 
       # --- browser ---
       # "firefox@nightly"
@@ -26,6 +26,7 @@
       "font-poppins"
       "font-geist"
       "font-geist-mono-nerd-font"
+      "font-jetbrains-mono-nerd-font"
     ];
   };
 }
