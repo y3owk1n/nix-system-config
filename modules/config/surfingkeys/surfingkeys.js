@@ -25,7 +25,7 @@ const {
 } = api;
 
 // ---- Settings ----
-Hints.setCharacters("htnsgcrl");
+Hints.setCharacters("aoeuidhtns");
 
 settings.hintAlign = "left";
 settings.omnibarPosition = "bottom";
