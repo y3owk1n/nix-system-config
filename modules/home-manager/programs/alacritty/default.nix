@@ -2,7 +2,7 @@
 {
   programs = {
     alacritty = {
-      enable = false;
+      enable = true;
       settings = {
         cursor.style = {
           blinking = "Off";
@@ -10,20 +10,20 @@
         };
         env.TERM = "xterm-256color";
         font = {
-          bold = {
-            family = "GeistMono NF";
-            style = "Bold";
-          };
-          bold_italic = {
-            family = "GeistMono NF";
-            style = "Bold Italic";
-          };
-          italic = {
-            family = "GeistMono NF";
-            style = "Italic";
-          };
+          # bold = {
+          #   family = "GeistMono NF";
+          #   style = "Bold";
+          # };
+          # bold_italic = {
+          #   family = "GeistMono NF";
+          #   style = "Bold Italic";
+          # };
+          # italic = {
+          #   family = "GeistMono NF";
+          #   style = "Italic";
+          # };
           normal = {
-            family = "GeistMono NF";
+            family = "JetBrainsMono NF";
             style = "Regular";
           };
           size = 14;
