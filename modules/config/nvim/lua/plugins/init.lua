@@ -17,17 +17,34 @@ return {
 	-- 	},
 	-- },
 	{
-		"GR3YH4TT3R93/zellij-nav.nvim",
-		init = function() -- Only needed if you want to override default keymaps otherwise just call opts = {}
-			vim.g.zellij_nav_default_mappings = false -- Default: true
-		end,
-		opts = {},
+		--- NOTE: Plugin source here: https://github.com/hiasr/vim-zellij-navigator
+		--- And neovim is using this plugin: https://github.com/swaits/zellij-nav.nvim
+		"swaits/zellij-nav.nvim",
+		lazy = true,
+		event = "VeryLazy",
 		keys = {
-			{ "<c-h>", "<cmd>:ZellijNavigateLeft<cr>" },
-			{ "<c-j>", "<cmd>:ZellijNavigateDown<cr>" },
-			{ "<c-k>", "<cmd>:ZellijNavigateUp<cr>" },
-			{ "<c-l>", "<cmd>:ZellijNavigateRight<cr>" },
+			{
+				"<c-h>",
+				"<cmd>ZellijNavigateLeft<cr>",
+				{ silent = true, desc = "navigate left" },
+			},
+			{
+				"<c-j>",
+				"<cmd>ZellijNavigateDown<cr>",
+				{ silent = true, desc = "navigate down" },
+			},
+			{
+				"<c-k>",
+				"<cmd>ZellijNavigateUp<cr>",
+				{ silent = true, desc = "navigate up" },
+			},
+			{
+				"<c-l>",
+				"<cmd>ZellijNavigateRight<cr>",
+				{ silent = true, desc = "navigate right" },
+			},
 		},
+		opts = {},
 	},
 	{
 		"dmmulroy/ts-error-translator.nvim",
