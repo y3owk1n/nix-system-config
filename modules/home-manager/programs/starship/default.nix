@@ -4,7 +4,7 @@
     starship = {
       enable = true;
       enableFishIntegration = true;
-      # enableTransience = true;
+      enableTransience = true;
       settings = {
         palette = "catppuccin_macchiato";
         palettes = {
@@ -48,6 +48,15 @@
           staged = "+$count";
           stashed = "\\$$count";
           untracked = "?$count";
+        };
+        shell = {
+          disabled = false;
+        };
+        os = {
+          disabled = false;
+          symbols = {
+            Macos = " ";
+          };
         };
       };
     };
