@@ -3,7 +3,7 @@
   homebrew = {
     casks = [
       "orbstack"
-      "spaceid"
+      # "spaceid"
       "onyx"
       "imageoptim"
       "whatsapp"
