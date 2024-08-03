@@ -2,7 +2,7 @@
 {
   services = {
     skhd = {
-      enable = true;
+      enable = false;
       package = pkgs.skhd;
       skhdConfig = ''
         alt - h : yabai -m window --focus west # option - h on mac
