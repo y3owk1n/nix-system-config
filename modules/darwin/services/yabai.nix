@@ -2,7 +2,7 @@
 {
   services = {
     yabai = {
-      enable = true;
+      enable = false;
       #package = (
       #pkgs.yabai.overrideAttrs (o: rec {
       #version = "7.1.0";
