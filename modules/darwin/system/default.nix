@@ -164,10 +164,10 @@
           askForPassword = 1;
           askForPasswordDelay = 0;
         };
-        "com.apple.mail" = {
-          # Disable inline attachments (just show the icons)
-          DisableInlineAttachmentViewing = true;
-        };
+        # "com.apple.mail" = {
+        #   # Disable inline attachments (just show the icons)
+        #   DisableInlineAttachmentViewing = true;
+        # };
         "com.apple.AdLib" = {
           allowApplePersonalizedAdvertising = false;
         };
@@ -241,9 +241,9 @@
       # defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" "@\U21a9"
 
       # Display emails in threaded mode, sorted by date (newest at the top)
-      defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreadedMode" -string "yes"
-      defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortedDescending" -string "no"
-      defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortOrder" -string "received-date"
+      # defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreadedMode" -string "yes"
+      # defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortedDescending" -string "no"
+      # defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortOrder" -string "received-date"
 
       defaults write com.apple.spotlight orderedItems -array \
           '{"enabled" = 1;"name" = "APPLICATIONS";}' \
