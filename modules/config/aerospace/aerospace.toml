@@ -22,26 +22,26 @@ outer.right = 8
 cmd-h = []     # Disable "hide application"
 cmd-alt-h = [] # Disable "hide others"
 
-alt-h = 'focus left'
-alt-j = 'focus down'
-alt-k = 'focus up'
-alt-l = 'focus right'
+cmd-alt-shift-ctrl-h = 'focus left'
+cmd-alt-shift-ctrl-j = 'focus down'
+cmd-alt-shift-ctrl-k = 'focus up'
+cmd-alt-shift-ctrl-l = 'focus right'
 
 alt-shift-h = 'move left'
 alt-shift-j = 'move down'
 alt-shift-k = 'move up'
 alt-shift-l = 'move right'
 
-alt-shift-minus = 'resize smart -50'
-alt-shift-equal = 'resize smart +50'
+# cmd-alt-shift-ctrl-minus = 'resize smart -50'
+# cmd-alt-shift-ctrl-equal = 'resize smart +50'
 
-alt-m = 'fullscreen'
+cmd-alt-shift-ctrl-m = 'fullscreen'
 
 # alt-backslash = 'layout tiles horizontal vertical'
 # alt-minus = 'layout accordion horizontal vertical'
 
-alt-backslash = 'join-with down'
-alt-minus = 'join-with right'
+cmd-alt-shift-ctrl-backslash = 'join-with down'
+cmd-alt-shift-ctrl-minus = 'join-with right'
 
 cmd-alt-shift-ctrl-1 = 'workspace 1'
 cmd-alt-shift-ctrl-2 = 'workspace 2'
@@ -65,9 +65,9 @@ alt-shift-8 = ['move-node-to-workspace 8', 'workspace 8']
 alt-shift-9 = ['move-node-to-workspace 9', 'workspace 9']
 alt-shift-0 = ['move-node-to-workspace 0', 'workspace 0']
 
-alt-shift-c = 'reload-config'
+cmd-alt-shift-ctrl-c = 'reload-config'
 
-alt-t = 'layout floating tiling' # 'floating toggle' in i3
+cmd-alt-shift-ctrl-t = 'layout floating tiling' # 'floating toggle' in i3
 
 # Space 1 = Browser
 [[on-window-detected]]
