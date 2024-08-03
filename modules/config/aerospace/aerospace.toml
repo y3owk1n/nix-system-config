@@ -83,6 +83,14 @@ run = 'move-node-to-workspace 1'
 if.app-id = 'org.alacritty'
 run = 'move-node-to-workspace 2'
 
+[[on-window-detected]]
+if.app-id = 'com.apple.Terminal'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'dev.kdrag0n.MacVirt'
+run = 'move-node-to-workspace 2'
+
 # Space 3 = Notes
 [[on-window-detected]]
 if.app-id = 'com.apple.Notes'
