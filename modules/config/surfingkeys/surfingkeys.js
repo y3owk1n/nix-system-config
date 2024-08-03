@@ -71,6 +71,8 @@ unmap("P"); // Scroll full page down
 // Emoji
 iunmap(":");
 
+unmap("<Ctrl-j>")
+
 // ---- Map ----
 map("H", "S");
 map("L", "D");
