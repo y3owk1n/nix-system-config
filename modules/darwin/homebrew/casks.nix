@@ -14,7 +14,7 @@
       # "gitbutler"
 
       # --- tiling manager ---
-      "nikitabobko/tap/aerospace"
+      "aerospace"
 
       # --- terminal ---
       # "wezterm"
