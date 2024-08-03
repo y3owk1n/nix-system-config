@@ -2,9 +2,25 @@
 
 This is a project to help me to manage my Nix system configuration, mainly with Darwin and Home Manager.
 
+## What do I use?
+
+### General
+
+- Shell: [fish](https://fishshell.com/)
+- Terminal: [alacritty](https://alacritty.org/)
+- Editor: [neovim](https://neovim.io/)
+- Multiplexer: ~~[tmux](https://github.com/tmux/tmux/wiki)~~ [zellij](https://zellij.dev/)
+- Prompt: [starship](https://starship.rs/)
+- Browser: [arc](https://arc.net/)
+- Docker: [orbstack](https://orbstack.dev/)
+- Network: [tailscale](https://tailscale.com/)
+
 ## Notes for future me
 
 ### To use MX Master 3 bluetooth mouse with kanata
+
+> [!NOTE]
+> Not using kanata anymore, got my zsa voyager keyboard.
 
 - Reset kanata
 - Restart Keychron keyboard
@@ -21,6 +37,9 @@ sh <(curl -L https://nixos.org/nix/install)
 ```
 
 ### Configure github helper
+
+> [!NOTE]
+> Not using this anymore, this can configured directly with github cli
 
 ```bash
 git credential-oauth configure
@@ -74,7 +93,7 @@ nix-shell -p nodePackages.node2nix --command "node2nix -18 -i ./node-packages.js
 
 ### To fix ungoogled-chromium icloud password not working
 
-https://github.com/ungoogled-software/ungoogled-chromium-macos/issues/144#issuecomment-1913176798
+<https://github.com/ungoogled-software/ungoogled-chromium-macos/issues/144#issuecomment-1913176798>
 
 ```bash
 echo '{
