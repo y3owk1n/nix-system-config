@@ -115,6 +115,10 @@ run = 'move-node-to-workspace 6'
 if.app-name-regex-substring = 'illustrator'
 run = 'move-node-to-workspace 6'
 
+[[on-window-detected]]
+if.app-id = 'com.apple.ScreenSharing'
+run = 'move-node-to-workspace 7'
+
 # Space 7 = Music
 [[on-window-detected]]
 if.app-id = 'com.apple.Music'
