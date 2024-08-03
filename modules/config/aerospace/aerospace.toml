@@ -37,8 +37,11 @@ alt-shift-equal = 'resize smart +50'
 
 alt-m = 'fullscreen'
 
-alt-backslash = 'layout tiles horizontal vertical'
-alt-minus = 'layout accordion horizontal vertical'
+# alt-backslash = 'layout tiles horizontal vertical'
+# alt-minus = 'layout accordion horizontal vertical'
+
+alt-backslash = 'join-with down'
+alt-minus = 'join-with right'
 
 cmd-alt-shift-ctrl-1 = 'workspace 1'
 cmd-alt-shift-ctrl-2 = 'workspace 2'
