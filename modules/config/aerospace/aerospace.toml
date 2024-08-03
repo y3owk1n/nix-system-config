@@ -1,3 +1,5 @@
+after-startup-command = ["workspace 1"]
+
 start-at-login = true
 
 default-root-container-layout = 'tiles'
