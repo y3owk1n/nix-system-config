@@ -6,7 +6,7 @@ local config = wezterm.config_builder()
 config.color_scheme = "Catppuccin Macchiato"
 
 -- font
-config.font = wezterm.font("GeistMono NF", { weight = "Bold" })
+config.font = wezterm.font("GeistMono NFM", { weight = "Bold" })
 config.font_size = 14
 
 -- UI
