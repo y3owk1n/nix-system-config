@@ -4,7 +4,7 @@
     starship = {
       enable = true;
       enableFishIntegration = true;
-      enableTransience = true;
+      # enableTransience = true;
       settings = {
         palette = "catppuccin_macchiato";
         palettes = {
@@ -36,6 +36,14 @@
             mantle = "#1e2030";
             crust = "#181926";
           };
+        };
+        character = {
+          error_symbol = "[➜](bold red)";
+          success_symbol = "[➜](bold green)";
+          vimcmd_replace_one_symbol = "[](bold purple)";
+          vimcmd_replace_symbol = "[](bold purple)";
+          vimcmd_symbol = "[](bold green)";
+          vimcmd_visual_symbol = "[](bold yellow)";
 
         };
         git_status = {
@@ -46,17 +54,8 @@
           modified = "!$count";
           renamed = "»$count";
           staged = "+$count";
-          stashed = "\\$$count";
+          stashed = "$$count";
           untracked = "?$count";
-        };
-        shell = {
-          disabled = false;
-        };
-        os = {
-          disabled = false;
-          symbols = {
-            Macos = " ";
-          };
         };
       };
     };
