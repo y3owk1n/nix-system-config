@@ -18,7 +18,7 @@
 
       # --- terminal ---
       # "wezterm"
-      # "wezterm@nightly"
+      "wezterm@nightly"
       "alacritty"
 
       # --- browser ---

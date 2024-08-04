@@ -6,8 +6,11 @@ local config = wezterm.config_builder()
 config.color_scheme = "Catppuccin Macchiato"
 
 -- font
-config.font = wezterm.font("GeistMono NFM", { weight = "Bold" })
+-- config.font = wezterm.font("GeistMono NFM", { weight = "Medium" })
+config.font = wezterm.font("JetBrainsMono NFM")
 config.font_size = 14
+config.freetype_load_flags = "NO_HINTING"
+config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 
 -- UI
 config.enable_tab_bar = false
@@ -19,6 +22,7 @@ config.window_decorations = "RESIZE"
 config.audible_bell = "Disabled"
 
 -- fps
+config.front_end = "WebGpu"
 config.max_fps = 240
 config.animation_fps = 240
 
