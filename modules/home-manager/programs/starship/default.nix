@@ -54,7 +54,7 @@
           modified = "!$count";
           renamed = "»$count";
           staged = "+$count";
-          stashed = "$$count";
+          stashed = "\\$$count";
           untracked = "?$count";
         };
       };
