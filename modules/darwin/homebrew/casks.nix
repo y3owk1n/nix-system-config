@@ -31,6 +31,7 @@
       "font-geist"
       "font-geist-mono-nerd-font"
       "font-jetbrains-mono-nerd-font"
+      "font-monaspace-nerd-font"
     ];
   };
 }
