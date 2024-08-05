@@ -84,8 +84,8 @@ keybinds clear-defaults=true {
         bind "t" { ToggleFloatingPanes; SwitchToMode "Normal"; }
         bind "q" { Quit; }
         bind "d" { Detach; }
-        bind "p" { PreviousSwapLayout; }
-        bind "n" { NextSwapLayout; }
+        // bind "p" { PreviousSwapLayout; }
+        // bind "n" { NextSwapLayout; }
         bind "f" {
             LaunchPlugin "filepicker" {
                 // floating true // uncomment this to have the filepicker opened in a floating window
