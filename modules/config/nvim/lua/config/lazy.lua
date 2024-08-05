@@ -40,7 +40,6 @@ require("lazy").setup({
 		-- add extras linting
 		{ import = "lazyvim.plugins.extras.linting.eslint" },
 		-- add extras util
-		{ import = "lazyvim.plugins.extras.util.startuptime" },
 		{ import = "lazyvim.plugins.extras.util.mini-hipatterns" },
 		-- add extras lang
 		{ import = "lazyvim.plugins.extras.lang.docker" },
