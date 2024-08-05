@@ -33,7 +33,8 @@ require("lazy").setup({
 		-- add extras editor
 		{ import = "lazyvim.plugins.extras.editor.harpoon2" },
 		{ import = "lazyvim.plugins.extras.editor.inc-rename" },
-		{ import = "lazyvim.plugins.extras.editor.telescope" },
+		-- { import = "lazyvim.plugins.extras.editor.telescope" },
+		{ import = "lazyvim.plugins.extras.editor.fzf" },
 		-- add extras formatting
 		{ import = "lazyvim.plugins.extras.formatting.prettier" },
 		-- add extras linting
