@@ -38,6 +38,11 @@ return {
 			custom_highlights = function(colors)
 				return {
 					HighlightUndo = { bg = colors.red, fg = colors.base },
+					--- fzf.lua
+					FzfLuaBorder = { link = "FloatBorder" },
+					FzfLuaTitle = { link = "FloatBorder" },
+					FzfLuaHeaderText = { fg = colors.mauve },
+					FzfLuaHeaderBind = { fg = colors.rosewater },
 				}
 			end,
 			integrations = {
