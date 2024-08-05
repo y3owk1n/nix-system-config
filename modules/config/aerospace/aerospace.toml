@@ -128,11 +128,11 @@ run = 'move-node-to-workspace 5'
 
 # Space 6 = Work
 [[on-window-detected]]
-if.app-name-regex-substring = 'photoshop'
+if.app-id = 'com.adobe.Photoshop'
 run = 'move-node-to-workspace 6'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'illustrator'
+if.app-id = 'com.adobe.illustrator'
 run = 'move-node-to-workspace 6'
 
 [[on-window-detected]]
