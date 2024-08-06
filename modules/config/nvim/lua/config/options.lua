@@ -5,6 +5,9 @@
 local opt = vim.opt
 vim.g.maplocalleader = ","
 
+--shell
+opt.shell = "fish"
+
 -- Lazygit
 vim.g.lazygit_config = false
 
