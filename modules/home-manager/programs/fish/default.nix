@@ -12,6 +12,7 @@
         # __autotmux_hook
         __autols_hook
         # __set_tide_variables
+        __set_fzf_variables
       '';
       shellAbbrs = {
         c = "clear";
@@ -208,6 +209,16 @@
         #     set -U tide_right_prompt_suffix 
         #   '';
         # };
+        __set_fzf_variables = {
+          body = ''
+            set -Ux FZF_DEFAULT_OPTS "\
+            --color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
+            --color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
+            --color=marker:#b7bdf8,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796 \
+            --color=selected-bg:#494d64 \
+            --multi"
+          '';
+        };
       };
     };
   };
