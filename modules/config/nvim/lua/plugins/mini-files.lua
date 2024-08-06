@@ -6,15 +6,19 @@ return {
 		mappings = {
 			close = "q",
 			go_in = "",
-			go_in_plus = "l",
+			go_in_plus = "<CR>",
 			go_out = "",
-			go_out_plus = "h",
-			reset = "<BS>",
+			go_out_plus = "<BS>",
+			reset = "",
 			reveal_cwd = "@",
 			show_help = "g?",
 			synchronize = "=",
 			trim_left = "<",
 			trim_right = ">",
+			go_in_horizontal = "",
+			go_in_vertical = "",
+			go_in_horizontal_plus = "-",
+			go_in_vertical_plus = "\\",
 		},
 		options = {
 			-- Whether to use for editing directories
