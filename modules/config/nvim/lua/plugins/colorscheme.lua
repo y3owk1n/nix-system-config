@@ -52,6 +52,7 @@ return {
 				dashboard = true,
 				flash = true,
 				gitsigns = true,
+				grug_far = true,
 				headlines = true,
 				illuminate = true,
 				indent_blankline = { enabled = true },
@@ -59,7 +60,9 @@ return {
 				lsp_trouble = true,
 				mason = true,
 				markdown = true,
-				mini = true,
+				mini = {
+					enabled = true,
+				},
 				native_lsp = {
 					enabled = true,
 					underlines = {
@@ -70,8 +73,7 @@ return {
 					},
 				},
 				navic = { enabled = true, custom_bg = "lualine" },
-				neotest = true,
-				neotree = true,
+				-- neotree = true,
 				noice = true,
 				notify = true,
 				semantic_tokens = true,
