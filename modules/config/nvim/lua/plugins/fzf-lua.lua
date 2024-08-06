@@ -12,5 +12,9 @@ return {
 		-- remove unwanted keybindings
 		opts.files.actions = {}
 		opts.grep.actions = {}
+
+		opts.defaults = {
+			formatter = "path.filename_first",
+		}
 	end,
 }
