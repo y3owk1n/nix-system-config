@@ -16,3 +16,19 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt.conceallevel = 0
 	end,
 })
+
+-- close mini.files with <q> or <esc>
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = {
+		"MiniFiles",
+	},
+	callback = function(event)
+		vim.bo[event.buf].buflisted = false
+		vim.keymap.set("n", "q", function()
+			require("mini.files").close()
+		end, { buffer = event.buf, silent = true })
+		vim.keymap.set("n", "<esc>", function()
+			require("mini.files").close()
+		end, { buffer = event.buf, silent = true })
+	end,
+})
