@@ -75,6 +75,10 @@ if.app-id = 'com.apple.safari'
 run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
+if.app-id = 'com.apple.SafariTechnologyPreview'
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
 run = 'move-node-to-workspace 1'
 
