@@ -23,7 +23,7 @@
 
       # --- browser ---
       # "firefox@nightly"
-      "arc"
+      # "arc"
       "safari-technology-preview"
 
       # --- fonts ---
