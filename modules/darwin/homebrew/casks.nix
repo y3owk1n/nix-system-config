@@ -24,6 +24,7 @@
       # --- browser ---
       # "firefox@nightly"
       "arc"
+      "safari-technology-preview"
 
       # --- fonts ---
       "font-inter"
