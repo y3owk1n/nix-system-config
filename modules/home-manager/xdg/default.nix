@@ -39,5 +39,9 @@
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-system-config/modules/config/aerospace";
       recursive = true;
     };
+    # kitty = {
+    #   source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-system-config/modules/config/kitty";
+    #   recursive = true;
+    # };
   };
 }
