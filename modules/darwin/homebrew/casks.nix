@@ -20,6 +20,7 @@
       # "wezterm"
       # "wezterm@nightly"
       "alacritty"
+      # "kitty"
 
       # --- browser ---
       # "firefox@nightly"
