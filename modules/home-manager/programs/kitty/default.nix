@@ -15,7 +15,7 @@
         bold_font = "auto";
         italic_font = "auto";
         bold_italic_font = "auto";
-        font_size = 13;
+        font_size = 14;
         window_padding_width = 10;
         hide_window_decorations = "titlebar-only";
         tab_bar_style = "hidden";
