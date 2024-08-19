@@ -12,6 +12,8 @@
       "stats"
 
       # "gitbutler"
+      # --- spotlight alternative ---
+      "raycast"
 
       # --- tiling manager ---
       "aerospace"

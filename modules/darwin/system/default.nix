@@ -189,42 +189,43 @@
         "com.apple.ImageCapture".disableHotPlug = true;
         # Turn on app auto-update
         "com.apple.commerce".AutoUpdate = true;
-        # "com.raycast.macos" = {
-        #   "NSStatusItem Visible raycastIcon" = 0;
-        #   commandsPreferencesExpandedItemIds = [
-        #     "builtin_package_navigation"
-        #     "builtin_package_scriptCommands"
-        #     "builtin_package_floatingNotes"
-        #   ];
-        #   "emojiPicker_skinTone" = "mediumLight";
-        #   # initialSpotlightHotkey = "Command-49";
-        #   navigationCommandStyleIdentifierKey = "legacy";
-        #   "onboarding_canShowActionPanelHint" = 0;
-        #   "onboarding_canShowBackNavigationHint" = 0;
-        #   "onboarding_completedTaskIdentifiers" = [
-        #     "startWalkthrough"
-        #     "calendar"
-        #     "setHotkeyAndAlias"
-        #     "snippets"
-        #     "quicklinks"
-        #     "installFirstExtension"
-        #     "floatingNotes"
-        #     "windowManagement"
-        #     "calculator"
-        #     "raycastShortcuts"
-        #     "openActionPanel"
-        #   ];
-        #   organizationsPreferencesTabVisited = 1;
-        #   popToRootTimeout = 60;
-        #   raycastAPIOptions = 8;
-        #   # raycastGlobalHotkey = "Command-49";
-        #   raycastPreferredWindowMode = "default";
-        #   raycastShouldFollowSystemAppearance = 1;
-        #   raycastWindowPresentationMode = 1;
-        #   showGettingStartedLink = 0;
-        #   "store_termsAccepted" = 1;
-        #   suggestedPreferredGoogleBrowser = 1;
-        # };
+        "com.raycast.macos" = {
+          "NSStatusItem Visible raycastIcon" = 0;
+          commandsPreferencesExpandedItemIds = [
+            "builtin_package_navigation"
+            "builtin_package_scriptCommands"
+            "builtin_package_floatingNotes"
+          ];
+          "emojiPicker_skinTone" = "light";
+          initialSpotlightHotkey = "Command-Control-Option-Shift-36";
+          navigationCommandStyleIdentifierKey = "vim";
+          "onboarding_canShowActionPanelHint" = 0;
+          "onboarding_canShowBackNavigationHint" = 0;
+          "onboarding_completedTaskIdentifiers" = [
+            "startWalkthrough"
+            "calendar"
+            "setHotkeyAndAlias"
+            "snippets"
+            "quicklinks"
+            "installFirstExtension"
+            "floatingNotes"
+            "windowManagement"
+            "calculator"
+            "raycastShortcuts"
+            "openActionPanel"
+          ];
+          organizationsPreferencesTabVisited = 1;
+          popToRootTimeout = 60;
+          useHyperKeyIcon = true;
+          raycastAPIOptions = 8;
+          raycastGlobalHotkey = "Command-Control-Option-Shift-36";
+          raycastPreferredWindowMode = "compact";
+          raycastShouldFollowSystemAppearance = 1;
+          raycastWindowPresentationMode = 1;
+          showGettingStartedLink = 0;
+          "store_termsAccepted" = 1;
+          suggestedPreferredGoogleBrowser = 1;
+        };
       };
     };
     activationScripts.extraActivation.enable = true;
