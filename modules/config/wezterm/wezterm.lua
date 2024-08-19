@@ -9,7 +9,7 @@ config.color_scheme = "Catppuccin Macchiato"
 -- config.font = wezterm.font("GeistMono NFM", { weight = "Medium" })
 config.font = wezterm.font("JetBrainsMono NFM")
 config.font_size = 14
-config.freetype_load_flags = "NO_HINTING"
+config.freetype_load_target = "Normal"
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 
 -- UI
