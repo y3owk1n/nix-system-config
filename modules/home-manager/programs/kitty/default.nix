@@ -2,7 +2,7 @@
 {
   programs = {
     kitty = {
-      enable = false;
+      enable = true;
       darwinLaunchOptions = [
         "--single-instance"
         "--start-as=maximized"
@@ -21,6 +21,8 @@
         tab_bar_style = "hidden";
         clear_all_shortcuts = "yes";
         clear_all_mouse_actions = "no";
+        confirm_os_window_close = 0;
+        input_delay = 0;
       };
       keybindings = {
         "cmd+w" = "close_window";
