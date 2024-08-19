@@ -2,8 +2,6 @@
 {
   homebrew = {
     casks = [
-      "orbstack"
-      # "spaceid"
       "onyx"
       "imageoptim"
       "whatsapp"
@@ -11,7 +9,9 @@
       "zerotier-one"
       "stats"
 
-      # "gitbutler"
+      # --- docker desktop alternative ---
+      "orbstack"
+
       # --- spotlight alternative ---
       "raycast"
 
@@ -21,7 +21,7 @@
       # --- terminal ---
       # "wezterm"
       # "wezterm@nightly"
-      "alacritty"
+      # "alacritty"
       # "kitty"
 
       # --- browser ---
