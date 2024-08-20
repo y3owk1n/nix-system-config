@@ -77,16 +77,21 @@
         show-process-indicators = true;
         orientation = "left";
         mru-spaces = false;
-        # mouse in top right corner will (5) start screensaver
-        wvous-tr-corner = 5;
-        # mouse in top left corner will (13) start lock screen
-        wvous-tl-corner = 13;
+        # # mouse in top right corner will (5) start screensaver
+        # wvous-tr-corner = 5;
+        # # mouse in top left corner will (13) start lock screen
+        # wvous-tl-corner = 13;
       };
 
       screencapture = {
         disable-shadow = true;
         location = "~/Downloads";
         type = "jpg";
+      };
+
+      screensaver = {
+        askForPassword = true;
+        askForPasswordDelay = 0;
       };
 
       # universalaccess = {
@@ -144,6 +149,9 @@
         NSGlobalDomain = {
           # Add a context menu item for showing the Web Inspector in web views
           WebKitDeveloperExtras = true;
+          AppleMiniaturizeOnDoubleClick = false;
+          NSAutomaticTextCompletionEnabled = true;
+          "com.apple.sound.beep.flash" = false;
         };
         "com.apple.finder" = {
           ShowExternalHardDrivesOnDesktop = false;
@@ -159,11 +167,11 @@
           DSDontWriteNetworkStores = true;
           DSDontWriteUSBStores = true;
         };
-        "com.apple.screensaver" = {
-          # Require password immediately after sleep or screen saver begins
-          askForPassword = 1;
-          askForPasswordDelay = 0;
-        };
+        # "com.apple.screensaver" = {
+        #   # Require password immediately after sleep or screen saver begins
+        #   askForPassword = 1;
+        #   askForPasswordDelay = 0;
+        # };
         # "com.apple.mail" = {
         #   # Disable inline attachments (just show the icons)
         #   DisableInlineAttachmentViewing = true;
