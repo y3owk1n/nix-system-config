@@ -26,9 +26,10 @@
       };
       keybindings = {
         "cmd+w" = "close_window";
-        "cmd+n" = "new_window";
-        "cmd+t" = "new_window";
         "cmd+q" = "quit";
+        "cmd+c" = "copy_to_clipboard";
+        "cmd+v" = "paste_from_clipboard";
+        "cmd+e" = "open_url_with_hints";
       };
     };
   };
