@@ -24,6 +24,7 @@ vim.keymap.del("n", "<S-l>")
 vim.keymap.del("n", "[b")
 vim.keymap.del("n", "]b")
 vim.keymap.del("n", "<leader>bb")
+vim.keymap.del("n", "<leader>`")
 vim.keymap.del("n", "<leader>,")
 vim.keymap.del("n", "<leader>bd")
 vim.keymap.del("n", "<leader>bD")
@@ -66,13 +67,14 @@ vim.keymap.set({ "n", "v" }, "H", "^", { desc = "Move to start of line" })
 vim.keymap.set({ "n", "v" }, "L", "$", { desc = "Move to end of line" })
 
 -- Better yank
-vim.keymap.set(
-	"x",
-	"y",
-	"ygv<Esc>",
-	{ desc = "Yank block and remain cursor", noremap = true, silent = true }
-)
+-- vim.keymap.set(
+-- 	"x",
+-- 	"y",
+-- 	"ygv<Esc>",
+-- 	{ desc = "Yank block and remain cursor", noremap = true, silent = true }
+-- )
 
+-- Window Splitting
 vim.keymap.set(
 	"n",
 	"-",
@@ -85,7 +87,6 @@ vim.keymap.set(
 	"<C-W>v",
 	{ desc = "Split Window Right", remap = true }
 )
--- vim.keymap.set("n", "<leader>wx", "<C-W>c", { desc = "Close current split", remap = true })
 
 --- Select all
 vim.keymap.set("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
@@ -93,8 +94,18 @@ vim.keymap.set("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
 --- Center page during actions
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down and center" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up and center" })
-vim.keymap.set("n", "n", "nzzzv", { desc = "Search next and center" })
-vim.keymap.set("n", "N", "Nzzzv", { desc = "Search previous and center" })
+vim.keymap.set(
+	"n",
+	"n",
+	"'Nn'[v:searchforward].'zvzz'",
+	{ expr = true, desc = "Search next and center" }
+)
+vim.keymap.set(
+	"n",
+	"N",
+	"'nN'[v:searchforward].'zz'",
+	{ expr = true, desc = "Search next and center" }
+)
 
 --- Do things without affecting the registers
 vim.keymap.set(
@@ -103,7 +114,6 @@ vim.keymap.set(
 	'"_x',
 	{ desc = "Delete a character without copying it" }
 )
--- vim.keymap.set("x", "<leader>p", '"_dP', { desc = "Paste without replacing" })
 vim.keymap.set({ "n", "v" }, "d", '"_d', { desc = "Delete without replacing" })
 vim.keymap.set({ "n", "v" }, "c", '"_c', { desc = "Change without replacing" })
 
