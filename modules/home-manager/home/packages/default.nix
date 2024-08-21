@@ -9,8 +9,9 @@ in
       # cargo
       rustup
       corepack_latest
+      fnm
       # nodePackages_latest.vercel
-      nodePackages_latest.nodejs
+      # nodePackages_latest.nodejs
       # nodePackages_latest.nodejs.pkgs.pnpm
       bun
       fd
