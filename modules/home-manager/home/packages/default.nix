@@ -23,7 +23,6 @@ in
       less
       minio
       jq
-      agkozak-zsh-prompt
       tree
       stripe-cli
       postgresql
@@ -44,7 +43,7 @@ in
       # pngpaste # only used for obsidian.nvim, not using it for now
       # --- extraNodePackages ---
       extraNodePackages.cpenv
-      extraNodePackages.generate-release-note
+      # extraNodePackages.generate-release-note
       # extraNodePackages.better-commits
     ];
   };
