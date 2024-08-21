@@ -24,6 +24,8 @@
         confirm_os_window_close = 0;
         input_delay = 0;
         disable_ligatures = "always";
+        cursor_blink_interval = 0;
+        macos_quit_when_last_window_closed = "yes";
       };
       keybindings = {
         "cmd+w" = "close_window";
