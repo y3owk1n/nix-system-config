@@ -23,6 +23,7 @@
         clear_all_mouse_actions = "no";
         confirm_os_window_close = 0;
         input_delay = 0;
+        disable_ligatures = "always";
       };
       keybindings = {
         "cmd+w" = "close_window";
