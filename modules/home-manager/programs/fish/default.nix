@@ -13,6 +13,7 @@
         __autols_hook
         # __set_tide_variables
         __set_fzf_variables
+        fnm env --use-on-cd --shell fish | source
       '';
       shellAbbrs = {
         c = "clear";
