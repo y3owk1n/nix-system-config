@@ -279,10 +279,12 @@
           '{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
     '';
     activationScripts.postUserActivation.text = ''
-      # NOTE: Do not delete this! Uncomment this when you want to use spotlight search
-      # This will enable spotlight search to index installed apps
       ## Following line should allow us to avoid a logout/login cycle
-      # /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+      /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+
+
+      ## NOTE: Do not delete this! Uncomment this when you want to use spotlight search
+      ## This will enable spotlight search to index installed apps
       # rsyncArgs="--archive --checksum --chmod=-w --copy-unsafe-links --delete"
       # apps_source="${config.system.build.applications}/Applications"
       # moniker="Nix Trampolines"
