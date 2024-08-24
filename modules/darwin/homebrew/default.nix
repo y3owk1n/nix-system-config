@@ -11,8 +11,8 @@
     caskArgs.no_quarantine = true;
     onActivation = {
       autoUpdate = true;
-      upgrade = true;
-      cleanup = "uninstall";
+      # upgrade = true;
+      cleanup = "zap";
     };
     global = {
       brewfile = true;
