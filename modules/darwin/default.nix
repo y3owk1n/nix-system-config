@@ -17,6 +17,4 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-
-  # environment.systemPackages = [ inputs.k92-nvim.packages.${system}.default ];
 }
