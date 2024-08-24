@@ -67,7 +67,7 @@ chsh -s (which fish)
 ### Build nix to results
 
 ```bash
-nix --extra-experimental-features 'nix-command flakes' build .#darwinConfigurations.your-local-hostname.system
+sudo nix --extra-experimental-features 'nix-command flakes' build .#darwinConfigurations.your-local-hostname.system
 ```
 
 ### Initialise darwin rebuild
