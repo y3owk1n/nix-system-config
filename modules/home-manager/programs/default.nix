@@ -1,7 +1,6 @@
 { ... }:
 {
   imports = [
-    ./alacritty
     ./bat
     ./fzf
     ./git
@@ -11,7 +10,6 @@
     ./lsd
     ./tmux
     ./fish
-    ./zsh
     ./neovim
     ./kitty
     ./gh

@@ -1,1 +1,3 @@
-["cpenv", "generate-release-note"]
+[
+    "cpenv"
+]

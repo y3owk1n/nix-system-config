@@ -8,6 +8,9 @@
       "lulu"
       "zerotier-one"
       "stats"
+      "appcleaner"
+      "keka"
+      "obsidian"
 
       # --- docker desktop alternative ---
       "orbstack"

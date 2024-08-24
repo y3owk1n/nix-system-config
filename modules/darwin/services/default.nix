@@ -1,9 +1,6 @@
 { ... }:
 {
-  imports = [
-    ./skhd.nix
-    ./yabai.nix
-  ];
+  imports = [ ];
   services = {
     nix-daemon.enable = true;
   };

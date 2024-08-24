@@ -18,6 +18,5 @@
       brewfile = true;
       autoUpdate = true;
     };
-    # Things from mac app store
   };
 }

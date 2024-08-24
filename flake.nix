@@ -14,8 +14,6 @@
     # Control system level software and settings including fonts
     darwin.url = "github:LnL7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs-unstable";
-
-    # k92-nvim.url = "github:y3owk1n/k92-nvim";
   };
 
   outputs =
@@ -24,7 +22,7 @@
       home-manager,
       darwin,
       ...
-    }: # add k92-nvim if want to use
+    }:
     let
       darwinSystem =
         {

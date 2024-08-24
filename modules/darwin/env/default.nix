@@ -1,14 +1,8 @@
 { pkgs, ... }:
-let
-  kanata = import ../custom/kanata.nix;
-in
 {
   # Here go the darwin preferences and config items
   environment = {
-    systemPackages = with pkgs; [
-      coreutils
-      #kanata
-    ];
+    systemPackages = with pkgs; [ coreutils ];
     shells = with pkgs; [
       bash
       fish
@@ -28,17 +22,4 @@ in
       "/share/fish"
     ];
   };
-  # launchd.daemons.kanata = {
-  #   serviceConfig = {
-  #     KeepAlive = true;
-  #     RunAtLoad = true;
-  #     ProgramArguments = [
-  #       "/bin/sh"
-  #       "-c"
-  #       "exec sudo /run/current-system/sw/bin/kanata -n -c /Users/kylewong/.config/kanata/config.kbd"
-  #     ];
-  #     StandardErrorPath = "/var/log/kanata.log";
-  #     StandardOutPath = "/var/log/kanata.log";
-  #   };
-  # };
 }

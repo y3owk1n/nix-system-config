@@ -1,17 +1,13 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
+{ ... }:
 {
   imports = [
     ./packages
     ./session-variables
   ];
   home = {
-    # Don't change this when you change package input. Leave it alone.
+    # NOTE: Don't change this when you change package input. Leave it alone.
     stateVersion = "23.11";
+
     # NOTE: Do not delete this! Uncomment this when you want to use spotlight search
     # This will enable spotlight search to index installed apps
     # activation = {

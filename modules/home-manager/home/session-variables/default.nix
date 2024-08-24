@@ -12,9 +12,6 @@
       SYSTEMD_COLORS = "true";
       COLORTERM = "truecolor";
       TERMINAL = "kitty";
-      # TERMINAL = "alacritty";
-      # TERMINAL = "wezterm";
-      # BROWSER = "qutebrowser";
       HOMEBREW_NO_AUTO_UPDATE = 1;
       PAGER = "less";
       CLICOLOR = 1;

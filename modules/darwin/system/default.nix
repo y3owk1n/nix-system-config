@@ -3,7 +3,6 @@
   system = {
     keyboard = {
       enableKeyMapping = false;
-      # remapCapsLockToEscape = true;
     };
     defaults = {
       # `man configuration.nix` on mac is useful in seeing available options
